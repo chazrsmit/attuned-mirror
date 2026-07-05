@@ -1,0 +1,15 @@
+.listing {
+    border: 1px solid black;
+    width: 80%;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.block {
+    padding: 3rem;
+    border-bottom: 2px solid black;
+    min-height: 20dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

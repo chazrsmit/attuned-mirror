@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "BBB Karrik";
+  src: local("BBB_Karrik"), url('./fonts/BBB_Karrik.otf') format('truetype');
+}
+
+@font-face {
+  font-family: "Dindong";
+  src: local("DINdong"), url('./fonts/DINdong.otf') format('truetype');
+}
+
+@font-face {
+  font-family: "Garabosse P1";
+  src: local("Garabosse-Parangonne"), url('./fonts/Garabosse-Parangonne.otf') format('truetype');
+}
+
+@font-face {
+  font-family: "Garabosse P2";
+  src: local("Garabosse-Perle"), url('./fonts/Garabosse-Perle.otf') format('truetype');
+}
+
+
 :root {
   /* --text: #6b6375;
   --text-h: #08060d;
@@ -75,10 +96,13 @@ body {
 }
 
 h1,
-h2 {
+h2,
+p {
   /* font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h); */
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
@@ -98,8 +122,14 @@ h2 {
   @media (max-width: 1024px) {
     font-size: 20px;
   } */
+  font-family: "Garabosse P2";
+  font-size: 60px;
 }
 p {
   /* margin: 0; */
+  font-weight: 300;
+  font-size: 24px;
+  font-family: "BBB Karrik";
+
 }
 
