@@ -20,6 +20,12 @@
 
 
 :root {
+  /* palette 1 */
+  --bg-1: #E5ECE9;
+  --bg-2: #D6D1CD;
+  --darker-grey: #969A97;
+  --pink-1: #F90093;
+  --pink-2: #C60F7B;
   /* --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -93,6 +99,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100dvh;
+  background: var(--bg-1);
 }
 
 h1,

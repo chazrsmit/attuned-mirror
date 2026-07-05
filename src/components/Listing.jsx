@@ -6,6 +6,7 @@ export default function Listing() {
         <>
             <div className="listing">
                 <div className="block">
+                    <p className="upcoming">upcoming</p>
                     <h2 className="titre">Attuned & Blackhill Soundsystem for Zone Neutre collective</h2>
                     <p>6 September 2026 @Mona</p>
                 </div>
