@@ -1,4 +1,35 @@
 .left-desktop {
     height: 100vh;
     width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-desktop span {
+   text-shadow: #ffd150 1px 0 10px;
+}
+
+/* buttons */
+
+.left-desktop .buttons {
+    display:flex;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 1em;
+}
+
+.left-desktop button {
+    border: none;
+    background: transparent;
+    font-family: "BBB Karrik";
+    font-size: 18px;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    border-radius: 50%;
+    margin: 0;
+    -webkit-box-shadow: inset -1px 3px 8px 5px #2379cc, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: inset -1px 3px 8px 5px #2379cc, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0);
 }
