@@ -1,18 +1,27 @@
 import './Listing.css'
 
-export default function Listing() {
+export default function Listing({ isClicked, setIsClicked }) {
 
     return (
         <>
             <div className="listing">
                 <div className="block">
-                    <p className="upcoming">upcoming</p>
-                    <h2 className="titre">Attuned & Blackhill Soundsystem for Zone Neutre collective</h2>
-                    <p>6 September 2026 @Mona</p>
+                    <div className="div-titre" onClick={() => {isClicked !== "sept26mona" || isClicked === null ? setIsClicked("sept26mona") : setIsClicked(null)}}>
+                        <h2 className="titre">Attuned & Blackhill Soundsystem for Zone Neutre collective</h2>
+                    </div>
+                    <div className="infos">
+                        <p>6 September 2026 @Mona</p>
+                        <p className="upcoming">upcoming</p>
+                    </div>
+                    {isClicked === "sept26mona" ? (
+                        <div>
+                            <p>texte complémentaire</p>
+                        </div>
+                    ) : null}
                 </div>
                 <div className="block">
-                    <h2 className="titre">Attuned & Boom Café for Getting the Voice Out</h2>
-                    <p>21 November 2025 @LaVallée</p>
+                    <h2 className="titre">Attuned & Boom Café for Casalina</h2>
+                    <p>29 November 2025 @LaVallée</p>
                 </div>
                 <div className="block">
                     <h2 className="titre">Attuned & La Vieille Chéchette for Sharefood</h2>
@@ -20,7 +29,7 @@ export default function Listing() {
                 </div>
                 <div className="block">
                     <h2 className="titre">Attuned & Boom Café for Getting the voice out</h2>
-                    <p>21 November 2024 @LaVallée</p>
+                    <p>15 November 2024 @LaVallée</p>
                 </div>
                 <div className="block">
                     <h2 className="titre">Attuned for 100pap's 3rd bday</h2>
