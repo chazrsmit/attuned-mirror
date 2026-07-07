@@ -1,83 +1,151 @@
-import './Listing.css'
-import { motion, AnimatePresence } from "framer-motion"
+import "./Listing.css";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Listing({ isClicked, setIsClicked }) {
-
-    return (
+  const events = [
+    {
+      id: "sept26mona",
+      title: "Attuned & Blackhill Soundsystem for Zone Neutre collective",
+      date: "6 September 2026 @Mona",
+      upcoming: true,
+      content: (
         <>
-            <div className="listing">
-                {/* Mona sept 26 */}
-                <motion.div
-                    layout
-                    className={`block ${isClicked === "sept26mona" ? 'opened' : null}`}
-                    transition={{
-                        layout: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-                    }}
-                    animate={{
-                        height: isClicked === "sept26mona" ? "101vh" : "22dvh"
-                        }}
-                >
-                    <div className="div-titre"     onClick={() =>
-                            isClicked === "sept26mona"
-                                ? setIsClicked(null)
-                                : setIsClicked("sept26mona")
-                        }>
-                        <h2 className="titre">Attuned & Blackhill Soundsystem for Zone Neutre collective</h2>
-                    </div>
-                    <div className="infos">
-                        <p>6 September 2026 @Mona</p>
-                        <p className="upcoming">upcoming</p>
-                    </div>
-                    {/* on ajoute un AnimatePresence comme il arrive après (enter and exit anim) */}
-                    <AnimatePresence>
-                        {isClicked === "sept26mona" ? (
-                            <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: "auto" }}
-                                exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.15 }}
-                                style={{ overflow: "hidden" }}
-                            >
-                                <p>texte complémentaire Mona</p>
-                            </motion.div>
-                        ) : null}
-                    </AnimatePresence>
-                </motion.div>
-                {/* LaVallée nov 25 */}
-                <div className="block">
-                    <div className="div-titre" onClick={() => {isClicked !== "nov25lav" || isClicked === null ? setIsClicked("nov25lav") : setIsClicked(null)}}>
-                        <h2 className="titre">Attuned & Boom Café for Casalina</h2>
-                    </div>
-                    <div className="infos">
-                        <p>29 November 2025 @LaVallée</p>
-                    </div>
-                    {isClicked === "nov25lav" ? (
-                        <div>
-                            <p>texte complémentaire Mona</p>
-                        </div>
-                    ) : null}
-                </div>
-                {/* LaVallée may 25 */}
-                <div className="block">
-                    <h2 className="titre">Attuned & La Vieille Chéchette for Sharefood</h2>
-                    <p>25 May 2025 @LaVallée</p>
-                </div>
-                {/* LaVallée nov 24 */}
-                <div className="block">
-                    <h2 className="titre">Attuned & Boom Café for Getting the voice out</h2>
-                    <p>15 November 2024 @LaVallée</p>
-                </div>
-                {/* Zsenne Bar june 24 */}
-                <div className="block">
-                    <h2 className="titre">Attuned for 100pap's 3rd bday</h2>
-                    <p>7 June 2024 @Zsenne Bar</p>
-                </div>
-                {/* Antidote oct 23 */}
-                <div className="block">
-                    <h2 className="titre">Attuned & 100pap for La Voix des sans papiers</h2>
-                    <p>25 October 2023 @L'Antidote</p>
-                </div>
-            </div>
+          <p>texte complémentaire Mona</p>
         </>
-    )
+      ),
+    },
+    {
+      id: "nov25lav",
+      title: "Attuned & Boom Café for Casalina",
+      date: "29 November 2025 @LaVallée",
+      upcoming: false,
+      content: (
+        <>
+          <p>texte complémentaire LaVallée</p>
+        </>
+      ),
+    },
+    {
+      id: "may25lav",
+      title: "Attuned & La Vieille Chéchette for Sharefood",
+      date: "25 May 2025 @LaVallée",
+      upcoming: false,
+      content: (
+        <>
+          <p>texte complémentaire Sharefood</p>
+        </>
+      ),
+    },
+    {
+      id: "nov24lav",
+      title: "Attuned & Boom Café for Getting the voice out",
+      date: "15 November 2024 @LaVallée",
+      upcoming: false,
+      content: (
+        <>
+          <p>texte complémentaire Getting the Voice Out</p>
+        </>
+      ),
+    },
+    {
+      id: "june24zsenne",
+      title: "Attuned for 100pap's 3rd bday",
+      date: "7 June 2024 @Zsenne Bar",
+      upcoming: false,
+      content: (
+        <>
+          <p>texte complémentaire Zsenne</p>
+        </>
+      ),
+    },
+    {
+      id: "oct23antidote",
+      title: "Attuned & 100pap for La Voix des sans papiers",
+      date: "25 October 2023 @L'Antidote",
+      upcoming: false,
+      content: (
+        <>
+          <p>texte complémentaire Antidote</p>
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <div className="listing">
+      {events.map((event) => {
+        const opened = isClicked === event.id;
+        const anotherOpened = isClicked !== null && !opened;
+
+        return (
+          <motion.div
+            key={event.id}
+            layout
+            className="block"
+            transition={{
+              layout: {
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              },
+            }}
+            animate={{
+              height: opened ? "100dvh" : anotherOpened ? 0 : "22dvh",
+              opacity: anotherOpened ? 0 : 1,
+              y: anotherOpened ? -40 : 0,
+              paddingTop: anotherOpened ? 0 : 48,
+              paddingBottom: anotherOpened ? 0 : 48,
+              marginBottom: anotherOpened ? 0 : 0,
+            }}
+            style={{
+              overflow: "hidden",
+            }}
+          >
+            <div
+              className="div-titre"
+              onClick={() =>
+                opened ? setIsClicked(null) : setIsClicked(event.id)
+              }
+            >
+              <h2 className="titre">{event.title}</h2>
+            </div>
+
+            <div className="infos">
+              <p>{event.date}</p>
+
+              {event.upcoming && (
+                <p className="upcoming">upcoming</p>
+              )}
+            </div>
+
+            <AnimatePresence>
+              {opened && (
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    height: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    height: "auto",
+                  }}
+                  exit={{
+                    opacity: 0,
+                    height: 0,
+                  }}
+                  transition={{
+                    duration: 0.25,
+                  }}
+                  style={{
+                    overflow: "hidden",
+                  }}
+                >
+                  {event.content}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        );
+      })}
+    </div>
+  );
 }

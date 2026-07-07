@@ -9,25 +9,23 @@
 }
 
 .block {
-    padding: 3rem;
-    border-bottom: 3px solid black;
+    padding-inline: 3rem;
     min-height: 22dvh;
+    border-top: 3px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     transition: all 0.02 ease-in-out; 
     /* box-sizing: border-box; */
     @media(max-width: 768px) {
-        padding: 2rem;
+        padding-inline: 2rem;
     }
 }
 
-.block:nth-of-type(6) {
-    border-bottom: none;
-}
 
 .block:nth-of-type(1) {
     position: relative;
+    border-top: 0;
 }
 
 .upcoming {
