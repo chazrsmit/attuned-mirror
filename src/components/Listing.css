@@ -1,26 +1,32 @@
 .listing {
     border-left: 3px solid black;
     width: 80%;
-    height: 100vh;
+    height: 100svh;
     overflow: scroll;
+       overflow-anchor: none;
     @media(max-width: 768px) {
         width: 100%;
     }
 }
 
 .block {
-    padding-inline: 3rem;
-    min-height: 22dvh;
+    padding: 3rem;
+    min-height: 22svh;
     border-top: 3px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    transition: all 0.02 ease-in-out; 
+    /* justify-content: center; */
+    /* transition: all 0.02 ease-in-out;  */
+    /* box-sizing: border-box; */
+    contain: layout;
+     /* overflow-anchor: none;  */
     /* box-sizing: border-box; */
     @media(max-width: 768px) {
-        padding-inline: 2rem;
+            padding: 2rem;
     }
 }
+
+
 
 
 .block:nth-of-type(1) {
