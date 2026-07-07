@@ -1,7 +1,7 @@
 import "./Listing.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 
-export default function Listing({ isClicked, setIsClicked }) {
+export default function Listing({ isMobile, isClicked, setIsClicked }) {
   const events = [
     {
       id: "sept26mona",
@@ -71,83 +71,67 @@ export default function Listing({ isClicked, setIsClicked }) {
     },
   ];
 
+  const LAYOUT_TRANSITION = { duration: 0.6, ease: [0.22, 1, 0.36, 1] };
+
   return (
-    <div className="listing">
-      {events.map((event) => {
-        const opened = isClicked === event.id;
-        const anotherOpened = isClicked !== null && !opened;
+    <LayoutGroup>
+      <motion.div className="listing" layoutScroll>
+        {events.map((event) => {
+          const opened = isClicked === event.id;
+          const anotherOpened = isClicked !== null && !opened;
 
-        return (
-          <motion.div
-            key={event.id}
-            layout
-            className="block"
-            transition={{
-              layout: {
-                duration: 0.6,
-                ease: [0.22, 1, 0.36, 1],
-              },
-            }}
-            animate={{
-              height: opened ? "100dvh" : anotherOpened ? 0 : "22dvh",
-              minHeight: opened ? "100dvh" : anotherOpened ? 0 : "22dvh",
-              opacity: anotherOpened ? 0 : 1,
-              y: anotherOpened ? -40 : 0,
-              paddingTop: anotherOpened ? 0 : 48,
-              paddingBottom: anotherOpened ? 0 : 48,
-              marginBottom: anotherOpened ? 0 : 0,
-              borderTopWidth: anotherOpened ? 0 : 3,
-            }}
-            style={{
-              overflow: "hidden",
-            }}
-          >
-            <div
-              className="div-titre"
-              onClick={() =>
-                opened ? setIsClicked(null) : setIsClicked(event.id)
-              }
+          return (
+            <motion.div
+              key={event.id}
+              layout="position"
+              className="block"
+              transition={{
+                layout: LAYOUT_TRANSITION,
+                default: LAYOUT_TRANSITION,
+              }}
+              animate={{
+                height: opened ? "60dvh" : anotherOpened ? 0 : "22dvh",
+                minHeight: opened ? "60dvh" : anotherOpened ? 0 : "22dvh",
+                opacity: anotherOpened ? 0 : 1,
+                paddingTop: anotherOpened ? 0 : "3rem",
+                paddingBottom: anotherOpened ? 0 : "3rem",
+                borderTopWidth: anotherOpened ? 0 : 3,
+              }}
+              style={{
+                overflow: "hidden",
+              }}
             >
-              <h2 className="titre">{event.title}</h2>
-            </div>
+              <div
+                className="div-titre"
+                onClick={() =>
+                  opened ? setIsClicked(null) : setIsClicked(event.id)
+                }
+              >
+                <h2 className="titre">{event.title}</h2>
+              </div>
 
-            <div className="infos">
-              <p>{event.date}</p>
+              <div className="infos">
+                <p>{event.date}</p>
+                {event.upcoming && <p className="upcoming">upcoming</p>}
+              </div>
 
-              {event.upcoming && (
-                <p className="upcoming">upcoming</p>
-              )}
-            </div>
-
-            <AnimatePresence>
-              {opened && (
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    height: 0,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    height: "auto",
-                  }}
-                  exit={{
-                    opacity: 0,
-                    height: 0,
-                  }}
-                  transition={{
-                    duration: 0.25,
-                  }}
-                  style={{
-                    overflow: "hidden",
-                  }}
-                >
-                  {event.content}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        );
-      })}
-    </div>
+              <AnimatePresence>
+                {opened && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    {event.content}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </LayoutGroup>
   );
 }
