@@ -90,11 +90,13 @@ export default function Listing({ isClicked, setIsClicked }) {
             }}
             animate={{
               height: opened ? "100dvh" : anotherOpened ? 0 : "22dvh",
+              minHeight: opened ? "100dvh" : anotherOpened ? 0 : "22dvh",
               opacity: anotherOpened ? 0 : 1,
               y: anotherOpened ? -40 : 0,
               paddingTop: anotherOpened ? 0 : 48,
               paddingBottom: anotherOpened ? 0 : 48,
               marginBottom: anotherOpened ? 0 : 0,
+              borderTopWidth: anotherOpened ? 0 : 3,
             }}
             style={{
               overflow: "hidden",
