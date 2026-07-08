@@ -1,7 +1,31 @@
+import { useEffect, useRef } from "react";
+import Lenis from "lenis";
 import "./Listing.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Listing({ isClicked, setIsClicked }) {
+  const listingRef = useRef(null);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      wrapper: listingRef.current,
+      content: contentRef.current,
+      duration: 1,
+      smoothWheel: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   const events = [
     { id: "sept26mona", title: "Attuned & Blackhill Soundsystem for Zone Neutre collective", date: "6 September 2026 @Mona", upcoming: true, content: <><p>texte complémentaire Mona</p></> },
     { id: "nov25lav", title: "Attuned & Boom Café for Casalina", date: "29 November 2025 @LaVallée", upcoming: false, content: <><p>texte complémentaire LaVallée</p></> },
@@ -12,41 +36,43 @@ export default function Listing({ isClicked, setIsClicked }) {
   ];
 
   return (
-    <div className="listing">
-      {events.map((event) => {
-        const opened = isClicked === event.id;
+    <div className="listing" ref={listingRef}>
+      <div ref={contentRef}>
+        {events.map((event) => {
+          const opened = isClicked === event.id;
 
-        return (
-          <div key={event.id} className="block">
-            <div
-              className="div-titre"
-              onClick={() => setIsClicked(opened ? null : event.id)}
-            >
-              <h2 className="titre">{event.title}</h2>
+          return (
+            <div key={event.id} className="block">
+              <div
+                className="div-titre"
+                onClick={() => setIsClicked(opened ? null : event.id)}
+              >
+                <h2 className="titre">{event.title}</h2>
+              </div>
+
+              <div className="infos">
+                <p>{event.date}</p>
+                {event.upcoming && <p className="upcoming">upcoming</p>}
+              </div>
+
+              <AnimatePresence initial={false}>
+                {opened && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    {event.content}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-
-            <div className="infos">
-              <p>{event.date}</p>
-              {event.upcoming && <p className="upcoming">upcoming</p>}
-            </div>
-
-            <AnimatePresence initial={false}>
-              {opened && (
-                <motion.div
-                  key="content"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "40vh", opacity: 1}}
-                  exit={{ height: 0, opacity: 0, y:0 }}
-                  transition={{ duration: 0.25, ease: "easeInOut" }}
-                  style={{ overflow: "hidden" }}
-                >
-                  {event.content}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
