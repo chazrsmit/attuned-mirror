@@ -34,14 +34,15 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
         upcoming: true,
         content: <><p>texte complémentaire Mona</p></>,
         image: "26mars-lineup-purpledark.png",
-        element1: "element-1bis.png",
+        element1: "",
         element2: "element-9.png",
-        left: "20px",
+        left: "-80px",
         right: "10px",
-        top1: "50px",
+        top1: "-160px",
         top2: "0px",
-        width1: "300px",
-        width2: "300px"
+        width1: "360px",
+        width2: "300px",
+        color: "pink",
      },
     { 
         id: "nov25lav",
@@ -51,19 +52,27 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
         content: <><p>texte complémentaire LaVallée</p></>,
         image: "nov25.png",
         element1: "",
-        element2: "element-14.png",
+        element2: "element-blue1.png",
         left: "-40px",
         right: "-30px",
         top1: "0px",
-        top2: "0px",
-        width2: "360px"
+        top2: "-10px",
+        width2: "350px",
+        color: "blue"
     },
     { 
         id: "may25lav",
         title: "Attuned & La Vieille Chéchette for Sharefood",
         date: "25 May 2025 @LaVallée",
         upcoming: false,
-        content: <><p>texte complémentaire Sharefood</p></>
+        content: <><p>texte complémentaire Sharefood</p></>,
+        element1: "",
+        element2: "element-14.png",
+        left: "-40px",
+        right: "-30px",
+        top1: "0px",
+        top2: "0px",
+        width2: "360px"
     },
     { 
         id: "nov24lav",
@@ -96,18 +105,18 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
           const hovered = isHovered === event.id
 
           return (
-            <div key={event.id} className="block"
+            <div key={event.id} className={`block ${hovered || opened ? 'bg' : null}`}
                 onMouseEnter={() => setIsHovered(hovered ? null : event.id)}
                 onMouseLeave={() => setIsHovered(hovered ? null : event.id)}>
               <div
                 className="div-titre"
                 onClick={() => setIsClicked(opened ? null : event.id)}
               >
-                <h2 className="titre">{event.title}</h2>
+                <h2 className={`titre ${hovered ? `${event.color}` : null}`}>{event.title}</h2>
               </div>
 
               <div className="infos">
-                <p>{event.date}</p>
+                <p className="date">{event.date}</p>
                 {event.upcoming && <p className="upcoming">upcoming</p>}
               </div>
 
@@ -147,7 +156,7 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
 
               {/* éléments graphiques */}
                 <AnimatePresence initial={false}>
-                {hovered && (
+                {hovered && event.element1 && (
                 <motion.img
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -159,12 +168,12 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                         left: event.left, 
                         width: event.width1 }}
                     className={`element`}
-                    src={`/images/${event.element1}`}
+                    src={`/images/${event?.element1}`}
                 />
                 )}
               </AnimatePresence>
                 <AnimatePresence initial={false}>
-                {hovered && (
+                {hovered && event.element2 && (
                 <motion.img
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -176,7 +185,7 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                         right: event.right, 
                         width: event.width2 }}
                     className={`element2`}
-                    src={`/images/${event.element2}`}
+                    src={`/images/${event?.element2}`}
                 />
                 )}
               </AnimatePresence>
