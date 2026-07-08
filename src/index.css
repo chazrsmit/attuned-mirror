@@ -18,6 +18,33 @@
   src: local("Garabosse-Perle"), url('./fonts/Garabosse-Perle.otf') format('truetype');
 }
 
+@font-face {
+  font-family: "Banana 1";
+  src: local("Banana-Outline-Light"), url('./fonts/Banana-Outline-Light.ttf')
+}
+
+@font-face {
+  font-family: "Banana 2";
+  src: local("Banana-Outline-Regular"), url('./fonts/Banana-Outline-Regular.ttf')
+}
+
+@font-face {
+  font-family: "Enclav";
+  src: local("EnclavAcadam-Regular"), url('./fonts/EnclavAcadam-Regular.otf')
+}
+
+@font-face {
+  font-family: "Homoneta I";
+  src: local("Homoneta-Italic"), url('./fonts/Homoneta-Italic.otf')
+}
+
+@font-face {
+  font-family: "Homoneta R";
+  src: local("Homoneta-Regular"), url('./fonts/Homoneta-Regular.otf')
+}
+
+
+
 
 :root {
   /* palette 1 */
