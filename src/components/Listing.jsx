@@ -222,7 +222,14 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                     className={`affiche ${opened ? 'clicked' : null}`}
                     src={`/images/${event.image}`}
                 />
-                <img className={`affiche2 ${opened ? 'clicked' : null}`} src={`/images/${event.affiche2}`}/>
+                <motion.img
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0 }}
+                    exit={{ opacity: 0}}
+                    transition={{ duration: 0.05, ease: "easeInOut" }}
+                    className={`affiche2 ${opened ? 'clicked' : null}`}
+                    src={`/images/${event.affiche2}`}
+                />
                 </>
                 )}
               </AnimatePresence>
