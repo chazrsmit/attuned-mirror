@@ -10,6 +10,7 @@
 }
 
 .block {
+    position: relative;
     padding: 3rem;
     min-height: 33svh;
     border-top: 3px solid black;
@@ -19,6 +20,7 @@
     /* transition: all 0.02 ease-in-out;  */
     box-sizing: border-box;
     contain: layout;
+    overflow: hidden;
      /* overflow-anchor: none;  */
     /* box-sizing: border-box; */
     @media(max-width: 768px) {
@@ -49,6 +51,7 @@
     padding-right: 0.6rem;
     border-radius: 50%;
     margin: 0;
+    background: var(--bg-2);
     -webkit-box-shadow: inset -1px 3px 8px 5px #ffd150, 2px 5px 16px 0px #ae8822, 5px 5px 15px 5px rgba(0,0,0,0); 
     box-shadow: inset -1px 3px 8px 5px #ffd150, 2px 5px 16px 0px #ae8822, 5px 5px 15px 5px rgba(0,0,0,0);
 
@@ -78,3 +81,17 @@
     justify-content: space-between;
 }
 
+/* affiche */
+
+.affiche, .element, .element2 {
+    z-index: -10;
+}
+
+.affiche {
+    filter: blur(4px);
+    transition: 0.25s filter ease-in-out;
+}
+
+.affiche.clicked {
+    filter: blur(0);
+}
