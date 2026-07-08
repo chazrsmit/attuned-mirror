@@ -48,6 +48,7 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
         artist4: "Rastacore",
         artist5: "Pneumotrax",
         image: "26mars-lineup-purpledark-pink.png",
+        affiche2: "26mars-lineup-purpledark.png",
         element1: "",
         element2: "element-9.png",
         left: "-80px",
@@ -204,9 +205,10 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                 )}
               </AnimatePresence>
 
-              {/* affiche on hover */}
+              {/* affiche */}
               <AnimatePresence initial={false}>
                 {hovered && (
+                <>
                 <motion.img
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -220,6 +222,8 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                     className={`affiche ${opened ? 'clicked' : null}`}
                     src={`/images/${event.image}`}
                 />
+                <img className={`affiche2 ${opened ? 'clicked' : null}`} src={`/images/${event.affiche2}`}/>
+                </>
                 )}
               </AnimatePresence>
 
