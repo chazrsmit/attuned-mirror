@@ -39,14 +39,24 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
         left: "20px",
         right: "10px",
         top1: "50px",
-        top2: "0px"
+        top2: "0px",
+        width1: "300px",
+        width2: "300px"
      },
     { 
         id: "nov25lav",
         title: "Attuned & Boom Café for Casalina",
         date: "29 November 2025 @LaVallée",
         upcoming: false,
-        content: <><p>texte complémentaire LaVallée</p></>
+        content: <><p>texte complémentaire LaVallée</p></>,
+        image: "nov25.png",
+        element1: "",
+        element2: "element-14.png",
+        left: "-40px",
+        right: "-30px",
+        top1: "0px",
+        top2: "0px",
+        width2: "360px"
     },
     { 
         id: "may25lav",
@@ -147,7 +157,7 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                         position: "absolute",
                         top: event.top1,
                         left: event.left, 
-                        width: "300px" }}
+                        width: event.width1 }}
                     className={`element`}
                     src={`/images/${event.element1}`}
                 />
@@ -164,7 +174,7 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                         position: "absolute",
                         top: event.top2,
                         right: event.right, 
-                        width: "300px" }}
+                        width: event.width2 }}
                     className={`element2`}
                     src={`/images/${event.element2}`}
                 />
