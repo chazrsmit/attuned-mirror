@@ -226,7 +226,7 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0 }}
                     exit={{ opacity: 0}}
-                    transition={{ duration: 0.05, ease: "easeInOut" }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
                     className={`affiche2 ${opened ? 'clicked' : null}`}
                     src={`/images/${event.affiche2}`}
                 />
@@ -235,7 +235,7 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
               </AnimatePresence>
 
               {/* éléments graphiques */}
-                {/* <AnimatePresence initial={false}>
+                <AnimatePresence initial={false}>
                 {hovered && event.element1 && (
                 <motion.img
                     initial={{ opacity: 0 }}
@@ -268,7 +268,7 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                     src={`/images/${event?.element2}`}
                 />
                 )}
-              </AnimatePresence> */}
+              </AnimatePresence>
             </div>
           );
         })}

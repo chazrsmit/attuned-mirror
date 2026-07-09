@@ -1,8 +1,8 @@
     /* GENERAL */
 
     .listing {
-        border-left: 3px solid black;
-        width: 80%;
+        /* border-left: 3px solid black; */
+        width: 75%;
         height: 100svh;
         overflow: scroll;
         overflow-anchor: none;
@@ -13,9 +13,11 @@
 
     .block {
         position: relative;
-        padding: 3rem;  
+        padding-inline: 1rem;  
+        padding-top: 3rem;
+        padding-bottom: 3rem;
         min-height: 34svh;
-        border-top: 3px solid black;
+        /* border-top: 3px solid black; */
         display: flex;
         flex-direction: column;
         overflow-x: visible;
@@ -25,6 +27,17 @@
         contain: layout;
         overflow: hidden;
         transition: all ease-in-out 0.25s;
+                    background:
+        linear-gradient(to right,
+        var(--bg-1) 0%,
+        transparent 50%,
+        var(--bg-1) 100%
+    ),
+    linear-gradient(180deg,
+        var(--bg-2) 0%,
+        var(--bg-1) 50%,
+        var(--bg-2) 100%
+    );
         /* overflow-anchor: none;  */
         /* box-sizing: border-box; */
         @media(max-width: 768px) {
@@ -32,8 +45,39 @@
         }
     }
 
+    .block::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+    width: 98%;
+    height: 2px;
+    background: black;
+    border-radius: 80px;
+}
+
     .block.pink {
-        background-image: linear-gradient(180deg, #f179bf 0%, var(--bg-1) 50%, #f179bf 100%);
+    background:
+        linear-gradient(to right,
+        var(--bg-1) 0%,
+        transparent 50%,
+        var(--bg-1) 100%
+    ),
+    linear-gradient(180deg,
+        var(--bg-2) 0%,
+        var(--bg-1) 50%,
+        var(--bg-2) 100%
+    );
+    /* linear-gradient(to right,
+        var(--bg-1) 0%,
+        transparent 50%,
+        var(--bg-1) 100%
+    ),
+    linear-gradient(180deg,
+        #f179bf 0%,
+        var(--bg-1) 50%,
+        #f179bf 100%
+    ); */
         /* background: url('./images/backgroundsite-pink2.png');
         transition: all ease-in-out 0.25s;
         @media(max-width: 768px) {
@@ -42,7 +86,25 @@
     }
 
     .block.blue {
-        background-image: linear-gradient(180deg, #7697de 0%, var(--bg-1) 50%, #7697de  100%);
+            background:
+        linear-gradient(to right,
+        var(--bg-1) 0%,
+        transparent 50%,
+        var(--bg-1) 100%
+    ),
+    linear-gradient(180deg,
+        var(--bg-2) 0%,
+        var(--bg-1) 50%,
+        var(--bg-2) 100%
+    );
+        /* background-image:
+            linear-gradient(to right, var(--bg-1) 0%, transparent 50%, var(--bg-1) 100%),
+            linear-gradient(180deg,
+                    #7697de 0%,
+                    var(--bg-1) 50%,
+                    #7697de 100%
+                ); */
+         
             /* background: url('./images/backgroundsite-blue2.png');
             transition: all ease-in-out 0.25s;
         @media(max-width: 768px) {
@@ -65,7 +127,7 @@
         box-sizing: border-box;
     }
 
-    .upcoming{
+    .upcoming {
         font-size: 18px;
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
@@ -96,6 +158,7 @@
         transition: all 0.02s ease-in-out; 
         user-select: none;
     }
+
 
     .div-titre {
         cursor: pointer;

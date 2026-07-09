@@ -35,7 +35,7 @@ function App() {
 
     {/* main, avec content à gauche et à droite sur ordi - sur mobile, par de gauche ou droite */}
     <section className="main">
-      {!isMobile && <LeftDesktop />}
+      {!isMobile && <LeftDesktop isClicked={isClicked} setIsClicked={setIsClicked} />}
       <Listing isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} />
     </section>
 
