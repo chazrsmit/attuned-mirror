@@ -77,6 +77,7 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
         artist3: "Nidrev",
         artist4: "Ben Richard (VJ)",
         image: "nov25.png",
+        affiche2: "nov25 blue.png",
         element1: "",
         element2: "element-blue1.png",
         left: "-40px",
