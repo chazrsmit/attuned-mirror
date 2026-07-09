@@ -148,7 +148,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                         right: "20px", 
                         width: "300px" }}
                     className={`affiche ${opened ? 'clicked' : null}`}
-                    src={`/images/${event.image}`}
+                    src={`${import.meta.env.BASE_URL}/images/${event.image}`}
                 />
                 <motion.img
                     initial={{ opacity: 0 }}
@@ -156,7 +156,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                     exit={{ opacity: 0}}
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     className={`affiche2 ${opened ? 'clicked' : null}`}
-                    src={`/images/${event.affiche2}`}
+                    src={`${import.meta.env.BASE_URL}/images/${event.affiche2}`}
                 />
                 </>
                 )}
@@ -176,7 +176,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                         left: event.left, 
                         width: event.width1 }}
                     className={`element`}
-                    src={`/images/${event?.element1}`}
+                    src={`${import.meta.env.BASE_URL}/images/${event?.element1}`}
                 />
                 )}
               </AnimatePresence>
@@ -193,7 +193,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                         right: event.right, 
                         width: event.width2 }}
                     className={`element2`}
-                    src={`/images/${event?.element2}`}
+                    src={`${import.meta.env.BASE_URL}/images/${event?.element2}`}
                 />
                 )}
               </AnimatePresence>
