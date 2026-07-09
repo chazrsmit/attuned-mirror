@@ -47,7 +47,34 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
 
               <div className="infos">
                 <p className="date">{event.date}</p>
-                {event.upcoming && <p className="upcoming">upcoming</p>}
+                <AnimatePresence mode="wait">
+                  {event.upcoming && <motion.p
+                                      key="upcoming"
+                                      className="upcoming"
+                                      initial={{
+                                          opacity: 0,
+                                          filter: "blur(6px)",
+                                          x: 20
+                                      }}
+                                      animate={{
+                                          opacity: 1,
+                                          filter: "blur(0px)",
+                                          x: 0
+                                      }}
+                                      exit={{
+                                          opacity: 0,
+                                          filter: "blur(6px)",
+                                          x: -20
+                                      }}
+                                      transition={{
+                                          duration: 0.3,
+                                          ease: "easeInOut"
+                                      }}
+                                      >
+                                        upcoming
+                                      </motion.p>
+                  }
+                </AnimatePresence>
               </div>
 
               <AnimatePresence initial={false}>

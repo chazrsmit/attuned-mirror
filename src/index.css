@@ -95,6 +95,7 @@ html, body, #root {
 body {
   overflow: hidden;
   margin: 0;
+  background: var(--bg-1);
 }
 
 #root {
@@ -111,7 +112,7 @@ body {
   flex-direction: column;
   height: 100dvh;
   /* background-image: linear-gradient(to left, var(--bg-1) 0%, var(--bg-2) 100%); */
-  background: var(--bg-1);
+  /* background: var(--bg-1); */
 }
 
 h1,

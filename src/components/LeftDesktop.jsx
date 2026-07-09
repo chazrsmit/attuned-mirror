@@ -26,20 +26,20 @@ export default function LeftDesktop({ events, isClicked, setIsClicked }) {
                                initial={{
                                     opacity: 0,
                                     filter: "blur(6px)",
-                                    // x: 20
+                                    x: 20
                                 }}
                                 animate={{
                                     opacity: 1,
                                     filter: "blur(0px)",
-                                    // x: 0
+                                    x: 0
                                 }}
                                 exit={{
                                     opacity: 0,
                                     filter: "blur(6px)",
-                                    // x: -20
+                                    x: -20
                                 }}
                                 transition={{
-                                    duration: 0.35,
+                                    duration: 0.3,
                                     ease: "easeInOut"
                                 }}
                             >
@@ -52,20 +52,20 @@ export default function LeftDesktop({ events, isClicked, setIsClicked }) {
                                 initial={{
                                     opacity: 0,
                                     filter: "blur(6px)",
-                                    // x: 20
+                                    x: 20
                                 }}
                                 animate={{
                                     opacity: 1,
                                     filter: "blur(0px)",
-                                    // x: 0
+                                    x: 0
                                 }}
                                 exit={{
                                     opacity: 0,
                                     filter: "blur(6px)",
-                                    // x: -20
+                                    x: -20
                                 }}
                                 transition={{
-                                    duration: 0.35,
+                                    duration: 0.3,
                                     ease: "easeInOut"
                                 }}
                             >
