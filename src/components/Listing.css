@@ -27,7 +27,7 @@
         contain: layout;
         overflow: hidden;
         transition: all ease-in-out 0.25s;
-                    background:
+        background:
         linear-gradient(to right,
         var(--bg-1) 0%,
         transparent 50%,
@@ -135,14 +135,14 @@
         padding-right: 0.6rem;
         border-radius: 50%;
         margin: 0;
-        background: var(--bg-1);
+        background: var(--bg-buttons);
         -webkit-box-shadow: inset -1px 3px 8px 5px #ffd150, 2px 5px 16px 0px #ae8822, 5px 5px 15px 5px rgba(0,0,0,0); 
         box-shadow: inset -1px 3px 8px 5px #ffd150, 2px 5px 16px 0px #ae8822, 5px 5px 15px 5px rgba(0,0,0,0);
     }
 
     .date {
         border-radius: 20px;
-        background: var(--bg-1);
+        background: var(--bg-buttons);
         padding-top: 0.4rem;
         padding-bottom: 0.4rem;
         padding-left: 0.6rem;
@@ -228,28 +228,40 @@
             drop-shadow(0 0 12px #E5ECE9)
             drop-shadow(0 0 24px rgba(229, 236, 233, 0.5)); */
         text-shadow: var(--bg-1) 1px 0px 0px, var(--bg-1) 0.540302px 0.841471px 0px, var(--bg-1) -0.416147px 0.909297px 0px, var(--bg-1) -0.989993px 0.14112px 0px, var(--bg-1) -0.653644px -0.756803px 0px, var(--bg-1) 0.283662px -0.958924px 0px, var(--bg-1) 0.96017px -0.279416px 0px;
-        filter:
+        /* filter:
             drop-shadow(0 0 2px var(--bg-1))
             drop-shadow(0 0 6px var(--bg-1))
             drop-shadow(0 0 12px var(--bg-1))
-            drop-shadow(0 0 24px rgba(229, 236, 233, 0.5));
+            drop-shadow(0 0 24px rgba(229, 236, 233, 0.5)); */
+        /* filter:
+            drop-shadow(0 0 2px var(--bg-1))
+            drop-shadow(0 0 4px var(--bg-1))
+            drop-shadow(0 0 6px var(--bg-1))
+            drop-shadow(0 0 8px rgba(229, 236, 233, 0.5)); */
+        filter:
+    drop-shadow(0 0 2px var(--bg-1))
+    drop-shadow(0 0 5px var(--bg-1))
+    drop-shadow(0 0 10px var(--bg-1))
+    drop-shadow(0 0 18px var(--bg-1))
+    drop-shadow(0 0 30px rgba(229, 236, 233, 0.8));
+        padding: 2rem;
     }
 
     .listing .lineup {
         text-shadow:
-            #E5ECE9 2px 0px 0px,
-            #E5ECE9 1.75517px 0.958851px 0px,
-            #E5ECE9 1.0806px 1.68294px 0px,
-            #E5ECE9 0.141474px 1.99499px 0px,
-            #E5ECE9 -0.832294px 1.81859px 0px,
-            #E5ECE9 -1.60229px 1.19694px 0px,
-            #E5ECE9 -1.97999px 0.28224px 0px,
-            #E5ECE9 -1.87291px -0.701566px 0px,
-            #E5ECE9 -1.30729px -1.51361px 0px,
-            #E5ECE9 -0.421592px -1.95506px 0px,
-            #E5ECE9 0.567324px -1.91785px 0px,
-            #E5ECE9 1.41734px -1.41108px 0px,
-            #E5ECE9 1.92034px -0.558831px 0px;
+            var(--bg-buttons) 2px 0px 0px,
+            var(--bg-buttons) 1.75517px 0.958851px 0px,
+            var(--bg-buttons) 1.0806px 1.68294px 0px,
+            var(--bg-buttons) 0.141474px 1.99499px 0px,
+            var(--bg-buttons) -0.832294px 1.81859px 0px,
+            var(--bg-buttons) -1.60229px 1.19694px 0px,
+            var(--bg-buttons) -1.97999px 0.28224px 0px,
+            var(--bg-buttons) -1.87291px -0.701566px 0px,
+            var(--bg-buttons) -1.30729px -1.51361px 0px,
+            var(--bg-buttons) -0.421592px -1.95506px 0px,
+            var(--bg-buttons) 0.567324px -1.91785px 0px,
+            var(--bg-buttons) 1.41734px -1.41108px 0px,
+            var(--bg-buttons) 1.92034px -0.558831px 0px;
         line-height: 1.2;
         /* padding: 1rem; */
     }
