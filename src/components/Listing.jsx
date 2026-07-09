@@ -76,8 +76,8 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
         artist2: "Bivou4c",
         artist3: "Nidrev",
         artist4: "Ben Richard (VJ)",
-        image: "nov25.png",
-        affiche2: "nov25 blue.png",
+        affiche2: "nov25.png",
+        image: "nov25 blue.png",
         element1: "",
         element2: "element-blue1.png",
         left: "-40px",
@@ -173,15 +173,22 @@ export default function Listing({ isClicked, setIsClicked, isHovered, setIsHover
                             <p>{event.content}</p>
                         </div>
                     </div>
+                      <br/>
+                      <br/>
                     <div className={`lineup ${opened ? event.bg : null}`}>
-                        <br/>
-                        <br/>
+                      <div className={`circle-lineup ${opened ? event.bg : null}`}>
+                        <p>Lineup</p>
+                      </div>
+                      <div className={`names ${opened ? event.bg : null}`}>
                         <p>{event.artist1}</p>
                         <p>{event.artist2}</p>
                         <p>{event.artist3}</p>
                         <p>{event.artist4}</p>
-                        <p>{event?.artist5}</p>
+                        <p>{event?.artist5}</p>                        
+                      </div>
+                      
                     </div>
+                    
                   </motion.div>
                 {/* <motion.div
                     key="content2"
