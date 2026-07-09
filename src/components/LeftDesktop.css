@@ -33,7 +33,7 @@
     font-family: "Banana 2";
     font-weight: bold;
     font-size: 24px;
-    letter-spacing: 1.1px;
+    /* letter-spacing: 1.1px; */
     /* text-shadow:
             var(--bg-buttons) 2px 0px 0px,
             var(--bg-buttons) 1.75517px 0.958851px 0px,
