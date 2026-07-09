@@ -1,6 +1,9 @@
 import './LeftDesktop.css'
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function LeftDesktop({ isClicked, setIsClicked }) {
+export default function LeftDesktop({ events, isClicked, setIsClicked }) {
+
+    const clickedEvent = events.find(event => event.id === isClicked)
 
     return (
         <>
@@ -15,9 +18,61 @@ export default function LeftDesktop({ isClicked, setIsClicked }) {
                     </div>
                 </div>
                 <div className="all-editions">
-                    <p className={`all ${isClicked ? 'clicked' : null}`}>All editions</p>
-                    <p className={`focus ${isClicked ? 'clicked' : null}`}>Titre</p>
-                    {/* <img src={`./images/element-12.png`} /> */}
+                    <AnimatePresence mode="wait">
+                        {clickedEvent ? (
+                            <motion.p
+                                key={clickedEvent.id}
+                                className="focus"
+                               initial={{
+                                    opacity: 0,
+                                    filter: "blur(6px)",
+                                    // x: 20
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    filter: "blur(0px)",
+                                    // x: 0
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    filter: "blur(6px)",
+                                    // x: -20
+                                }}
+                                transition={{
+                                    duration: 0.35,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                {clickedEvent.title}
+                            </motion.p>
+                        ) : (
+                            <motion.p
+                                key="all"
+                                className="all"
+                                initial={{
+                                    opacity: 0,
+                                    filter: "blur(6px)",
+                                    // x: 20
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    filter: "blur(0px)",
+                                    // x: 0
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    filter: "blur(6px)",
+                                    // x: -20
+                                }}
+                                transition={{
+                                    duration: 0.35,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                All editions
+                            </motion.p>
+                        )}
+                    </AnimatePresence>
                 </div>
             </div>
         </>

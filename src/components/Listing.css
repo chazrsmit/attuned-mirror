@@ -56,6 +56,10 @@
     border-radius: 80px;
 }
 
+.block:last-of-type::before {
+    display: none;
+}
+
     .block.pink {
     background:
         linear-gradient(to right,

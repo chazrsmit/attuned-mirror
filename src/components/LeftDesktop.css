@@ -25,9 +25,17 @@
 .all-editions {
     writing-mode: vertical-rl;
     text-orientation: sideways;
-    text-align: center;
     position: relative;
-}
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: 100%;
+    width: 100%;
+
+    /* border: 1px solid green; */
+}   
 
 .all-editions p {
     font-family: "Banana 2";
@@ -100,23 +108,12 @@
 
 .all, .focus {
     position: absolute;
-    top: 50%;
-    transition: ease-in-out 0.2s all;
-    transform: translateY(-50%);
+    top: 40%;
+    /* border: 1px solid red; */
+    height: 50%;
+    text-align:right;
+
+    /* transform: translateY(-50%) translateX(-50%); */
 }
 
-.all {
-    opacity: 1;
-}
 
-.all.clicked {
-    opacity: 0;
-}
-
-.focus {
-    opacity: 0;
-}
-
-.focus.clicked {
-    opacity: 1;
-}
