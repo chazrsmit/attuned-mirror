@@ -148,7 +148,9 @@ function App() {
         top1: "0px",
         top2: "0px",
         width2: "290px",
-        image: "bulle.png"
+        image: "bulle.png",
+        link: "https://soundcloud.com/kioskradio/attuned-w-k-ma-kiosk-radio-21",
+        linktext: "Listen to Kōma playing at Kiosk Radio (21.10.23)"
     },
         { 
         id: "may13antidote",
@@ -181,7 +183,7 @@ function App() {
     {/* main, avec content à gauche et à droite sur ordi - sur mobile, par de gauche ou droite */}
     <section className="main">
       {!isMobile && <LeftDesktop events={events} isClicked={isClicked} setIsClicked={setIsClicked} />}
-      <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} />
+      <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} />
     </section>
 
     {/* possible footer */}

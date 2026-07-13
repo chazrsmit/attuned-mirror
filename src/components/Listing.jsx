@@ -4,7 +4,7 @@ import "./Listing.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 
-export default function Listing({ events, isClicked, setIsClicked, isHovered, setIsHovered }) {
+export default function Listing({ events, isClicked, setIsClicked, isHovered, setIsHovered, isMobile }) {
   const listingRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -110,7 +110,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                         <p>{event?.artist5}</p>                        
                       </div>
                     </div>
-                    <div className="link">
+                    <div className={`link ${opened ? event.bg : null}`}>
                       <a href={event.link} target="blank">{event.linktext}</a>
                     </div>
                     {/* <div className="parternship">
@@ -123,33 +123,37 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
               </AnimatePresence>
 
               {/* affiche */}
-              <AnimatePresence initial={false}>
-                {hovered && (
-                <>
-                <motion.img
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0}}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                    style={{ 
-                        position: "absolute",
-                        top: "200px",
-                        right: "20px", 
-                        width: "300px" }}
-                    className={`affiche ${opened ? 'clicked' : null}`}
-                    src={`${import.meta.env.BASE_URL}/images/${event.image}`}
-                />
-                <motion.img
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0 }}
-                    exit={{ opacity: 0}}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                    className={`affiche2 ${opened ? 'clicked' : null}`}
-                    src={`${import.meta.env.BASE_URL}/images/${event.affiche2}`}
-                />
-                </>
-                )}
+              { !isMobile &&
+              
+              (
+                <AnimatePresence initial={false}>
+                  {hovered && (
+                  <>
+                  <motion.img
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0}}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                      style={{ 
+                          position: "absolute",
+                          top: "200px",
+                          right: "20px", 
+                          width: "300px" }}
+                      className={`affiche ${opened ? 'clicked' : null}`}
+                      src={`${import.meta.env.BASE_URL}/images/${event.image}`}
+                  />
+                  <motion.img
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 0 }}
+                      exit={{ opacity: 0}}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                      className={`affiche2 ${opened ? 'clicked' : null}`}
+                      src={`${import.meta.env.BASE_URL}/images/${event.affiche2}`}
+                  />
+                  </>
+                  )}
               </AnimatePresence>
+              )}
 
               {/* éléments graphiques */}
               <AnimatePresence initial={false}>

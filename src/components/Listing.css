@@ -352,10 +352,16 @@
         align-items: center;    
         font-family: "Garabosse P2";
         width: fit-content;
-        background-image: url("./images/link-pink.png");
         background-size: cover;
         background-position: center center;
-        
+    }
+
+    .listing .link.pink {
+        background-image: url("./images/link-pink.png");
+    }
+
+    .listing .link.blue {
+        background-image: url("./images/link-blue.png");
     }
 
 
