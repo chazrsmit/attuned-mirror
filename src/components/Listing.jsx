@@ -3,6 +3,7 @@ import Lenis from "lenis";
 import "./Listing.css";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 export default function Listing({ events, isClicked, setIsClicked, isHovered, setIsHovered }) {
   const listingRef = useRef(null);
   const contentRef = useRef(null);
@@ -31,7 +32,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
     <div className="listing" ref={listingRef}>
       <div ref={contentRef}>
         {events.map((event) => {
-          const opened = isClicked === event.id;
+          const opened = isClicked === event.id
           const hovered = isHovered === event.id
 
           return (
@@ -47,6 +48,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
 
               <div className="infos">
                 <p className="date">{event.date}</p>
+                {/* upcoming */}
                 <AnimatePresence mode="wait">
                   {event.upcoming && <motion.p
                                       key="upcoming"
@@ -77,6 +79,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                 </AnimatePresence>
               </div>
 
+              {/* content */}
               <AnimatePresence initial={false}>
                 {opened && (
                     <>
@@ -106,29 +109,15 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                         <p>{event.artist4}</p>
                         <p>{event?.artist5}</p>                        
                       </div>
-                      
                     </div>
+                    <div className="link">
+                      <a href={event.link} target="blank">{event.linktext}</a>
+                    </div>
+                    {/* <div className="parternship">
+                      <p>{event.help}</p>
+                    </div> */}
                     
                   </motion.div>
-                {/* <motion.div
-                    key="content2"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: "easeInOut" }}
-                    style={{  }}
-                    className="content2"
-                  >
-                    <div className={`lineup ${opened ? event.bg : null}`}>
-                        <br/>
-                        <br/>
-                        <p>{event.artist1}</p>
-                        <p>{event.artist2}</p>
-                        <p>{event.artist3}</p>
-                        <p>{event.artist4}</p>
-                        <p>{event?.artist5}</p>
-                    </div>
-                  </motion.div> */}
                   </>
                 )}
               </AnimatePresence>
@@ -163,7 +152,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
               </AnimatePresence>
 
               {/* éléments graphiques */}
-                <AnimatePresence initial={false}>
+              <AnimatePresence initial={false}>
                 {hovered && event.element1 && (
                 <motion.img
                     initial={{ opacity: 0 }}
@@ -180,7 +169,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                 />
                 )}
               </AnimatePresence>
-                <AnimatePresence initial={false}>
+              <AnimatePresence initial={false}>
                 {hovered && event.element2 && (
                 <motion.img
                     initial={{ opacity: 0 }}

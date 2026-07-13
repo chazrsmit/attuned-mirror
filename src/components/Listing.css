@@ -46,7 +46,7 @@
         }
     }
 
-    .block::before {
+.block::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -133,16 +133,6 @@
     }
 
     .upcoming {
-        /* font-size: 18px;
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
-        padding-left: 0.6rem;
-        padding-right: 0.6rem;
-        border-radius: 50%;
-        margin: 0;
-        background: var(--bg-buttons);
-        -webkit-box-shadow: inset -1px 3px 8px 5px #ffd150, 2px 5px 16px 0px #ae8822, 5px 5px 15px 5px rgba(0,0,0,0); 
-        box-shadow: inset -1px 3px 8px 5px #ffd150, 2px 5px 16px 0px #ae8822, 5px 5px 15px 5px rgba(0,0,0,0); */
         font-family: "Banana 2";
         font-weight: bold;
         color: var(--pink-1);
@@ -222,43 +212,7 @@
 
     /* CONTENT */
 
-    .listing .content {
-        /* margin-top: 2rem; */
-        /* -webkit-text-stroke: 1px var(--bg-1); */
-        /* padding-left: 3rem; */
-    }
-
     .description-wrapper {
-        /* -webkit-text-stroke: 1px var(--bg-1); */
-        /* text-shadow: rgb(229, 236, 233) 1px 0px 0px, rgb(229, 236, 233) 0.540302px 0.841471px 0px, rgb(229, 236, 233) -0.416147px 0.909297px 0px, rgb(229, 236, 233) -0.989993px 0.14112px 0px, rgb(229, 236, 233) -0.653644px -0.756803px 0px, rgb(229, 236, 233) 0.283662px -0.958924px 0px, rgb(229, 236, 233) 0.96017px -0.279416px 0px;
-        filter:
-            drop-shadow(0 0 2px #E5ECE9)
-            drop-shadow(0 0 6px #E5ECE9)
-            drop-shadow(0 0 12px #E5ECE9)
-            drop-shadow(0 0 24px rgba(229, 236, 233, 0.5)); */
-        /* text-shadow: var(--bg-1) 1px 0px 0px, var(--bg-1) 0.540302px 0.841471px 0px, var(--bg-1) -0.416147px 0.909297px 0px, var(--bg-1) -0.989993px 0.14112px 0px, var(--bg-1) -0.653644px -0.756803px 0px, var(--bg-1) 0.283662px -0.958924px 0px, var(--bg-1) 0.96017px -0.279416px 0px; */
-        /* filter:
-            drop-shadow(0 0 2px var(--bg-1))
-            drop-shadow(0 0 6px var(--bg-1))
-            drop-shadow(0 0 12px var(--bg-1))
-            drop-shadow(0 0 24px rgba(229, 236, 233, 0.5)); */
-        /* filter:
-            drop-shadow(0 0 2px var(--bg-1))
-            drop-shadow(0 0 4px var(--bg-1))
-            drop-shadow(0 0 6px var(--bg-1))
-            drop-shadow(0 0 8px rgba(229, 236, 233, 0.5)); */
-        /* filter:
-            drop-shadow(0 0 2px var(--bg-1))
-            drop-shadow(0 0 4px var(--bg-1))
-            drop-shadow(0 0 7px var(--bg-1))
-            drop-shadow(0 0 10px rgba(229, 236, 233, 0.8))
-            drop-shadow(0 0 14px rgba(229, 236, 233, 0.5)); */
-        /* filter:
-        drop-shadow(0 0 2px #D6D1CD)
-        drop-shadow(0 0 4px #D6D1CD)
-        drop-shadow(0 0 7px rgba(214, 209, 205, 0.8))
-        drop-shadow(0 0 10px rgba(214, 209, 205, 0.6))
-        drop-shadow(0 0 14px rgba(214, 209, 205, 0.4)); */
         padding: 2rem;
         @media(max-width: 768px) {
             padding: 0rem;
@@ -267,6 +221,13 @@
 
     .description p {
         text-shadow: rgb(214, 209, 205) 4px 0px 0px, rgb(214, 209, 205) 3.87565px 0.989616px 0px, rgb(214, 209, 205) 3.51033px 1.9177px 0px, rgb(214, 209, 205) 2.92676px 2.72656px 0px, rgb(214, 209, 205) 2.16121px 3.36588px 0px, rgb(214, 209, 205) 1.26129px 3.79594px 0px, rgb(214, 209, 205) 0.282949px 3.98998px 0px, rgb(214, 209, 205) -0.712984px 3.93594px 0px, rgb(214, 209, 205) -1.66459px 3.63719px 0px, rgb(214, 209, 205) -2.51269px 3.11229px 0px, rgb(214, 209, 205) -3.20457px 2.39389px 0px, rgb(214, 209, 205) -3.69721px 1.52664px 0px, rgb(214, 209, 205) -3.95997px 0.56448px 0px, rgb(214, 209, 205) -3.97652px -0.432781px 0px, rgb(214, 209, 205) -3.74583px -1.40313px 0px, rgb(214, 209, 205) -3.28224px -2.28625px 0px, rgb(214, 209, 205) -2.61457px -3.02721px 0px, rgb(214, 209, 205) -1.78435px -3.57996px 0px, rgb(214, 209, 205) -0.843183px -3.91012px 0px, rgb(214, 209, 205) 0.150409px -3.99717px 0px, rgb(214, 209, 205) 1.13465px -3.8357px 0px, rgb(214, 209, 205) 2.04834px -3.43574px 0px, rgb(214, 209, 205) 2.83468px -2.82216px 0px, rgb(214, 209, 205) 3.44477px -2.03312px 0px, rgb(214, 209, 205) 3.84068px -1.11766px 0px, rgb(214, 209, 205) 3.9978px -0.132717px 0px;
+    }
+
+    .listing .content .description a {
+        text-decoration: none;
+        font-family: "Garabosse P2";
+        color: var(--pink-1);
+        text-shadow: rgb(255, 209, 80) 5px 0px 0px, rgb(255, 209, 80) 4.90033px 0.993347px 0px, rgb(255, 209, 80) 4.60531px 1.94709px 0px, rgb(255, 209, 80) 4.12668px 2.82321px 0px, rgb(255, 209, 80) 3.48353px 3.58678px 0px, rgb(255, 209, 80) 2.70151px 4.20736px 0px, rgb(255, 209, 80) 1.81179px 4.6602px 0px, rgb(255, 209, 80) 0.849836px 4.92725px 0px, rgb(255, 209, 80) -0.145998px 4.99787px 0px, rgb(255, 209, 80) -1.13601px 4.86924px 0px, rgb(255, 209, 80) -2.08073px 4.54649px 0px, rgb(255, 209, 80) -2.94251px 4.04248px 0px, rgb(255, 209, 80) -3.68697px 3.37732px 0px, rgb(255, 209, 80) -4.28444px 2.57751px 0px, rgb(255, 209, 80) -4.71111px 1.67494px 0px, rgb(255, 209, 80) -4.94996px 0.7056px 0px, rgb(255, 209, 80) -4.99147px -0.291871px 0px, rgb(255, 209, 80) -4.83399px -1.27771px 0px, rgb(255, 209, 80) -4.48379px -2.2126px 0px, rgb(255, 209, 80) -3.95484px -3.05929px 0px, rgb(255, 209, 80) -3.26822px -3.78401px 0px, rgb(255, 209, 80) -2.4513px -4.35788px 0px, rgb(255, 209, 80) -1.53666px -4.75801px 0px, rgb(255, 209, 80) -0.560763px -4.96846px 0px, rgb(255, 209, 80) 0.437495px -4.98082px 0px, rgb(255, 209, 80) 1.41831px -4.79462px 0px, rgb(255, 209, 80) 2.34258px -4.41727px 0px, rgb(255, 209, 80) 3.17346px -3.86382px 0px, rgb(255, 209, 80) 3.87783px -3.15633px 0px, rgb(255, 209, 80) 4.4276px -2.32301px 0px, rgb(255, 209, 80) 4.80085px -1.39708px 0px, rgb(255, 209, 80) 4.98271px -0.415447px 0px;
     }
 
     .listing .lineup {
@@ -290,7 +251,6 @@
             var(--bg-buttons) 1.92034px -0.558831px 0px;
         line-height: 1.2;
         margin-left: 10%;
-        /* padding: 1rem; */
     }
 
     .listing .lineup .names.pink {
@@ -325,29 +285,7 @@
         }
     }
 
-    /* .circle-lineup.pink::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 180%;
-    height: 45%;
-
-    background: radial-gradient(
-        ellipse at center,
-        #F90093 0%,
-        #c60f7ab1 40%,
-        rgba(198, 15, 123, 0.15) 70%,
-        transparent 100%
-    );
-
-    filter: blur(20px); 
-    } */
-
+            /* CIRCLE LINE UP */
     .circle-lineup.blue::before, .circle-lineup.pink::before {
     content: "";
     position: absolute;
@@ -391,3 +329,33 @@
     .circle-lineup.blue p {
         -webkit-text-stroke: 1px #2379cc;
     }
+
+    /* LINK */
+
+    .listing .link a {
+        text-decoration: none;
+        color: var(--bg-buttons);
+        animation: stroke infinite linear 2s;
+                text-shadow: rgb(255, 209, 80) 5px 0px 0px, rgb(255, 209, 80) 4.90033px 0.993347px 0px, rgb(255, 209, 80) 4.60531px 1.94709px 0px, rgb(255, 209, 80) 4.12668px 2.82321px 0px, rgb(255, 209, 80) 3.48353px 3.58678px 0px, rgb(255, 209, 80) 2.70151px 4.20736px 0px, rgb(255, 209, 80) 1.81179px 4.6602px 0px, rgb(255, 209, 80) 0.849836px 4.92725px 0px, rgb(255, 209, 80) -0.145998px 4.99787px 0px, rgb(255, 209, 80) -1.13601px 4.86924px 0px, rgb(255, 209, 80) -2.08073px 4.54649px 0px, rgb(255, 209, 80) -2.94251px 4.04248px 0px, rgb(255, 209, 80) -3.68697px 3.37732px 0px, rgb(255, 209, 80) -4.28444px 2.57751px 0px, rgb(255, 209, 80) -4.71111px 1.67494px 0px, rgb(255, 209, 80) -4.94996px 0.7056px 0px, rgb(255, 209, 80) -4.99147px -0.291871px 0px, rgb(255, 209, 80) -4.83399px -1.27771px 0px, rgb(255, 209, 80) -4.48379px -2.2126px 0px, rgb(255, 209, 80) -3.95484px -3.05929px 0px, rgb(255, 209, 80) -3.26822px -3.78401px 0px, rgb(255, 209, 80) -2.4513px -4.35788px 0px, rgb(255, 209, 80) -1.53666px -4.75801px 0px, rgb(255, 209, 80) -0.560763px -4.96846px 0px, rgb(255, 209, 80) 0.437495px -4.98082px 0px, rgb(255, 209, 80) 1.41831px -4.79462px 0px, rgb(255, 209, 80) 2.34258px -4.41727px 0px, rgb(255, 209, 80) 3.17346px -3.86382px 0px, rgb(255, 209, 80) 3.87783px -3.15633px 0px, rgb(255, 209, 80) 4.4276px -2.32301px 0px, rgb(255, 209, 80) 4.80085px -1.39708px 0px, rgb(255, 209, 80) 4.98271px -0.415447px 0px;
+                    /* filter:
+            drop-shadow(0 0 1px #C60F7B)
+            drop-shadow(0 0 2px #C60F7B)
+            drop-shadow(0 0 3px #C60F7B); */
+    }
+
+    .listing .link {
+        padding-left: 2rem;
+        /* margin-top: 3rem; */
+        /* padding-top: 3rem; */    
+        height: 6rem;
+        display: flex;
+        align-items: center;    
+        font-family: "Garabosse P2";
+        width: fit-content;
+        background-image: url("./images/link-pink.png");
+        background-size: cover;
+        background-position: center center;
+        
+    }
+
+

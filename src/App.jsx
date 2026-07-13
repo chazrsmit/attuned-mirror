@@ -85,7 +85,7 @@ function App() {
         right: "-30px",
         top1: "0px",
         top2: "-10px",
-        width2: "280px",
+        width2: "270px",
         bg: "blue"
     },
     { 
@@ -147,7 +147,7 @@ function App() {
         right: "0px",
         top1: "0px",
         top2: "0px",
-        width2: "300px",
+        width2: "290px",
         image: "bulle.png"
     },
         { 
@@ -155,7 +155,8 @@ function App() {
         title: "Attuned for 100pap's 6th bday",
         date: "13 May 2023 @L'Antidote (La Fabriek)",
         upcoming: false,
-        content: <><p>texte complémentaire Antidote</p></>,
+        content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned's first ever edition was organised both for and in partnership with <a href="https://100pap.be/" target="blank">100PAP</a>, a Brussels-based non-profit organisation that supports collectives of undocumented people by fighting inadequate and unstable housing conditions through the sale of beers. Inviting Polish artist Daisy Cutter for her first gig ever in Brussels, this first event reflected Attuned's ambition to showcase emerging local and international talent.<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the help of La Voix des Sans-Papiers and Brasserie de la Seine.</p></>,
         bg: "pink",
         element2: "element-pink5.png",
         left: "-40px",
@@ -163,6 +164,13 @@ function App() {
         top1: "0px",
         top2: "10px",
         width2: "250px",
+        image: "6th100pap.png",
+        artist1: "Daisy Cutter",
+        artist2: "Melissa Juice",
+        artist3: "Rafael Aragon",
+        artist4: "Martin Daniel",
+        link: "https://www.youtube.com/watch?v=qmaKOMYJIbI",
+        linktext: "Watch Daisy Cutter play at Kiosk Radio (13.05.2023)"
     }
   ];
 
