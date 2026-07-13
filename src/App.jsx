@@ -80,12 +80,12 @@ function App() {
         affiche2: "nov25.png",
         image: "nov25 blue.png",
         element1: "",
-        element2: "element-blue1.png",
+        element2: "element-blue6.png",
         left: "-40px",
         right: "-30px",
         top1: "0px",
         top2: "-10px",
-        width2: "330px",
+        width2: "280px",
         bg: "blue"
     },
     { 
@@ -100,7 +100,7 @@ function App() {
         right: "-30px",
         top1: "0px",
         top2: "0px",
-        width2: "360px",
+        width2: "400px",
         bg: "pink",
     },
     { 
@@ -110,7 +110,7 @@ function App() {
         upcoming: false,
         content: <><p>texte complémentaire Getting the Voice Out</p></>,
         bg: "blue",
-        element2: "element-blue4.png",
+        element2: "element-blue9.png",
         left: "-40px",
         right: "10px",
         top1: "0px",
@@ -123,7 +123,13 @@ function App() {
         date: "7 June 2024 @Zsenne Bar",
         upcoming: false,
         content: <><p>texte complémentaire Zsenne</p></>,
-        bg: "pink"
+        bg: "pink",
+        element2: "element-pink6.png",
+        left: "-40px",
+        right: "70px",
+        top1: "0px",
+        top2: "20px",
+        width2: "230px",
     },
     { 
         id: "oct23antidote",
@@ -131,7 +137,13 @@ function App() {
         date: "25 October 2023 @L'Antidote",
         upcoming: false,
         content: <><p>texte complémentaire Antidote</p></>,
-        bg: "blue"
+        bg: "blue",
+        element2: "element-blue11.png",
+        left: "-40px",
+        right: "0px",
+        top1: "0px",
+        top2: "0px",
+        width2: "300px",
     },
   ];
 
