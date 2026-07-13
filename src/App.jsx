@@ -98,10 +98,12 @@ function App() {
         element2: "element-14.png",
         left: "-40px",
         right: "-30px",
-        top1: "0px",
-        top2: "0px",
+        top1: "-40px",
+        top2: "-50px",
         width2: "400px",
         bg: "pink",
+        image: "sharefood-1.png",
+        affiche2: "26mars-lineup-purpledark.png",
     },
     { 
         id: "nov24lav",
@@ -116,11 +118,12 @@ function App() {
         top1: "0px",
         top2: "0px",
         width2: "300px",
+        image: "gtvo-blue.png"
     },
     { 
         id: "june24zsenne",
-        title: "Attuned for 100pap's 3rd bday",
-        date: "7 June 2024 @Zsenne Bar",
+        title: "Attuned for 100pap's 7th bday",
+        date: "8 June 2024 @Zenne Bar",
         upcoming: false,
         content: <><p>texte complémentaire Zsenne</p></>,
         bg: "pink",
@@ -128,13 +131,14 @@ function App() {
         left: "-40px",
         right: "70px",
         top1: "0px",
-        top2: "20px",
+        top2: "10px",
         width2: "230px",
+        image: "7th100pap.png"
     },
     { 
         id: "oct23antidote",
-        title: "Attuned & 100pap for La Voix des sans papiers",
-        date: "25 October 2023 @L'Antidote",
+        title: "Attuned & 100pap for Bulle asbl",
+        date: "21 October 2023 @L'Antidote (La Fabriek)",
         upcoming: false,
         content: <><p>texte complémentaire Antidote</p></>,
         bg: "blue",
@@ -144,7 +148,22 @@ function App() {
         top1: "0px",
         top2: "0px",
         width2: "300px",
+        image: "bulle.png"
     },
+        { 
+        id: "may13antidote",
+        title: "Attuned for 100pap's 6th bday",
+        date: "13 May 2023 @L'Antidote (La Fabriek)",
+        upcoming: false,
+        content: <><p>texte complémentaire Antidote</p></>,
+        bg: "pink",
+        element2: "element-pink5.png",
+        left: "-40px",
+        right: "40px",
+        top1: "0px",
+        top2: "10px",
+        width2: "250px",
+    }
   ];
 
   return (
