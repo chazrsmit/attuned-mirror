@@ -4,7 +4,7 @@ import "./Listing.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 
-export default function Listing({ events, isClicked, setIsClicked, isHovered, setIsHovered, isMobile, setFloatingGraphic }) {
+export default function Listing({ events, isClicked, setIsClicked, isHovered, setIsHovered, titleHovered, setTitleHovered, isMobile, setFloatingGraphic }) {
   const listingRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -34,6 +34,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
         {events.map((event) => {
           const opened = isClicked === event.id
           const hovered = isHovered === event.id
+          const title = titleHovered === event.id
 
           return (
             <div key={event.id} className={`block ${hovered || opened ? event.bg : null}`}
@@ -44,17 +45,22 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                       src: event.element2,
                       width: event.width2,
                       x: Math.random() * 70,
-                      y: Math.random() * 70
+                      y: Math.random() * 66
                     })
                     return event.id;
                   })
+                  setTitleHovered(event.id)
+                  console.log(title)
               }}
-                onMouseLeave={() => setIsHovered(prev === event.id ? null : prev)}>
+                onMouseLeave={() => {
+                  setIsHovered(prev => (prev === event.id ? null : prev))
+                  setTitleHovered(null)
+                }}>
               <div
                 className="div-titre"
                 onClick={() => setIsClicked(opened ? null : event.id)}
               >
-                <h2 className={`titre ${hovered || opened ? event.bg : null}`}>{event.title}</h2>
+                <h2 className={`titre ${title || opened ? event.bg : null}`}>{event.title}</h2>
               </div>
 
               <div className="infos">
