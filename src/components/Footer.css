@@ -1,0 +1,11 @@
+footer {
+    height: 8vh;
+    width: 100svw;
+    border-top: 2px solid black;
+    background:
+        linear-gradient(to right,
+        var(--bg-1) 0%,
+        var(--bg-2) 50%,
+        var(--bg-1) 100%
+    )
+}

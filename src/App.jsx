@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Listing from './components/Listing'
 import LeftDesktop from './components/LeftDesktop'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -77,7 +78,7 @@ function App() {
         width2: "270px",
         bg: "blue",
         link: "https://www.youtube.com/watch?v=m7OvvWCjahI",
-        linktext: "Watch Nidrev play at GIMIC Radio (28.11.25)"
+        linktext: "Watch Nidrev play at GIMIC (28.11.25)"
     },
     { 
         id: "may25lav",
@@ -101,7 +102,7 @@ function App() {
         artist4: "Tragavasilia (live)",
         artist5: "Ben Richard (VJ)",
         link: "https://set79.com/tracklist/soundcloud.com/gimic-radio/attuned-w-terry-gimic-22-may-2025-8",
-        linktext: "Listen to Terry play at GIMIC radio (22.05.25)"
+        linktext: "Listen to Terry play at GIMIC (22.05.25)"
     },
     { 
         id: "nov24lav",
@@ -157,7 +158,7 @@ function App() {
         left: "-40px",
         right: "0px",
         top1: "0px",
-        top2: "0px",
+        top2: "-10px",
         width2: "290px",
         image: "bulle-2.png",
         link: "https://soundcloud.com/kioskradio/attuned-w-k-ma-kiosk-radio-21",
@@ -194,6 +195,8 @@ function App() {
   return (
     <>
     {/* possible nav */}
+        {/* possible footer */}
+    {isMobile && <Footer /> }
 
     {/* main, avec content à gauche et à droite sur ordi - sur mobile, par de gauche ou droite */}
     <section className="main">
@@ -201,7 +204,6 @@ function App() {
       <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} />
     </section>
 
-    {/* possible footer */}
     </>
   )
 }

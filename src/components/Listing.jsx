@@ -138,7 +138,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                       style={{ 
                           position: "absolute",
-                          top: "200px",
+                          top: "220px",
                           right: "20px", 
                           width: "300px" }}
                       className={`affiche ${opened ? 'clicked' : null}`}
