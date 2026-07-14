@@ -88,7 +88,7 @@
           title: "Attuned & La Vieille Chéchette for Sharefood",
           date: "25 May 2025 @LaVallée",
           upcoming: false,
-          content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A second date with LaVallée, with hybrid techno and live Brazilian percussions. We teamed up with community café <a href="https://rencontredescontinents.be/La-Vieille-Chechette.html" target="blank">La Vieille Chéchette</a> to support the non-profit organisation <a href="https://sharefood.be/">Share Food</a> which is committed to fight food waste and social exclusion in Brussels. Every day, a team of volunteers recovers kilos of unsold food from partner stores, that will then be given the next day to people in need. The benefits from this event went to the purchase of a new community fridge to store said food.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We invited Marseille-based Margonmars to play a set for this event, along the likes of Brussels-based Sarah Abd Ali and Attuned resident Terry and Brazilian percussions band Tragavasilia.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the precious help of La Lotterie Nationale, Ney & Partners, Brasserie de la Senne, Froui, Flora and WOW Engineering.</p></>,
+          content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A second date with LaVallée, with hybrid techno and live Brazilian percussions. We teamed up with community café <a href="https://rencontredescontinents.be/La-Vieille-Chechette.html" target="blank">La Vieille Chéchette</a> to support the non-profit organisation <a href="https://sharefood.be/">Share Food</a> which is committed to fight food waste and social exclusion in Brussels. Every day, a team of volunteers recovers kilos of unsold food from partner stores, to then be given the next day to people in need. The benefits from this event went to the purchase of a new community fridge to store said food.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We invited Marseille-based Margonmars to play a set for this event, along the likes of Brussels-based Sarah Abd Ali and Attuned resident Terry and Brazilian percussions band Tragavasilia.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the precious help of La Lotterie Nationale, Ney & Partners, Brasserie de la Senne, Froui, Flora and WOW Engineering.</p></>,
           element1: "",
           element2: "element-14.png",
           left: "-40px",
@@ -213,7 +213,10 @@
       <AnimatePresence initial={false} mode="wait">
         {floatingGraphic && (
         <motion.img
-            key={floatingGraphic.src} 
+            key={floatingGraphic.src}
+            drag
+            dragElastic={0.1}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}  
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

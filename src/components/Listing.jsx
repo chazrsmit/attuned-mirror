@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 
 export default function Listing({ events, isClicked, setIsClicked, isHovered, setIsHovered, titleHovered, setTitleHovered, isMobile, setFloatingGraphic }) {
-  const listingRef = useRef(null);
-  const contentRef = useRef(null);
+  const listingRef = useRef(null)
+  const contentRef = useRef(null)
+  const positionsRef = useRef({})
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -38,24 +39,28 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
 
           return (
             <div key={event.id} className={`block ${hovered || opened ? event.bg : null}`}
-                onMouseEnter={() => {
-                  setIsHovered(prev => {
-                    if (prev === event.id) return prev;
-                    setFloatingGraphic({
-                      src: event.element2,
-                      width: event.width2,
-                      x: Math.random() * 70,
-                      y: Math.random() * 66
-                    })
-                    return event.id;
-                  })
-                  setTitleHovered(event.id)
-                  console.log(title)
-              }}
-                onMouseLeave={() => {
-                  setIsHovered(prev => (prev === event.id ? null : prev))
-                  setTitleHovered(null)
-                }}>
+            onMouseEnter={() => {
+              setIsHovered(event.id)
+
+              setFloatingGraphic(prev => {
+                if (prev?.id === event.id) return prev  // already showing this block's image — leave position untouched
+                return {
+                  id: event.id,
+                  src: event.element2,
+                  width: event.width2,
+                  x: Math.random() * 70,
+                  y: Math.random() * 66
+                }
+              })
+
+              setTitleHovered(event.id)
+            }}
+            onMouseLeave={() => {
+              setIsHovered(prev => (prev === event.id ? null : prev))
+              setTitleHovered(prev => (prev === event.id ? null : prev))
+              // floatingGraphic is untouched here on purpose — it stays sticky
+            }}    
+            >
               <div
                 className="div-titre"
                 onClick={() => setIsClicked(opened ? null : event.id)}
@@ -142,7 +147,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
               </AnimatePresence>
 
               {/* affiche */}
-              { !isMobile &&
+              {/* { !isMobile &&
               
               (
                 <AnimatePresence initial={false}>
@@ -172,7 +177,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                   </>
                   )}
               </AnimatePresence>
-              )}
+              )} */}
 
               {/* éléments graphiques */}
               <AnimatePresence initial={false}>
