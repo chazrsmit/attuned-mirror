@@ -3,11 +3,13 @@ import './App.css'
 import Listing from './components/Listing'
 import LeftDesktop from './components/LeftDesktop'
 import Footer from './components/Footer'
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
 
   // sur mobile ou non?
   const [isMobile, setIsMobile] = useState(false)
+  // check constant de la width du viewport
   useEffect(() => {
     const check = () => {
       if (window.innerWidth < 768) {
@@ -21,15 +23,12 @@ function App() {
     window.addEventListener("resize", check) // lorsqu'on resize le viewport, la fonction check se lance
     return () => window.removeEventListener("resize", check) // on clean up
   }, [])
-  // lorsqu'on resize, actualiser
-
-  // 
 
   const [isClicked, setIsClicked] = useState(null)
   const [isHovered, setIsHovered] = useState(null)
 
 
-    const events = [
+  const events = [
     { 
         id: "sept26mona",
         title: "Attuned & Blackhill Soundsystem for Zone Neutre collective",
@@ -52,11 +51,13 @@ function App() {
         right: "10px",
         top1: "-160px",
         top2: "0px",
-        width1: "360px",
-        width2: "300px",
+        width1: "370px",
+        width2: "320px",
         bg: "pink",
         link: "https://www.youtube.com/watch?v=oECREGGBBHo",
-        linktext: "Watch Blackhill Soundsystem play at GIMIC (20.03.26)"
+        linktext: "Watch Blackhill Soundsystem play at GIMIC (20.03.26)",
+        x: null,
+        y: null
      },
     { 
         id: "nov25lav",
@@ -193,6 +194,9 @@ function App() {
     }
   ];
 
+  // logique éléments graphiques
+  const [floatingGraphic, setFloatingGraphic] = useState(null);
+
   return (
     <>
     {/* possible nav */}
@@ -202,8 +206,27 @@ function App() {
     {/* main, avec content à gauche et à droite sur ordi - sur mobile, par de gauche ou droite */}
     <section className="main">
       {!isMobile && <LeftDesktop events={events} isClicked={isClicked} setIsClicked={setIsClicked} />}
-      <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} />
+      <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} />
     </section>
+
+    <AnimatePresence initial={false} mode="wait">
+      {isHovered && (
+      <motion.img
+          key={floatingGraphic.src} 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
+          style={{ overflow: "hidden",
+              position: "absolute",
+              top: `${floatingGraphic.y}vh`,
+              left: `${floatingGraphic.x}vw`,
+              width: floatingGraphic.width }}
+          className={`element2`}
+          src={`${import.meta.env.BASE_URL}/images/${floatingGraphic.src}`}
+      />
+      )}
+    </AnimatePresence>
 
     </>
   )

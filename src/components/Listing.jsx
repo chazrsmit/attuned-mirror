@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import "./Listing.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 
-export default function Listing({ events, isClicked, setIsClicked, isHovered, setIsHovered, isMobile }) {
+export default function Listing({ events, isClicked, setIsClicked, isHovered, setIsHovered, isMobile, setFloatingGraphic }) {
   const listingRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -37,8 +37,19 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
 
           return (
             <div key={event.id} className={`block ${hovered || opened ? event.bg : null}`}
-                onMouseEnter={() => setIsHovered(hovered ? null : event.id)}
-                onMouseLeave={() => setIsHovered(hovered ? null : event.id)}>
+                onMouseEnter={() => {
+                  setIsHovered(prev => {
+                    if (prev === event.id) return prev;
+                    setFloatingGraphic({
+                      src: event.element2,
+                      width: event.width2,
+                      x: Math.random() * 70,
+                      y: Math.random() * 70
+                    })
+                    return event.id;
+                  })
+              }}
+                onMouseLeave={() => setIsHovered(prev === event.id ? null : prev)}>
               <div
                 className="div-titre"
                 onClick={() => setIsClicked(opened ? null : event.id)}
@@ -175,7 +186,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                 />
                 )}
               </AnimatePresence>
-              <AnimatePresence initial={false}>
+              {/* <AnimatePresence initial={false}>
                 {hovered && event.element2 && (
                 <motion.img
                     initial={{ opacity: 0 }}
@@ -184,14 +195,14 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     style={{ overflow: "hidden",
                         position: "absolute",
-                        top: event.top2,
-                        right: event.right, 
+                        top: `${randomPos[event.id]?.y ?? 50}%`,
+                        left: `${randomPos[event.id]?.x ?? 50}%`,
                         width: event.width2 }}
                     className={`element2`}
                     src={`${import.meta.env.BASE_URL}/images/${event?.element2}`}
                 />
                 )}
-              </AnimatePresence>
+              </AnimatePresence> */}
             </div>
           );
         })}

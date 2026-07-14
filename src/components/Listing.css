@@ -145,14 +145,17 @@
 
     /* AFFICHE2 + ELEMENTS */
 
-    .affiche, .element, .element2 {
+    .affiche, .element {
         z-index: -10;
     }
 
     .affiche {
         filter: blur(4px) grayscale(1) ;
         transition: 0.35s filter ease-in-out;
+    }
 
+    .element2 {
+          pointer-events: none;
     }
 
     .affiche.clicked {
