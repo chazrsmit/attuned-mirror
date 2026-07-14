@@ -98,7 +98,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                     </div>
                       <br/>
                       <br/>
-                    <div className={`lineup ${opened ? event.bg : null}`}>
+                    <div className={`lineup ${opened ? event.bg : null}`}  style={{ paddingBottom: !event.link ? "1rem" : undefined }}>
                       <div className={`circle-lineup ${opened ? event.bg : null}`}>
                         <p>Lineup</p>
                       </div>
@@ -110,9 +110,11 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                         <p>{event?.artist5}</p>                        
                       </div>
                     </div>
-                    <div className={`link ${opened ? event.bg : null}`}>
-                      <a href={event.link} target="blank">{event.linktext}</a>
-                    </div>
+                    {event.link &&
+                      <div className={`link ${opened ? event.bg : null}`}>
+                        <a href={event.link} target="blank">{event.linktext}</a>
+                      </div>
+                    }
                     {/* <div className="parternship">
                       <p>{event.help}</p>
                     </div> */}
