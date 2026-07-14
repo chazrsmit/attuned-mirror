@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 
 function App() {
 
+  // sur mobile ou non?
   const [isMobile, setIsMobile] = useState(false)
   useEffect(() => {
     const check = () => {
@@ -22,7 +23,7 @@ function App() {
   }, [])
   // lorsqu'on resize, actualiser
 
-  // quand on click sur un block, ouverture avec toutes les infos
+  // 
 
   const [isClicked, setIsClicked] = useState(null)
   const [isHovered, setIsHovered] = useState(null)
