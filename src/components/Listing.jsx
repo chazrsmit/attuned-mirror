@@ -48,6 +48,9 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                   id: event.id,
                   src: event.element2,
                   width: event.width2,
+                  widthMobile: event.widthMobile,
+                  topMobile: event.topMobile,
+                  leftMobile: event.leftMobile,
                   x: Math.random() * 70,
                   y: Math.random() * 66
                 }
@@ -197,6 +200,22 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                 />
                 )}
               </AnimatePresence>
+              {/* {isMobile && hovered && event.element2 && (
+                  <motion.img
+                    className="element2"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    style={{
+                      position: "absolute",
+                      bottom: event.topMobile,
+                      left: event.leftMobile,
+                      width: event.widthMobile,
+                    }}
+                    src={`${import.meta.env.BASE_URL}/images/${event.element2}`}
+                  />
+                )} */}
               {/* <AnimatePresence initial={false}>
                 {hovered && event.element2 && (
                 <motion.img
