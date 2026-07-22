@@ -253,6 +253,18 @@
     // logique éléments graphiques
     const [floatingGraphic, setFloatingGraphic] = useState(null);
 
+    // faire apparaire listing en liste (vertical)
+    const [listingOn, setListingOn] = useState(false)
+
+    const handleBtnClick = (e) => {
+      if (!listingOn) {
+              setListingOn(true)
+      }
+      else {
+        setListingOn(false)
+      }
+    }
+
     return (
       <>
       {/* possible nav */}
@@ -275,11 +287,19 @@
 
       {/* main, avec content à gauche et à droite sur ordi - sur mobile, par de gauche ou droite */}
       <section className="main">
-        {!isMobile && <LeftDesktop events={events} isClicked={isClicked} setIsClicked={setIsClicked} />}
-        {/* <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} /> */}
-        <ListingBis events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
+        {!isMobile && <LeftDesktop events={events} isClicked={isClicked} setIsClicked={setIsClicked} listingOn={listingOn} />}
+        {listingOn &&
+        <AnimatePresence mode="wait">
+          <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
+        </AnimatePresence>
+        }
+        {!listingOn && 
+        <AnimatePresence mode="wait">
+            <ListingBis events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
+        </AnimatePresence>
+        }
       </section>
-
+{/* 
       <AnimatePresence initial={false} mode="wait">
         {floatingGraphic && (
         <motion.img
@@ -300,7 +320,10 @@
             src={`${import.meta.env.BASE_URL}/images/${floatingGraphic.src}`}
         />
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+      <div className="btn-listing-change" onClick={()=>handleBtnClick()} style={{position:"absolute", inset: "0"}}>
+        <button>click</button>
+      </div>
 
       </>
     )

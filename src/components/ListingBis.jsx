@@ -5,7 +5,20 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
 
     return(
         <>
-            <div className="listing-bis">
+            <motion.div className="listing-bis"
+                                                  initial={{
+                                          opacity: 0
+                                      }}
+                                      animate={{
+                                          opacity: 1
+                                      }}
+                                      exit={{
+                                          opacity: 0
+                                      }}
+                                      transition={{
+                                          duration: 0.2,
+                                          ease: "easeInOut"
+                                      }}>
                 {events.map(event => (
                     <motion.div
                         key={event.id}
@@ -40,7 +53,7 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
 
                 ))}
 
-            </div>
+            </motion.div>
         </>
     )
 }

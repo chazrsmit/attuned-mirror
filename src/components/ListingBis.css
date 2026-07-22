@@ -45,7 +45,7 @@
 .bgImage {
     filter: blur(18px);
     z-index: 0;
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease-in-out;
 }
 
 .title-center:hover + .bgImage{

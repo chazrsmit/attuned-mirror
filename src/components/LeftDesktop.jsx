@@ -1,7 +1,7 @@
 import './LeftDesktop.css'
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function LeftDesktop({ events, isClicked, setIsClicked }) {
+export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn }) {
 
     const clickedEvent = events.find(event => event.id === isClicked)
 
@@ -17,8 +17,9 @@ export default function LeftDesktop({ events, isClicked, setIsClicked }) {
                         <button>instagram</button>
                     </div>
                 </div> */}
-                {/* <div className="all-editions">
-                    <AnimatePresence mode="wait">
+                {listingOn &&
+                                <div className="all-editions">
+                    <AnimatePresence initiale={false} mode="wait">
                         {clickedEvent ? (
                             <motion.p
                                 key={clickedEvent.id}
@@ -73,7 +74,8 @@ export default function LeftDesktop({ events, isClicked, setIsClicked }) {
                             </motion.p>
                         )}
                     </AnimatePresence>
-                </div> */}
+                </div>
+                }
             </div>
         </>
     )
