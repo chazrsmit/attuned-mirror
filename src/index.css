@@ -159,6 +159,9 @@ h2 {
   } */
   font-family: "Garabosse P2";
   font-size: 60px;
+  @media(max-width: 768px) {
+    font-size: 3.5rem;
+  }
 }
 p {
   /* margin: 0; */

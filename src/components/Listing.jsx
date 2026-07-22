@@ -64,6 +64,36 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
               // floatingGraphic is untouched here on purpose — it stays sticky
             }}    
             >
+              {isMobile && event.upcoming &&
+                <div>
+                  <motion.p
+                                      key="upcoming"
+                                      className="upcoming"
+                                      initial={{
+                                          opacity: 0,
+                                          filter: "blur(6px)",
+                                          x: 20
+                                      }}
+                                      animate={{
+                                          opacity: 1,
+                                          filter: "blur(0px)",
+                                          x: 0
+                                      }}
+                                      exit={{
+                                          opacity: 0,
+                                          filter: "blur(6px)",
+                                          x: -20
+                                      }}
+                                      transition={{
+                                          duration: 0.3,
+                                          ease: "easeInOut"
+                                      }}
+                                      >
+                                        upcoming
+                                      </motion.p>
+                </div>
+              }
+
               <div
                 className="div-titre"
                 onClick={() => setIsClicked(opened ? null : event.id)}
@@ -74,7 +104,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
               <div className="infos">
                 <p className="date">{event.date}</p>
                 {/* upcoming */}
-                <AnimatePresence mode="wait">
+                {!isMobile &&                 <AnimatePresence mode="wait">
                   {event.upcoming && <motion.p
                                       key="upcoming"
                                       className="upcoming"
@@ -101,7 +131,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                                         upcoming
                                       </motion.p>
                   }
-                </AnimatePresence>
+                </AnimatePresence>}
               </div>
 
               {/* content */}

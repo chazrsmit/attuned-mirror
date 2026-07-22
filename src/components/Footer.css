@@ -1,7 +1,6 @@
 footer {
     height: 8vh;
     width: 100svw;
-    border-top: 2px solid black;
     background:
         linear-gradient(to right,
         var(--bg-1) 0%,
