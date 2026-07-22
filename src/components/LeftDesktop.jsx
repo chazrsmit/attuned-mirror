@@ -17,7 +17,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked }) {
                         <button>instagram</button>
                     </div>
                 </div> */}
-                <div className="all-editions">
+                {/* <div className="all-editions">
                     <AnimatePresence mode="wait">
                         {clickedEvent ? (
                             <motion.p
@@ -73,7 +73,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked }) {
                             </motion.p>
                         )}
                     </AnimatePresence>
-                </div>
+                </div> */}
             </div>
         </>
     )

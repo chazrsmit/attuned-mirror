@@ -1,6 +1,7 @@
   import { useState, useEffect } from 'react'
   import './App.css'
   import Listing from './components/Listing'
+  import ListingBis from './components/ListingBis'
   import LeftDesktop from './components/LeftDesktop'
   import Footer from './components/Footer'
   import { motion, AnimatePresence } from "framer-motion";
@@ -33,7 +34,7 @@
     const events = [
       { 
           id: "sept26mona",
-          title: "Attuned & Black Hill Soundsystem for Zone Neutre collective",
+          title: "Attuned & Black Hill Soundsystem for Zone Neutre",
           date: "6 September 2026 @Mona",
           upcoming: true,
           content: <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned and <a href="https://www.instagram.com/blackhillsoundsystem/" target="blank">Black Hill Soundsystem</a> are joining forces to raise funds for <a href="https://www.facebook.com/p/Collectif-zone-neutre-100071631008694/" target="blank">Zone Neutre</a> collective - a self-organised space currently housing 50+ people, founded on collective ownership, solidarity, mutual aid, and horizontality.
@@ -63,7 +64,12 @@
           link: "https://www.youtube.com/watch?v=oECREGGBBHo",
           linktext: "Watch Blackhill Soundsystem play at GIMIC (20.03.26)",
           x: null,
-          y: null
+          y: null,
+          bgImage: "3.png",
+          bgImage2: "3-bis.png",
+          topBg: "4svh",
+          leftBg: "18svw",
+          bgColor: "yellow"
       },
       { 
           id: "nov25lav",
@@ -89,7 +95,12 @@
           widthMobile: "200px",
           bg: "pink",
           link: "https://www.youtube.com/watch?v=m7OvvWCjahI",
-          linktext: "Watch Nidrev play at GIMIC (28.11.25)"
+          linktext: "Watch Nidrev play at GIMIC (28.11.25)",
+          bgImage: "7.png",
+          bgImage2: "7-bis.png",
+          topBg: "7svh",
+          leftBg: "44svw",
+          bgColor: "green"
       },
       { 
           id: "may25lav",
@@ -116,7 +127,12 @@
           artist4: "Tragavasilia (live)",
           artist5: "Ben Richard (VJ)",
           link: "https://set79.com/tracklist/soundcloud.com/gimic-radio/attuned-w-terry-gimic-22-may-2025-8",
-          linktext: "Listen to Terry play at GIMIC (22.05.25)"
+          linktext: "Listen to Terry play at GIMIC (22.05.25)",
+          bgImage: "2.png",
+          bgImage2: "2-bis.png",
+          topBg: "5svh",
+          leftBg: "70svw",
+          bgColor: 'pink'
       },
       { 
           id: "nov24lav",
@@ -140,7 +156,11 @@
           artist1: "Bambi b2b STDJ",
           artist2: "Moogly b2b Serotonine",
           link: "https://www.youtube.com/watch?v=lw4kZMz0eqY",
-          linktext: "Watch Bambi & STDJ play at Kiosk Radio (15.11.25)"
+          linktext: "Watch Bambi & STDJ play at Kiosk Radio (15.11.25)",
+          bgImage: "4.png",
+          bgImage2: "4-bis.png",
+          topBg: "600px",
+          leftBg: "410px"
       },
       { 
           id: "june24zsenne",
@@ -163,7 +183,11 @@
           image: "7th100pap.png",
           artist1: "STDJ",
           artist2: "Meex",
-          artist3: "Tropical Djipsies"
+          artist3: "Tropical Djipsies",
+          bgImage: "5.png",
+          bgImage2: "5-bis.png",
+          topBg: "680px",
+          leftBg: "680px"
       },
       { 
           id: "oct23antidote",
@@ -188,7 +212,11 @@
           linktext: "Listen to Kōma playing at Kiosk Radio (21.10.23)",
           artist1: "La Dame",
           artist2: "Kōma",
-          artist3: "STDJ"
+          artist3: "STDJ",
+          bgImage: "6.png",
+          bgImage2: "6-bis.png",
+          topBg: "700px",
+          leftBg: "800px"
       },
           { 
           id: "may13antidote",
@@ -214,7 +242,11 @@
           artist3: "Rafael Aragon",
           artist4: "Martin Daniel",
           link: "https://www.youtube.com/watch?v=qmaKOMYJIbI",
-          linktext: "Watch Daisy Cutter play at Kiosk Radio (13.05.2023)"
+          linktext: "Watch Daisy Cutter play at Kiosk Radio (13.05.2023)",
+          bgImage: "7.png",
+          bgImage2: "7-bis.png",
+          topBg: "800px",
+          leftBg: "800px"
       }
     ];
 
@@ -244,7 +276,8 @@
       {/* main, avec content à gauche et à droite sur ordi - sur mobile, par de gauche ou droite */}
       <section className="main">
         {!isMobile && <LeftDesktop events={events} isClicked={isClicked} setIsClicked={setIsClicked} />}
-        <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
+        {/* <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} /> */}
+        <ListingBis events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
       </section>
 
       <AnimatePresence initial={false} mode="wait">

@@ -3,13 +3,13 @@
     .listing {
         /* border-left: 3px solid black; */
         width: 80%;
-        height: 100svh;
-    overflow-y: scroll;   /* or auto, if you don't need it always visible */
-    overflow-x: hidden;   /* never scrolls sideways */
-    overflow-anchor: none;
-            scrollbar-width: none;
+        height: 100svh; 
+        overflow-y: scroll;   /* or auto, if you don't need it always visible */
+        overflow-x: hidden;   /* never scrolls sideways */
+        overflow-anchor: none;
+        scrollbar-width: none;
         -ms-overflow-style: none;
-        @media(max-width: 768px) {
+            @media(max-width: 768px) {
             width: 100%;
             height: 92svh;
         }
