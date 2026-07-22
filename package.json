@@ -1,7 +1,6 @@
 {
-  "name": "attuned-site",
+  "name": "attuned-mirror",
   "private": true,
-  "homepage": "https://chazrsmit.github.io/attuned-site",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
