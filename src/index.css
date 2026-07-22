@@ -43,6 +43,17 @@
   src: local("Homoneta-Regular"), url('./fonts/Homoneta-Regular.otf')
 }
 
+@font-face {
+  font-family: "Adelphe Fructidor";
+  src: local('Adelphe-Trouble-FructidorRegular'), url('./fonts/Adelphe-Trouble-FructidorRegular.otf');
+}
+
+
+@font-face {
+  font-family: "BBB Sprat";
+  src: local('BBBSprat-Regular'), url('./fonts/BBBSprat-Regular.otf');
+}
+
 
 
 

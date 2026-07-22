@@ -54,7 +54,7 @@
           top1: "-160px",
           top2: "0px",
           width1: "370px",
-          width2: "300px",
+          width2: "280px",
           bg: "pink",
           link: "https://www.youtube.com/watch?v=oECREGGBBHo",
           linktext: "Watch Blackhill Soundsystem play at GIMIC (20.03.26)",
