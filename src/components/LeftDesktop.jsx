@@ -8,7 +8,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked }) {
     return (
         <>
             <div className="left-desktop">
-                <div className="left-content">
+                {/* <div className="left-content">
                     <p>
                         <span>Attuned</span> is a non-profit association based in Brussels that organises <span>benefit parties</span> to raise funds for social causes. Since its inception in 2023, Attuned has managed to raise over <span>5000€</span> for local collectives and associations working within the human rights and agroecological spheres.
                     </p>
@@ -16,7 +16,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked }) {
                         <button>contact us</button>
                         <button>instagram</button>
                     </div>
-                </div>
+                </div> */}
                 <div className="all-editions">
                     <AnimatePresence mode="wait">
                         {clickedEvent ? (

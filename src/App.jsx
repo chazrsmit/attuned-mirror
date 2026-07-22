@@ -32,28 +32,29 @@
     const events = [
       { 
           id: "sept26mona",
-          title: "Attuned & Blackhill Soundsystem for Zone Neutre collective",
+          title: "Attuned & Black Hill Soundsystem for Zone Neutre collective",
           date: "6 September 2026 @Mona",
           upcoming: true,
-          content: <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned and <a href="https://www.instagram.com/blackhillsoundsystem/" target="blank">Blackhill Soundsystem</a> are joining forces to raise funds for <a href="https://www.facebook.com/p/Collectif-zone-neutre-100071631008694/" target="blank">Zone Neutre</a> collective - a self-organised space currently housing 50+ people, founded on collective ownership, solidarity, mutual aid, and horizontality.
-          Beyond occupying empty buildings, Zone Neutre is part of a broader political struggle: fighting for housing rights and the regularisation of undocumented people. The benefits of this night will go to help raising funds to secure safe and stable housing for the members of the collective, helping them in their political fight.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teaming up with Blackhill, a reggae-dub collective based between Charleroi and Brussels and curator of this lineup, we are hosting for the first time a day event that will take place in the garden of <a href="https://www.toestand.be/fr/mona" target="blank">Mona</a> - a Toestand-run space which organises various socio-cultural activies.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          content: <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned and <a href="https://www.instagram.com/blackhillsoundsystem/" target="blank">Black Hill Soundsystem</a> are joining forces to raise funds for <a href="https://www.facebook.com/p/Collectif-zone-neutre-100071631008694/" target="blank">Zone Neutre</a> collective - a self-organised space currently housing 50+ people, founded on collective ownership, solidarity, mutual aid, and horizontality.
+          Beyond occupying empty buildings, Zone Neutre is part of a broader political struggle: fighting for housing rights and the regularisation of undocumented people. The benefits of this night will go to help raising funds to secure safe and stable housing for the members of the collective, helping them in their political fight.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teaming up with Black Hill, a reggae-dub collective based between Charleroi and Brussels and curator of this lineup, we are hosting for the first time a day event that will take place in the garden of <a href="https://www.toestand.be/fr/mona" target="blank">Mona</a> - a Toestand-run space which organises various socio-cultural activies.
+          <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          NB: this event was originally to take place in March in the housing space of Zone Neutre with a different lineup but due to reasons beyond our control, Zone Neutre wasn't able to host the event in that location anymore. 
+          <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           With the precious help of Brasserie de la Senne, Konligo and Froui.
           </>,
-          artist1: "Blackhill Crew",
-          artist2: "High 'n' Irie",
-          artist3: "Elisethere",
-          artist4: "Rastacore",
-          artist5: "Pneumotrax",
+          artist1: "Black Hill Soundsystem",
+          artist2: "Fatma Soundsystem",
+          artist3: "On air Soundsystem",
           image: "blackhill.png",
           affiche2: "26mars-lineup-purpledark.png",
           element1: "",
-          element2: "element-9.png",
+          element2: "element-pink-more7.png",
           left: "-80px",
           right: "10px",
           top1: "-160px",
           top2: "0px",
           width1: "370px",
-          width2: "320px",
+          width2: "300px",
           bg: "pink",
           link: "https://www.youtube.com/watch?v=oECREGGBBHo",
           linktext: "Watch Blackhill Soundsystem play at GIMIC (20.03.26)",
@@ -73,13 +74,13 @@
           affiche2: "nov25.png",
           image: "nov25 blue.png",
           element1: "",
-          element2: "element-blue6.png",
+          element2: "element-pink-more.png",
           left: "-40px",
           right: "-30px",
           top1: "0px",
           top2: "-10px",
           width2: "270px",
-          bg: "blue",
+          bg: "pink",
           link: "https://www.youtube.com/watch?v=m7OvvWCjahI",
           linktext: "Watch Nidrev play at GIMIC (28.11.25)"
       },
@@ -90,7 +91,7 @@
           upcoming: false,
           content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A second date with LaVallée, with hybrid techno and live Brazilian percussions. We teamed up with community café <a href="https://rencontredescontinents.be/La-Vieille-Chechette.html" target="blank">La Vieille Chéchette</a> to support the non-profit organisation <a href="https://sharefood.be/">Share Food</a> which is committed to fight food waste and social exclusion in Brussels. Every day, a team of volunteers recovers kilos of unsold food from partner stores, to then be given the next day to people in need. The benefits from this event went to the purchase of a new community fridge to store said food.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We invited Marseille-based Margonmars to play a set for this event, along the likes of Brussels-based Sarah Abd Ali and Attuned resident Terry and Brazilian percussions band Tragavasilia.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the precious help of La Lotterie Nationale, Ney & Partners, Brasserie de la Senne, Froui, Flora and WOW Engineering.</p></>,
           element1: "",
-          element2: "element-14.png",
+          element2: "element-pink-more4.png",
           left: "-40px",
           right: "-30px",
           top1: "-40px",
@@ -115,8 +116,8 @@
           content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For our first time in cultural center LaVallée, we partnered with <a href="https://boomcafe.be/" target="blank">Boom Café</a> to raise funds for <a href="https://www.gettingthevoiceout.org/">Getting the Voice Out</a> collective. The former is a community-run café located in the center of Brussels offering locally-sourced products and cultural activities; the latter is a Belgian collective fighting against borders and all forms of confinement, aiming to raise the voice of people detained in detention centers and to support their struggles. Access to information regarding detention centers being almost nonexistent, the association works to share the detainees' experiences of detention and deportation, as well as document the forms of resistance they organise within these facilities.<br/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For this techno-focused night, we invited French artist Bambi to DJ alongside three other acts from the local scene - including Attuned-regular STDJ and his genre-hoping musical abilities.<br/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the precious help of Konligo, Brasserie de la Senne, Freddy met curry, NEY & Partner and 100PAP.</p></>,
-          bg: "blue",
-          element2: "element-blue9.png",
+          bg: "pink",
+          element2: "element-pink-more2.png",
           left: "-40px",
           right: "10px",
           top1: "0px",
@@ -137,12 +138,12 @@
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A day of dub, hip hop, bass, global sounds, and percussions.<br/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the precious help of Brasserie de la Senne.</p></>,
           bg: "pink",
-          element2: "element-pink6.png",
+          element2: "element-pink-more5.png",
           left: "-40px",
           right: "70px",
           top1: "0px",
           top2: "10px",
-          width2: "230px",
+          width2: "340px",
           image: "7th100pap.png",
           artist1: "STDJ",
           artist2: "Meex",
@@ -156,8 +157,8 @@
           content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For its second edition, Attuned settled once again at L'Antidote (now known as La Fabriek) to raise funds for <a href="https://www.labulle.org/" target="blank">Bulle</a> - a free mobile laundry service for people experiencing homelessness, stopping in a different location everyday accross specific neighbourhoods in Brussels. Beyond that, it also acts as an effective social space allowing them to break out of isolation and connect with other people - offering free coffee, milk, tea, biscuits, and fruit to provide a warm and welcoming space to relax.<br/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This time, we had a 100% Brussels lineup, with some of the most active artists in the underground music scene. The music was centered on UK bass music with a masterful rotation of jungle, drum 'n' bass and dubstep.<br/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the precious help of Konligo, Brasserie de la Senne, L'Amère à Boire and 100PAP.</p></>,
-          bg: "blue",
-          element2: "element-blue11.png",
+          bg: "pink",
+          element2: "element-pink-more3.png",
           left: "-40px",
           right: "0px",
           top1: "0px",
@@ -179,12 +180,12 @@
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inviting Polish artist Daisy Cutter for her first gig ever in Brussels, the artistic programmation reflected Attuned's ambition to showcase emerging local and international talent.<br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the help of La Voix des Sans-Papiers and Brasserie de la Senne.</p></>,
           bg: "pink",
-          element2: "element-pink5.png",
+          element2: "element-pink-more6.png",
           left: "-40px",
           right: "40px",
           top1: "0px",
           top2: "10px",
-          width2: "250px",
+          width2: "270px",
           image: "6th100pap.png",
           artist1: "Daisy Cutter",
           artist2: "Melissa Juice",
