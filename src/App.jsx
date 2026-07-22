@@ -28,7 +28,6 @@
 
     const [isClicked, setIsClicked] = useState(null)
     const [isHovered, setIsHovered] = useState(null)
-    const [titleHovered, setTitleHovered] = useState(null)
 
 
     const events = [
@@ -67,7 +66,7 @@
           y: null,
           bgImage: "3.png",
           bgImage2: "3-bis.png",
-          topBg: "4svh",
+          topBg: "-2svh",
           leftBg: "18svw",
           bgColor: "yellow"
       },
@@ -98,7 +97,7 @@
           linktext: "Watch Nidrev play at GIMIC (28.11.25)",
           bgImage: "7.png",
           bgImage2: "7-bis.png",
-          topBg: "7svh",
+          topBg: "4svh",
           leftBg: "44svw",
           bgColor: "green"
       },
@@ -130,8 +129,8 @@
           linktext: "Listen to Terry play at GIMIC (22.05.25)",
           bgImage: "2.png",
           bgImage2: "2-bis.png",
-          topBg: "5svh",
-          leftBg: "70svw",
+          topBg: "2svh",
+          leftBg: "71svw",
           bgColor: 'pink'
       },
       { 
@@ -157,10 +156,11 @@
           artist2: "Moogly b2b Serotonine",
           link: "https://www.youtube.com/watch?v=lw4kZMz0eqY",
           linktext: "Watch Bambi & STDJ play at Kiosk Radio (15.11.25)",
-          bgImage: "4.png",
-          bgImage2: "4-bis.png",
-          topBg: "600px",
-          leftBg: "410px"
+          bgImage: "6.png",
+          bgImage2: "6-bis.png",
+          topBg: "32svh",
+          leftBg: "22svw",
+          bgColor: "blue"
       },
       { 
           id: "june24zsenne",
@@ -184,10 +184,11 @@
           artist1: "STDJ",
           artist2: "Meex",
           artist3: "Tropical Djipsies",
-          bgImage: "5.png",
-          bgImage2: "5-bis.png",
-          topBg: "680px",
-          leftBg: "680px"
+          bgImage: "4.png",
+          bgImage2: "4-bis.png",
+          topBg: "36svh",
+          leftBg: "48svw",
+          bgColor: "yellow"
       },
       { 
           id: "oct23antidote",
@@ -213,10 +214,11 @@
           artist1: "La Dame",
           artist2: "Kōma",
           artist3: "STDJ",
-          bgImage: "6.png",
-          bgImage2: "6-bis.png",
-          topBg: "700px",
-          leftBg: "800px"
+          bgImage: "5.png",
+          bgImage2: "5-bis.png",
+          topBg: "41svh",
+          leftBg: "70svw",
+          bgColor: "blue"
       },
           { 
           id: "may13antidote",
@@ -243,10 +245,11 @@
           artist4: "Martin Daniel",
           link: "https://www.youtube.com/watch?v=qmaKOMYJIbI",
           linktext: "Watch Daisy Cutter play at Kiosk Radio (13.05.2023)",
-          bgImage: "7.png",
-          bgImage2: "7-bis.png",
-          topBg: "800px",
-          leftBg: "800px"
+          bgImage: "1.png",
+          bgImage2: "1-bis.png",
+          topBg: "62svh",
+          leftBg: "34svw",
+          bgColor: "pink"
       }
     ];
 
@@ -264,6 +267,8 @@
         setListingOn(false)
       }
     }
+
+    const [titleHovered, setTitleHovered] = useState(null)
 
     return (
       <>
@@ -324,6 +329,23 @@
       <div className="btn-listing-change" onClick={()=>handleBtnClick()} style={{position:"absolute", inset: "0"}}>
         <button>click</button>
       </div>
+
+
+      <AnimatePresence mode="wait">
+        {titleHovered && (
+          <motion.div
+            key={titleHovered}
+            className="title-big"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+          >
+            <h1>{titleHovered}</h1>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
 
       </>
     )

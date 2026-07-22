@@ -54,7 +54,25 @@
   src: local('BBBSprat-Regular'), url('./fonts/BBBSprat-Regular.otf');
 }
 
+@font-face {
+  font-family: "Insolente";
+  src: local('Insolente-Regular'), url('./fonts/Insolente-Regular.otf');
+}
 
+@font-face {
+  font-family: "Fraktur";
+  src: local('UnormativeFraktur'), url('./fonts/UnormativeFraktur.otf');
+}
+
+@font-face {
+  font-family: "Crozet";
+  src: local('Crozet-Regular'), url('./fonts/Crozet-Regular.otf');
+}
+
+@font-face {
+  font-family: "PicNic";
+  src: local('PicNic'), url('./fonts/PicNic.otf');
+}
 
 
 :root {
@@ -115,7 +133,7 @@ body {
   overflow: hidden;
   margin: 0;
   /* background: var(--bg-1); */
-  background: linear-gradient(to the right, #bebebe 0%, #eeeeee 50%, #bebebe 100%)
+  background: linear-gradient(to the right, #b9b9b9 0%, #eeeeee 50%, #b9b9b9 100%)
 }
 
 #root {

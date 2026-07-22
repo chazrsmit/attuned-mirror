@@ -8,3 +8,36 @@
   width: fit-content;
   height: fit-content;
 }
+
+.title-big, .title-big2 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  display:flex;
+  align-items:center;  
+  justify-content:center;
+  text-align:center;
+  
+}
+
+.title-big h1{
+  font-family: "PicNic";
+  font-size: 9vw;
+  width: 90%;
+    line-height: 1.5;
+    font-style: italic;
+  /* font-family: "BBB Sprat";
+  font-size: 8vw;
+  line-height: 1.2;
+  width: 90%; */
+}
+
+.title-big2 h1{
+  font-family: "Crozet";
+  font-size: 9vw;
+  width: 90%;
+    line-height: 1.5;
+  color: #77d5f4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

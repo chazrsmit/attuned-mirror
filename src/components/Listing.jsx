@@ -47,7 +47,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                                           x: -20
                                       }}
                                       transition={{
-                                          duration: 0.2,
+                                          duration: 0.3,
                                           ease: "easeInOut"
                                       }}>
       <div ref={contentRef}>
