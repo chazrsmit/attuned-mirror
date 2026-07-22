@@ -32,6 +32,9 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
   return (
     <div className="listing" ref={listingRef}>
       <div ref={contentRef}>
+        {/* {isMobile && 
+
+        } */}
         {events.map((event) => {
           const opened = isClicked === event.id
           const hovered = isHovered === event.id
@@ -153,6 +156,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                     </div>
                       <br/>
                       <br/>
+
                     <div className={`lineup ${opened ? event.bg : null}`}  style={{ paddingBottom: !event.link ? "1rem" : undefined }}>
                       <div className={`circle-lineup ${opened ? event.bg : null}`}>
                         <p>Lineup</p>
@@ -165,6 +169,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                         <p>{event?.artist5}</p>                        
                       </div>
                     </div>
+                    
                     {event.link &&
                       <div className={`link ${opened ? event.bg : null}`}>
                         <a href={event.link} target="blank">{event.linktext}</a>

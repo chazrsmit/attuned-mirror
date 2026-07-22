@@ -4,6 +4,7 @@
   import LeftDesktop from './components/LeftDesktop'
   import Footer from './components/Footer'
   import { motion, AnimatePresence } from "framer-motion";
+  import GradualBlur from './components/GradualBlur'
 
   function App() {
 
@@ -224,7 +225,21 @@
       <>
       {/* possible nav */}
           {/* possible footer */}
-      {isMobile && <Footer /> }
+      {isMobile && <Footer />}
+{/* {isMobile && (
+  <div style={{ position: "relative", top: "0vh" }}>
+    <GradualBlur
+      target="parent"
+      position="top"
+      height="4rem"
+      strength={1.5}
+      divCount={3}
+      curve="bezier"
+      exponential
+      opacity={1}
+    />
+  </div>
+  )} */}
 
       {/* main, avec content à gauche et à droite sur ordi - sur mobile, par de gauche ou droite */}
       <section className="main">
