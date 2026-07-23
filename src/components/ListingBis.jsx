@@ -1,12 +1,15 @@
 import './ListingBis.css'
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Focus from './Focus'
 
 export default function ListingBis({events, isClicked, setIsClicked, isHovered, setIsHovered, titleHovered, setTitleHovered, isMobile}) {
 
     const [cursorDate, setCursorDate] = useState(null);
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
     const [cursorColor, setCursorColor] = useState(null);
+    const navigate = useNavigate()
 
     return(
         <>
@@ -53,7 +56,13 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                         setCursorPos({ x: e.clientX, y: e.clientY });
                                         setCursorColor(event.bgColor);
                                     }}
+                                    onClick={() => {
+                                        navigate(`/event/${event.id}`)
+                                        setTitleHovered(null)
+                                    }}
                                 >
+                                   {event.upcoming && (
+                                    <div className="up"><span>upcoming</span></div>)}
                                     {event.title}
                                 </motion.p>
                                 <motion.img

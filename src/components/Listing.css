@@ -1,8 +1,8 @@
     /* GENERAL */
 
     .listing {
-        /* border-left: 3px solid black; */
-        width: 80%;
+        /* border: 1px solid red; */
+        width: 78%;
         height: 100svh; 
         overflow-y: scroll;   /* or auto, if you don't need it always visible */
         overflow-x: hidden;   /* never scrolls sideways */
@@ -13,6 +13,10 @@
             width: 100%;
             height: 92svh;
         }
+    }
+
+    .listing p{
+        font-family: "BBB Karrik";
     }
 
     .block {

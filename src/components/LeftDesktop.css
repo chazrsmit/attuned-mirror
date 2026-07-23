@@ -1,4 +1,5 @@
 .left-desktop {
+    /* border: 1px solid green; */
     height: 100vh;
     width: 20%;
     display: flex;
@@ -135,9 +136,9 @@
 
 }
 
-.all-editions img {
+/* .all-editions img {
     width: 600px;
-}
+} */
 
 /* buttons */
 
@@ -176,7 +177,7 @@
 
 .all, .focus {
     position: absolute;
-    top: 40%;
+    top: 20%;
     /* border: 1px solid red; */
     height: 50%;
     text-align:right;

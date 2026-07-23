@@ -1,4 +1,5 @@
   import { useState, useEffect } from 'react'
+  import { useNavigate, Routes, Route, useLocation } from 'react-router-dom'
   import './App.css'
   import Listing from './components/Listing'
   import ListingBis from './components/ListingBis'
@@ -7,8 +8,12 @@
   import { motion, AnimatePresence } from "framer-motion";
   import GradualBlur from './components/GradualBlur'
   import CursorTrail from './components/CursorTrail'
+  import Focus from './components/Focus'
 
   function App() {
+
+    // pour définir les path/routes
+    const navigate = useNavigate()
 
     // sur mobile ou non?
     const [isMobile, setIsMobile] = useState(false)
@@ -29,6 +34,10 @@
 
     const [isClicked, setIsClicked] = useState(null)
     const [isHovered, setIsHovered] = useState(null)
+
+    // are we on the homepage?
+    const location = useLocation()
+    const isHomepage = location.pathname === "/"
 
 
     const events = [
@@ -274,26 +283,42 @@
     return (
       <>
       <CursorTrail />
-      {/* possible nav */}
-      {/* possible footer */}
       {isMobile && <Footer />}
-{/* {isMobile && (
-  <div style={{ position: "relative", top: "0vh" }}>
-    <GradualBlur
-      target="parent"
-      position="top"
-      height="4rem"
-      strength={1.5}
-      divCount={3}
-      curve="bezier"
-      exponential
-      opacity={1}
-    />
-  </div>
-  )} */}
 
-      {/* main, avec content à gauche et à droite sur ordi - sur mobile, par de gauche ou droite */}
       <section className="main">
+        {!isMobile && (
+            <LeftDesktop
+                events={events}
+                isClicked={isClicked}
+                setIsClicked={setIsClicked}
+                listingOn={listingOn}
+            />
+        )}
+      {/* Définition des routes (main page "/" et pages focus) */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+              listingOn ? (
+                                <AnimatePresence mode="wait">
+                                    <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
+                                </AnimatePresence>
+                          ) : (
+                                <AnimatePresence mode="wait">
+                                    <ListingBis events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
+                                </AnimatePresence>
+                          )
+
+          }
+        />
+        <Route
+          path="/event/:id"
+          element={<Focus events={events} />}
+        />
+      </Routes>
+     </section>
+
+      {/* <section className="main">
         {!isMobile && <LeftDesktop events={events} isClicked={isClicked} setIsClicked={setIsClicked} listingOn={listingOn} />}
         {listingOn &&
         <AnimatePresence mode="wait">
@@ -305,7 +330,7 @@
             <ListingBis events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
         </AnimatePresence>
         }
-      </section>
+      </section> */}
 {/* 
       <AnimatePresence initial={false} mode="wait">
         {floatingGraphic && (
@@ -328,12 +353,13 @@
         />
         )}
       </AnimatePresence> */}
+
       {/* <div className="btn-listing-change" onClick={()=>handleBtnClick()} style={{position:"absolute", inset: "0"}}>
         <button>click</button>
       </div> */}
 
-
-      <AnimatePresence mode="wait">
+    {!listingOn && isHomepage &&
+        <AnimatePresence mode="wait">
         {titleHovered && (
           <motion.div
             key={titleHovered}
@@ -347,6 +373,8 @@
           </motion.div>
         )}
       </AnimatePresence>
+    }
+
 
         {/* <img className="bg-explanation" src={`/images/homepage/corner-1.png`} /> */}
 
