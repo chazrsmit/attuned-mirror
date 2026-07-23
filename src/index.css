@@ -48,6 +48,10 @@
   src: local('Adelphe-Trouble-FructidorRegular'), url('./fonts/Adelphe-Trouble-FructidorRegular.otf');
 }
 
+@font-face {
+  font-family: "Adelphe Germinal";
+  src: local('Adelphe-Trouble-GerminalRegularr'), url('./fonts/Adelphe-Trouble-GerminalRegular.otf');
+}
 
 @font-face {
   font-family: "BBB Sprat";
@@ -73,6 +77,17 @@
   font-family: "PicNic";
   src: local('PicNic'), url('./fonts/PicNic.otf');
 }
+
+@font-face {
+  font-family: "Tremplin";
+  src: local('Tremplin-Regular'), url('./fonts/Tremplin-Regular.otf');
+}
+
+@font-face {
+  font-family: "Redaction";
+  src: local('Redaction-Inclusive-Regular'), url('./fonts/Redaction-Inclusive-Regular.otf');
+}
+
 
 
 :root {
@@ -133,7 +148,8 @@ body {
   overflow: hidden;
   margin: 0;
   /* background: var(--bg-1); */
-  background: linear-gradient(to the right, #b9b9b9 0%, #eeeeee 50%, #b9b9b9 100%)
+  background: linear-gradient(90deg, #c1c1c1 0%, #eeeeee 45%, #e3e3e3 100%);
+  cursor: url('/images/homepage/logo.png') 16 16, auto;
 }
 
 #root {
@@ -190,7 +206,7 @@ p {
   /* margin: 0; */
   font-weight: 300;
   font-size: 24px;
-  font-family: "BBB Karrik";
+  /* font-family: "BBB Karrik"; */
 }
 
 a {

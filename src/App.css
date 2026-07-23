@@ -9,7 +9,7 @@
   height: fit-content;
 }
 
-.title-big, .title-big2 {
+.title-big {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -17,7 +17,12 @@
   align-items:center;  
   justify-content:center;
   text-align:center;
-  
+}
+
+.title-big2 {
+  top:0;
+  right: 0;
+  position: absolute;
 }
 
 .title-big h1{
@@ -34,10 +39,18 @@
 
 .title-big2 h1{
   font-family: "Crozet";
-  font-size: 9vw;
+  font-size: 6vw;
   width: 90%;
-    line-height: 1.5;
-  color: #77d5f4;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    line-height: 1;
 }
+
+.bg-explanation {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 50svh;
+  left:0;
+  filter: blur(18px);
+  z-index: 0;
+}
+

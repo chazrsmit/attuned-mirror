@@ -326,9 +326,9 @@
         />
         )}
       </AnimatePresence> */}
-      <div className="btn-listing-change" onClick={()=>handleBtnClick()} style={{position:"absolute", inset: "0"}}>
+      {/* <div className="btn-listing-change" onClick={()=>handleBtnClick()} style={{position:"absolute", inset: "0"}}>
         <button>click</button>
-      </div>
+      </div> */}
 
 
       <AnimatePresence mode="wait">
@@ -345,6 +345,8 @@
           </motion.div>
         )}
       </AnimatePresence>
+
+        {/* <img className="bg-explanation" src={`/images/homepage/corner-1.png`} /> */}
 
 
       </>

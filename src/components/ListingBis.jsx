@@ -1,7 +1,12 @@
 import './ListingBis.css'
 import { motion, AnimatePresence } from "framer-motion";
+import { useState } from 'react'
 
 export default function ListingBis({events, isClicked, setIsClicked, isHovered, setIsHovered, titleHovered, setTitleHovered, isMobile}) {
+
+    const [cursorDate, setCursorDate] = useState(null);
+    const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+    const [cursorColor, setCursorColor] = useState(null);
 
     return(
         <>
@@ -39,7 +44,15 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                     className={`title-center ${event.bgColor? event.bgColor : null}`}
                                     style={{position: "absolute", top: "50%", left:"50%", transform: "translate(-50%, -50%)"}}
                                     onMouseEnter={() => setTitleHovered(event.title)}
-                                    onMouseLeave={() => setTitleHovered(null)}
+                                    onMouseLeave={() => {
+                                        setTitleHovered(null);
+                                        setCursorDate(null);
+                                    }}
+                                        onMouseMove={(e) => {
+                                        setCursorDate(event.date);
+                                        setCursorPos({ x: e.clientX, y: e.clientY });
+                                        setCursorColor(event.bgColor);
+                                    }}
                                 >
                                     {event.title}
                                 </motion.p>
@@ -54,6 +67,21 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                     </motion.div>
 
                 ))}
+
+                {cursorDate && (
+                    <div
+                        style={{
+                            position: 'fixed',
+                            left: cursorPos.x + 14,
+                            top: cursorPos.y + 14,
+                            pointerEvents: 'none',
+                            zIndex: 9999,
+                        }}
+                        className={`cursor-date-label ${cursorColor ? cursorColor : null}`}
+                    >
+                        {cursorDate}
+                    </div>
+                )}
 
             </motion.div>
         </>
