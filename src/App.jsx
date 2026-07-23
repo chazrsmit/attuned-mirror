@@ -350,6 +350,10 @@
 
         {/* <img className="bg-explanation" src={`/images/homepage/corner-1.png`} /> */}
 
+        {/* buttons */}
+        <div className="btn-collaborate">
+          <button className="">Wanna collaborate?</button>
+        </div>
 
       </>
     )
