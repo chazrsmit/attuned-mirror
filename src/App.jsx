@@ -6,6 +6,7 @@
   import Footer from './components/Footer'
   import { motion, AnimatePresence } from "framer-motion";
   import GradualBlur from './components/GradualBlur'
+  import CursorTrail from './components/CursorTrail'
 
   function App() {
 
@@ -272,8 +273,9 @@
 
     return (
       <>
+      <CursorTrail />
       {/* possible nav */}
-          {/* possible footer */}
+      {/* possible footer */}
       {isMobile && <Footer />}
 {/* {isMobile && (
   <div style={{ position: "relative", top: "0vh" }}>

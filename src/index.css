@@ -149,8 +149,12 @@ body {
   margin: 0;
   /* background: var(--bg-1); */
   background: linear-gradient(90deg, #c1c1c1 0%, #eeeeee 45%, #e3e3e3 100%);
-  cursor: url('/images/homepage/logo.png') 16 16, auto;
+  /* cursor: url('/images/homepage/logo.png') 16 16, auto; */
 }
+
+/* p {
+    cursor: text;
+} */
 
 #root {
   /* width: 1126px;
