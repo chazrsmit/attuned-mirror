@@ -92,6 +92,8 @@
 
 :root {
     --threshold: 50%;
+    --white: #e3e3e3;
+    --grey: #c1c1c1;
   /* palette 1 */
   /* --bg-1: #E5ECE9; thème 1 */
   /* --bg-2: #D6D1CD; */

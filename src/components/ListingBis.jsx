@@ -11,6 +11,8 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
     const [cursorColor, setCursorColor] = useState(null);
     const navigate = useNavigate()
 
+    
+
     return(
         <>
             <motion.div className="listing-bis"
@@ -59,6 +61,7 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                     onClick={() => {
                                         navigate(`/event/${event.id}`)
                                         setTitleHovered(null)
+                                        setIsClicked(event.id)
                                     }}
                                 >
                                    {event.upcoming && (

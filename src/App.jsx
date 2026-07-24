@@ -46,12 +46,12 @@
           title: "Attuned & Black Hill Soundsystem for Zone Neutre",
           date: "6 September 2026 @Mona",
           upcoming: true,
-          content: <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned and <a href="https://www.instagram.com/blackhillsoundsystem/" target="blank">Black Hill Soundsystem</a> are joining forces to raise funds for <a href="https://www.facebook.com/p/Collectif-zone-neutre-100071631008694/" target="blank">Zone Neutre</a> collective - a self-organised space currently housing 50+ people, founded on collective ownership, solidarity, mutual aid, and horizontality.
+          content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned and <a href="https://www.instagram.com/blackhillsoundsystem/" target="blank">Black Hill Soundsystem</a> are joining forces to raise funds for <a href="https://www.facebook.com/p/Collectif-zone-neutre-100071631008694/" target="blank">Zone Neutre</a> collective - a self-organised space currently housing 50+ people, founded on collective ownership, solidarity, mutual aid, and horizontality.
           Beyond occupying empty buildings, Zone Neutre is part of a broader political struggle: fighting for housing rights and the regularisation of undocumented people. The benefits of this night will go to help raising funds to secure safe and stable housing for the members of the collective, helping them in their political fight.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teaming up with Black Hill, a reggae-dub collective based between Charleroi and Brussels and curator of this lineup, we are hosting for the first time a day event that will take place in the garden of <a href="https://www.toestand.be/fr/mona" target="blank">Mona</a> - a Toestand-run space which organises various socio-cultural activies.
           <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           NB: this event was originally to take place in March in the housing space of Zone Neutre with a different lineup but due to reasons beyond our control, Zone Neutre wasn't able to host the event in that location anymore. 
           <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          With the precious help of Brasserie de la Senne, Konligo and Froui.
+          With the precious help of Brasserie de la Senne, Konligo and Froui.</p>
           </>,
           artist1: "Black Hill Soundsystem",
           artist2: "Fatma Soundsystem",
@@ -85,7 +85,7 @@
           title: "Attuned & Boom Café for Casalina",
           date: "29 November 2025 @LaVallée",
           upcoming: false,
-          content: <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For this new event of bass music and solidarity, Attuned teamed up once again with community-run <a href="" target="blank">Boom Café</a> to organise an unforgettable benefit party. We collaborated with LaVallée for a third event in their space, this time turning up the volume to support <a href="" target="blank">Casalina</a> - a grassroots social farming project founded in Brussels with facilities in Puglia, Italy. More than a farm, it’s a community hub promoting resilience, knowledge-sharing, and conviviality, especially supporting migrants facing harsh living and working conditions. The benefits of the event helped Casalina in their launching of a syntropic grain production.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We invited Paris-based artist Bivou4c to join us alongside Attuned resident Terry and Mentality-founder Nidrev.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the precious help of Brasserie de la Senne, Freddy met curry, le Phare du Kanal, La Flaque (craft beer) and Froui.</>,
+          content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For this new event of bass music and solidarity, Attuned teamed up once again with community-run <a href="" target="blank">Boom Café</a> to organise an unforgettable benefit party. We collaborated with LaVallée for a third event in their space, this time turning up the volume to support <a href="" target="blank">Casalina</a> - a grassroots social farming project founded in Brussels with facilities in Puglia, Italy. More than a farm, it’s a community hub promoting resilience, knowledge-sharing, and conviviality, especially supporting migrants facing harsh living and working conditions. The benefits of the event helped Casalina in their launching of a syntropic grain production.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We invited Paris-based artist Bivou4c to join us alongside Attuned resident Terry and Mentality-founder Nidrev.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the precious help of Brasserie de la Senne, Freddy met curry, le Phare du Kanal, La Flaque (craft beer) and Froui.</p></>,
           artist1: "Terry",
           artist2: "Bivou4c",
           artist3: "Nidrev",
@@ -141,7 +141,12 @@
           bgImage2: "2-bis.png",
           topBg: "2svh",
           leftBg: "71svw",
-          bgColor: 'pink'
+          bgColor: 'pink',
+          imageEvent1: "250525/1.webp",
+          imageEvent2: "250525/2.webp",
+          imageEvent3: '250525/3.webp',
+          imageEvent4: "250525/4.webp",
+          imageEvent5: "250525/5.webp",
       },
       { 
           id: "nov24lav",
@@ -170,7 +175,13 @@
           bgImage2: "6-bis.png",
           topBg: "32svh",
           leftBg: "22svw",
-          bgColor: "blue"
+          bgColor: "blue",
+          imageEvent1: "151124/1.webp",
+          imageEvent2: "151124/2.webp",
+          imageEvent3: '151124/3.webp',
+          imageEvent4: "151124/4.webp",
+          imageEvent5: "151124/5.webp",
+          imageEvent6: "151124/6.webp"
       },
       { 
           id: "june24zsenne",
@@ -260,10 +271,10 @@
           topBg: "62svh",
           leftBg: "34svw",
           bgColor: "pink",
-          imageEvent1: "130523/image023.png",
-          imageEvent2: "130523/image031.png",
-          imageEvent3: '130523/image003.png',
-          imageEvent4: "130523/image013.png"
+          imageEvent1: "130523/image023.webp",
+          imageEvent2: "130523/image031.webp",
+          imageEvent3: '130523/image003.webp',
+          imageEvent4: "130523/image013.webp"
       }
     ];
 
@@ -317,7 +328,7 @@
         />
         <Route
           path="/event/:id"
-          element={<Focus events={events} />}
+          element={<Focus events={events} setIsClicked={setIsClicked} />}
         />
       </Routes>
      </section>

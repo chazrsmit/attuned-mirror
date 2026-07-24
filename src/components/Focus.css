@@ -3,7 +3,7 @@
 .focusss {
     /* border: 2px solid red; */
     display:flex;
-    width: 77%;
+    width: 78%;
     height: 100svh; 
     z-index: 1;
     /* overflow-anchor: none;
@@ -14,7 +14,19 @@
         height: 92svh;
     } */
          /* border: 1px solid pink; */
+}
 
+.bg-test {
+    position: absolute;
+    z-index: 0;
+    filter: blur(18px);
+    width: 500px;
+}
+
+.focusss .right .lenis-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .focusss p {
@@ -26,18 +38,23 @@
     flex-direction: column;
     /* border: 2px solid pink; */
     justify-content: space-between;
+    height: 100%;
+    min-height: 0;
 }
 
 .btn-x {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 1svw;
+    top: 3svh;
+    cursor: pointer;
+    z-index: 100;
 }
 
 .focusss .middle {
     display: flex;
-    overflow-y: auto;
-    scrollbar-width: none;
+    overflow: hidden;
+    flex: 1;
+    min-height: 0;
     /* border: 2px solid blue; */
 }
 
@@ -45,17 +62,22 @@
     width: 60%;
     /* overflow-y: auto;
     scrollbar-width: none; */
-    /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    height: 100svh;
+    min-height: 0;
+    /* padding-left: 1%; */
 }
 
 .focusss .left .inner-text {
     overflow-y: auto;
     scrollbar-width: none;
     padding-top: 3svh;
+    padding-left: 1%;
+    flex: 1;
+    min-height: 0;
 }
 
 .focusss .right {
@@ -63,6 +85,8 @@
     overflow-y: auto;
     scrollbar-width: none;
     padding-top: 30svh;
+    /* height: 100svh; */
+    min-height: 0;
     display:flex;
     justify-content: flex-start;
     /* padding-left: 6%; */
@@ -70,14 +94,15 @@
     align-items: flex-end;
     /* border: 1px solid blue; */
     padding-right: 1svw;
+    padding-bottom: 1svw;
 }
 
 .focusss .right img {
-    filter: brightness(calc(100% + var(--threshold))) grayscale(100%) contrast(500%);
+    filter: brightness(calc(80% + var(--threshold))) grayscale(100%) contrast(300%) blur(1px);
     transition: filter 0.2s ease;
-        object-fit: cover;
-            width: 360px;
-    height: 200px;
+    object-fit: cover;
+    width: 250px;
+    height: 130px;
 }
 
 /* .focusss .photo-wrapper {
@@ -95,4 +120,56 @@
 .focusss .bottom {
     /* border: 2px solid yellow; */
     /* width:  60%; */
+        padding-left: 1%;
+}
+
+/* description */
+
+.focusss .description a {
+    text-decoration: none;
+    font-family: "PicNic";
+    font-size: 24px;
+    transition: all 0.2s ease;
+    /* color: var(--pink-1); */
+    /* -webkit-text-stroke: 1px var(--bg-2); */
+}
+
+.inner-text.yellow .description a {
+    color: rgb(255, 209, 80);
+    text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+}
+
+.inner-text.yellow .description a:hover {
+    color: black;
+    text-shadow: rgb(255, 209, 80) 3px 0px 0px, rgb(255, 209, 80) 2.83487px 0.981584px 0px, rgb(255, 209, 80) 2.35766px 1.85511px 0px, rgb(255, 209, 80) 1.62091px 2.52441px 0px, rgb(255, 209, 80) 0.705713px 2.91581px 0px, rgb(255, 209, 80) -0.287171px 2.98622px 0px, rgb(255, 209, 80) -1.24844px 2.72789px 0px, rgb(255, 209, 80) -2.07227px 2.16926px 0px, rgb(255, 209, 80) -2.66798px 1.37182px 0px, rgb(255, 209, 80) -2.96998px 0.42336px 0px, rgb(255, 209, 80) -2.94502px -0.571704px 0px, rgb(255, 209, 80) -2.59586px -1.50383px 0px, rgb(255, 209, 80) -1.96093px -2.27041px 0px, rgb(255, 209, 80) -1.11013px -2.78704px 0px, rgb(255, 209, 80) -0.137119px -2.99686px 0px, rgb(255, 209, 80) 0.850987px -2.87677px 0px, rgb(255, 209, 80) 1.74541px -2.43999px 0px, rgb(255, 209, 80) 2.44769px -1.73459px 0px, rgb(255, 209, 80) 2.88051px -0.838247px 0px;
+}
+
+.inner-text.pink .description a {
+    color: rgb(236, 176, 225);
+    text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+}
+
+.inner-text.pink .description a:hover {
+    color:black;
+    text-shadow: rgb(236, 176, 225) 3px 0px 0px, rgb(236, 176, 225) 2.83487px 0.981584px 0px, rgb(236, 176, 225) 2.35766px 1.85511px 0px, rgb(236, 176, 225) 1.62091px 2.52441px 0px, rgb(236, 176, 225) 0.705713px 2.91581px 0px, rgb(236, 176, 225) -0.287171px 2.98622px 0px, rgb(236, 176, 225) -1.24844px 2.72789px 0px, rgb(236, 176, 225) -2.07227px 2.16926px 0px, rgb(236, 176, 225) -2.66798px 1.37182px 0px, rgb(236, 176, 225) -2.96998px 0.42336px 0px, rgb(236, 176, 225) -2.94502px -0.571704px 0px, rgb(236, 176, 225) -2.59586px -1.50383px 0px, rgb(236, 176, 225) -1.96093px -2.27041px 0px, rgb(236, 176, 225) -1.11013px -2.78704px 0px, rgb(236, 176, 225) -0.137119px -2.99686px 0px, rgb(236, 176, 225) 0.850987px -2.87677px 0px, rgb(236, 176, 225) 1.74541px -2.43999px 0px, rgb(236, 176, 225) 2.44769px -1.73459px 0px, rgb(236, 176, 225) 2.88051px -0.838247px 0px;
+}
+
+.inner-text.green .description a {
+    color: rgb(44, 246, 179);
+    text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+}
+
+.inner-text.green .description a:hover {
+    color: black;
+    text-shadow: rgb(44, 246, 179) 3px 0px 0px, rgb(44, 246, 179) 2.83487px 0.981584px 0px, rgb(44, 246, 179) 2.35766px 1.85511px 0px, rgb(44, 246, 179) 1.62091px 2.52441px 0px, rgb(44, 246, 179) 0.705713px 2.91581px 0px, rgb(44, 246, 179) -0.287171px 2.98622px 0px, rgb(44, 246, 179) -1.24844px 2.72789px 0px, rgb(44, 246, 179) -2.07227px 2.16926px 0px, rgb(44, 246, 179) -2.66798px 1.37182px 0px, rgb(44, 246, 179) -2.96998px 0.42336px 0px, rgb(44, 246, 179) -2.94502px -0.571704px 0px, rgb(44, 246, 179) -2.59586px -1.50383px 0px, rgb(44, 246, 179) -1.96093px -2.27041px 0px, rgb(44, 246, 179) -1.11013px -2.78704px 0px, rgb(44, 246, 179) -0.137119px -2.99686px 0px, rgb(44, 246, 179) 0.850987px -2.87677px 0px, rgb(44, 246, 179) 1.74541px -2.43999px 0px, rgb(44, 246, 179) 2.44769px -1.73459px 0px, rgb(44, 246, 179) 2.88051px -0.838247px 0px;
+}
+
+.inner-text.blue .description a {
+    color: rgb(119, 213, 244) ;
+    text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+}
+
+.inner-text.blue .description a:hover {
+    color: black;
+    text-shadow: rgb(119, 213, 244)  3px 0px 0px, rgb(119, 213, 244)  2.83487px 0.981584px 0px, rgb(119, 213, 244)  2.35766px 1.85511px 0px, rgb(119, 213, 244)  1.62091px 2.52441px 0px, rgb(119, 213, 244)  0.705713px 2.91581px 0px, rgb(119, 213, 244)  -0.287171px 2.98622px 0px, rgb(119, 213, 244)  -1.24844px 2.72789px 0px, rgb(119, 213, 244)  -2.07227px 2.16926px 0px, rgb(119, 213, 244)  -2.66798px 1.37182px 0px, rgb(119, 213, 244)  -2.96998px 0.42336px 0px, rgb(119, 213, 244)  -2.94502px -0.571704px 0px, rgb(119, 213, 244)  -2.59586px -1.50383px 0px, rgb(119, 213, 244)  -1.96093px -2.27041px 0px, rgb(119, 213, 244)  -1.11013px -2.78704px 0px, rgb(119, 213, 244)  -0.137119px -2.99686px 0px, rgb(119, 213, 244)  0.850987px -2.87677px 0px, rgb(119, 213, 244)  1.74541px -2.43999px 0px, rgb(119, 213, 244)  2.44769px -1.73459px 0px, rgb(119, 213, 244)  2.88051px -0.838247px 0px;
 }

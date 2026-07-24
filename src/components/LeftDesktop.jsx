@@ -44,10 +44,37 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                     </p> */}
                     
                 </div>
-                {listingOn &&
-                                <div className="all-editions">
+                {/* {listingOn && */}
+                    <div className="all-editions">
                     <AnimatePresence initiale={false} mode="wait">
-                        {clickedEvent ? (
+                        {/* {clickedEvent && (
+                            <motion.p
+                                key={clickedEvent.id}
+                                className="focus"
+                               initial={{
+                                    opacity: 0,
+                                    
+                                    
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    
+                                  
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    
+                                  
+                                }}
+                                transition={{
+                                    duration: 0.1,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                {clickedEvent.date}
+                            </motion.p>
+                        )} */}
+                        {/* {clickedEvent ? (
                             <motion.p
                                 key={clickedEvent.id}
                                 className="focus"
@@ -97,12 +124,12 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                                     ease: "easeInOut"
                                 }}
                             >
-                                All editions
-                            </motion.p>
-                        )}
+                                all editions
+                            </motion.p> 
+                        )} */}
                     </AnimatePresence>
                 </div>
-                }
+                {/* } */}
             </div>
         </>
     )
