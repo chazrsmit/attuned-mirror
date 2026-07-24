@@ -91,6 +91,7 @@
 
 
 :root {
+    --threshold: 50%;
   /* palette 1 */
   /* --bg-1: #E5ECE9; thème 1 */
   /* --bg-2: #D6D1CD; */

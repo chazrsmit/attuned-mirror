@@ -43,6 +43,16 @@
 
 .focusss .left {
     width: 60%;
+    /* overflow-y: auto;
+    scrollbar-width: none; */
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.focusss .left .inner-text {
     overflow-y: auto;
     scrollbar-width: none;
     padding-top: 3svh;
@@ -52,9 +62,37 @@
     width: 40%;
     overflow-y: auto;
     scrollbar-width: none;
-    padding-top: 3svh;
+    padding-top: 30svh;
+    display:flex;
+    justify-content: flex-start;
+    /* padding-left: 6%; */
+    flex-direction: column;
+    align-items: flex-end;
+    /* border: 1px solid blue; */
+    padding-right: 1svw;
 }
+
+.focusss .right img {
+    filter: brightness(calc(100% + var(--threshold))) grayscale(100%) contrast(500%);
+    transition: filter 0.2s ease;
+        object-fit: cover;
+            width: 360px;
+    height: 200px;
+}
+
+/* .focusss .photo-wrapper {
+    border: 4px solid rgb(236, 176, 225);
+    width: 360px;
+    height: 200px;
+    margin-bottom: 2svh;
+} */
+
+.focusss .right img:hover {
+    filter: none;
+}
+
 
 .focusss .bottom {
     /* border: 2px solid yellow; */
+    /* width:  60%; */
 }

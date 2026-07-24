@@ -259,7 +259,11 @@
           bgImage2: "1-bis.png",
           topBg: "62svh",
           leftBg: "34svw",
-          bgColor: "pink"
+          bgColor: "pink",
+          imageEvent1: "130523/image023.png",
+          imageEvent2: "130523/image031.png",
+          imageEvent3: '130523/image003.png',
+          imageEvent4: "130523/image013.png"
       }
     ];
 
@@ -377,7 +381,6 @@
     }
 
 
-        {/* <img className="bg-explanation" src={`/images/homepage/corner-1.png`} /> */}
 
         {/* buttons */}
         <div className="btn-collaborate">
