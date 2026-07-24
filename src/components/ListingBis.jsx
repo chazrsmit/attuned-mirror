@@ -62,7 +62,7 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                     }}
                                 >
                                    {event.upcoming && (
-                                    <p><span className="up">upcoming</span></p>)}
+                                    <p className="up"><span>upcoming</span></p>)}
                                     <p>{event.title}</p>
                                 </motion.div>
                                 <motion.img
