@@ -358,7 +358,8 @@
         <button>click</button>
       </div> */}
 
-    {!listingOn && isHomepage &&
+    {!listingOn &&
+    isHomepage &&
         <AnimatePresence mode="wait">
         {titleHovered && (
           <motion.div

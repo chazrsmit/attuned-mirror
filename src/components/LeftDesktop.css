@@ -9,6 +9,7 @@
         linear-gradient(to right,
         var(--bg-2) 0%,
         var(--bg-1) 100%);
+    align-items: flex-end;
 }
 
 
@@ -21,7 +22,7 @@
     font-size: 17px;
     font-family: "BBB Karrik";
     z-index:1;
-    -webkit-text-stroke: 0.5px #c1c1c1;
+    -webkit-text-stroke: 0.3px #c1c1c1;
     text-align: justify;
     line-height: 1;
     /* color: #c1c1c1;
@@ -34,10 +35,12 @@
 }
 
 .left-desktop .explanation .one {
-    position: absolute;
-    top: 74svh;
+    /* position: absolute;
+    top: 74svh; */
     width: 20svw;
-    left: 1svw;
+    margin-bottom: 9svh;
+    margin-left: 1svw;
+        /* left: 1svw; */
 }
 
 .left-desktop .explanation .two {

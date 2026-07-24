@@ -38,7 +38,7 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                         className="wrapping-div"
                     >
                         <div style={{position: "relative"}}>
-                                <motion.p
+                                <motion.div
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
@@ -62,9 +62,9 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                     }}
                                 >
                                    {event.upcoming && (
-                                    <div className="up"><span>upcoming</span></div>)}
-                                    {event.title}
-                                </motion.p>
+                                    <p><span className="up">upcoming</span></p>)}
+                                    <p>{event.title}</p>
+                                </motion.div>
                                 <motion.img
                                     key={event.id}
                                     transition={{ duration: 0.25, ease: "easeInOut" }}

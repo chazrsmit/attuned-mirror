@@ -28,8 +28,17 @@ export default function Focus({ events }) {
                 }}
         >
             <div>
-                <button onClick={() => navigate('/')}>X</button>
-                <h2>{event.title}</h2>
+                <div>
+                    <button onClick={() => navigate('/')}>X</button>
+                </div>
+                <div>
+                    <h2>{event.title}</h2>
+                </div>
+                <div className="description-wrapper">
+                        <div className="description">
+                            <p>{event.content}</p>
+                        </div>
+                    </div>
             </div>
         </motion.div>
         </>

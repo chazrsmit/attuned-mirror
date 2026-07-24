@@ -31,6 +31,8 @@
   width: 90%;
     line-height: 1.5;
     font-style: italic;
+    /* filter:blur(18px);
+    z-index:-1; */
   /* font-family: "BBB Sprat";
   font-size: 8vw;
   line-height: 1.2;
@@ -42,6 +44,7 @@
   font-size: 6vw;
   width: 90%;
     line-height: 1;
+
 }
 
 .bg-explanation {
