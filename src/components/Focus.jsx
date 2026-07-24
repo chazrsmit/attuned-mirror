@@ -27,19 +27,38 @@ export default function Focus({ events }) {
                 ease: "easeInOut"
                 }}
         >
-            <div>
-                <div>
-                    <button onClick={() => navigate('/')}>X</button>
-                </div>
-                <div>
-                    <h2>{event.title}</h2>
-                </div>
-                <div className="description-wrapper">
-                        <div className="description">
-                            <p>{event.content}</p>
+            <button onClick={() => navigate('/')} className="btn-x">X</button>
+            <div className="focus-content">
+                {/* button
+                <div className="btn">
+                    <button onClick={() => navigate('/')} className="btn-x">X</button>
+                </div> */}
+                {/* middle */}
+                <div className="middle">
+                    {/* colonne gauche */}
+                    <div className="left">
+                        <div>
+                            <h2>{event.title}</h2>
+                        </div>
+                        <div className="description-wrapper">
+                                <div className="description">
+                                    <p>{event.content}</p>
+                                </div>
                         </div>
                     </div>
+                    {/* colonne droite avec photos */}
+                    <div className="right">
+                        <div>
+                            <p>photos ici</p>
+                        </div>
+                    </div>
+                </div>
+                {/* bottom line */}
+                <div className="bottom">
+                    <p>texte ici</p>
+                </div>
             </div>
+            
         </motion.div>
         </>
     )

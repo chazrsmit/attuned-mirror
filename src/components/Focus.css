@@ -1,9 +1,10 @@
+
+
 .focusss {
     /* border: 2px solid red; */
-    width: 78%;
-    height: 100svh;
-    overflow-y: scroll;  
-    overflow-x: hidden;   
+    display:flex;
+    width: 77%;
+    height: 100svh; 
     z-index: 1;
     /* overflow-anchor: none;
     scrollbar-width: none;
@@ -12,9 +13,48 @@
         width: 100%;
         height: 92svh;
     } */
+         /* border: 1px solid pink; */
 
 }
 
 .focusss p {
     font-family: "BBB Karrik";
+}
+
+.focus-content {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid pink; */
+    justify-content: space-between;
+}
+
+.btn-x {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.focusss .middle {
+    display: flex;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* border: 2px solid blue; */
+}
+
+.focusss .left {
+    width: 60%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-top: 3svh;
+}
+
+.focusss .right {
+    width: 40%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-top: 3svh;
+}
+
+.focusss .bottom {
+    /* border: 2px solid yellow; */
 }
