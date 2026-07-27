@@ -1,16 +1,46 @@
 import './LeftDesktop.css'
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"
+import {useState} from "react"
 
 export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn }) {
 
     const clickedEvent = events.find(event => event.id === isClicked)
+    const [credits, setCredits] = useState(null)
 
     return (
         <>
             <div className="left-desktop">
-                <div className="btn-collaborate">
-                    <button className="">Wanna collaborate?</button>
-                </div>
+                <AnimatePresence mode="wait">
+    {credits ? (
+        <motion.div
+            key="credits"
+            layout
+            className="credits"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y:0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+        >
+            <p>credits</p>
+            <button onClick={() => setCredits(false)}>close</button>
+        </motion.div>
+    ) : (
+        <motion.div
+            key="collaborate"
+            layout
+            className="btn-collaborate"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x:0 }}
+            exit={{ opacity: 0, x:-20 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+        >
+            <a href="mailto:attuned.collectif@proton.me"><button>Wanna collaborate?</button></a>
+            <div><a href="https://www.facebook.com/attunedbxl/" target="blank">Facebook</a></div>
+            <div><a href="https://www.instagram.com/attuned_collective/" target="blank">Instagram</a></div>
+            <div><a onClick={() => setCredits(true)}>Credits</a></div>
+        </motion.div>
+    )}
+</AnimatePresence>
                 
             <AnimatePresence mode="wait">
             {

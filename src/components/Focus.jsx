@@ -155,7 +155,7 @@ export default function Focus({ events, setIsClicked }) {
                     <div className="right" ref={rightRef}>
                         <div className="lenis-content">
                                 <div>
-                                    <p>Lineup</p>
+                                    <p>Lineup:</p>
                                 </div>
                                 <div className="names">
                                     <p>{event.artist1}</p>
