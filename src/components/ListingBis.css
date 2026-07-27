@@ -24,13 +24,19 @@
     font-family: "Garabosse P2";
         z-index: 1;
     cursor: pointer;
+    @media(max-width: 992px) {
+        width: 80%;
+    };
 }
 
 .title-center p {
     font-size: 20px;
     @media(max-width: 1024px) {
         font-size: 24px;
-    }
+    };
+    /* @media(max-width: 992px) {
+        font-size: 23px;
+    }; */
 }
 
 .up {
