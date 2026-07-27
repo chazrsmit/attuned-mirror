@@ -112,7 +112,18 @@ export default function Focus({ events, setIsClicked }) {
                                         {event.content}
                                     </div>
                                 </div>
-                                {/* images - horizontal scroll on desktop */}
+                                {/* <div>
+                                    <p>Lineup</p>
+                                </div>
+                                <div className="names">
+                                    <p>{event.artist1}</p>
+                                    <p>{event.artist2}</p>
+                                    <p>{event.artist3}</p>
+                                    <p>{event.artist4}</p>
+                                    <p>{event?.artist5}</p>
+                                </div> */}
+                            </div>
+                                                            {/* images - horizontal scroll on desktop */}   
                                 <div className="photos">
                                     {event.imageEvent1 &&
                                     
@@ -135,17 +146,6 @@ export default function Focus({ events, setIsClicked }) {
                                         <img className="img-6" src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
                                     }
                                 </div>
-                                {/* <div>
-                                    <p>Lineup</p>
-                                </div>
-                                <div className="names">
-                                    <p>{event.artist1}</p>
-                                    <p>{event.artist2}</p>
-                                    <p>{event.artist3}</p>
-                                    <p>{event.artist4}</p>
-                                    <p>{event?.artist5}</p>
-                                </div> */}
-                            </div>
                         </div>
 
                         {/* bottom line */}
@@ -157,6 +157,13 @@ export default function Focus({ events, setIsClicked }) {
                     {/* colonne droite avec photos */}
                     <div className="right" ref={rightRef}>
                         <div className="lenis-content">
+                            {/* <div>
+                                <div className="poster">
+                                    <img src={`/images/${event.image}`} loading="eager" fetchPriority="high" />
+                                </div>
+                            </div> */}
+
+                            <div>
                                 <div>
                                     <p>Lineup:</p>
                                 </div>
@@ -167,6 +174,7 @@ export default function Focus({ events, setIsClicked }) {
                                     <p>{event.artist4}</p>
                                     <p>{event?.artist5}</p>
                                 </div>
+                            </div>
                             {/* {event.imageEvent1 &&
                             // <div className="photo-wrap">
                                 <img className="img-1" src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>

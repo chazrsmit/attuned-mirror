@@ -11,77 +11,77 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
         <>
             <div className="left-desktop">
                 <AnimatePresence mode="wait">
-    {credits ? (
-        <motion.div
-            key="credits"
-            layout
-            className="credits"
-            initial={{ opacity: 0, y: -20, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y:0,filter: "blur(0px)"  }}
-            exit={{ opacity: 0, y: -20,filter: "blur(8px)" }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-        >
-            <div>
-                <p>The fonts used on this website were created by <a href="https://typotheque.genderfluid.space" target="blank">Bye Bye Binary</a>, a French-Belgian type library that "compiles and distributes a collection of post-binary typefaces created through an activist and feminist lens, to be used by as many people as possible".
-                <br/>
-                The fonts in question are: <a href="https://typotheque.genderfluid.space/fr/fontes/garabosse" target="blank">Garabosse</a>, <a href="https://typotheque.genderfluid.space/fr/fontes/picnic" target="blank">PicNic</a> and <a href="https://typotheque.genderfluid.space/fr/fontes/bbb-karrik" target="blank">BBB Karrik</a>.
-                <br />
-                The website was designed and coded by <a href="" target="blank">Charlotte Smit</a>.
-                <br/><br/>
-                Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit and Paul Bossu.</p>
-            </div>
-            <div>
-                <a className="close-credits" onClick={() => setCredits(false)}>close</a>
-            </div>
-        </motion.div>
-    ) : (
-        <motion.div
-            key="collaborate"
-            layout
-            className="btn-collaborate"
-            initial={{ opacity: 0, x: -20, filter: "blur(8px)"  }}
-            animate={{ opacity: 1, x: 0,filter: "blur(0px)" }}
-            exit={{ opacity: 0, x:-20,filter: "blur(8px)"  }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-        >
-            <a href="mailto:attuned.collectif@proton.me"><button>Wanna collaborate?</button></a>
-            <div><a href="https://www.facebook.com/attunedbxl/" target="blank">Facebook</a></div>
-            <div><a href="https://www.instagram.com/attuned_collective/" target="blank">Instagram</a></div>
-            <div><a onClick={() => setCredits(true)}>Credits</a></div>
-        </motion.div>
-    )}
-</AnimatePresence>
+                    {credits ? (
+                        <motion.div
+                            key="credits"
+                            layout
+                            className="credits"
+                            initial={{ opacity: 0, y: -20, filter: "blur(8px)" }}
+                            animate={{ opacity: 1, y:0,filter: "blur(0px)"  }}
+                            exit={{ opacity: 0, y: -20,filter: "blur(8px)" }}
+                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                        >
+                            <div>
+                                <p>The fonts used on this website were created by <a href="https://typotheque.genderfluid.space" target="blank">Bye Bye Binary</a>, a French-Belgian type library that "compiles and distributes a collection of post-binary typefaces created through an activist and feminist lens, to be used by as many people as possible".
+                                <br/>
+                                The fonts in question are: <a href="https://typotheque.genderfluid.space/fr/fontes/garabosse" target="blank">Garabosse</a>, <a href="https://typotheque.genderfluid.space/fr/fontes/picnic" target="blank">PicNic</a> and <a href="https://typotheque.genderfluid.space/fr/fontes/bbb-karrik" target="blank">BBB Karrik</a>.
+                                <br />
+                                The website was designed and coded by <a href="" target="blank">Charlotte Smit</a>.
+                                <br/><br/>
+                                Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit and Paul Bossu.</p>
+                            </div>
+                            <div>
+                                <a className="close-credits" onClick={() => setCredits(false)}>close</a>
+                            </div>
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="collaborate"
+                            layout
+                            className="btn-collaborate"
+                            initial={{ opacity: 0, x: -20, filter: "blur(8px)"  }}
+                            animate={{ opacity: 1, x: 0,filter: "blur(0px)" }}
+                            exit={{ opacity: 0, x:-20,filter: "blur(8px)"  }}
+                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                        >
+                            <a href="mailto:attuned.collectif@proton.me"><button>Wanna collaborate?</button></a>
+                            <div><a href="https://www.facebook.com/attunedbxl/" target="blank">Facebook</a></div>
+                            <div><a href="https://www.instagram.com/attuned_collective/" target="blank">Instagram</a></div>
+                            <div><a onClick={() => setCredits(true)}>Credits</a></div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
                 
-            <AnimatePresence mode="wait">
-            {
-                location.pathname === "/" ?
-                    <motion.div 
-                        key="/"
-                        initial={{ opacity: 0, filter: "blur(8px)" }}
-                        animate={{ opacity: 1, filter: "blur(0px)" }}
-                        exit={{ opacity: 0, filter: "blur(8px)" }}
-                        transition={{ duration: 0.2, ease: "easeInOut" }}
-                        className="explanation"
-                    >
-                        <p className="one">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Attuned</span> is a non-profit association based in Brussels that organises <span>benefit parties</span> to raise funds for social causes. Since its inception in 2023, Attuned has managed to raise over <span>6000€</span> over the course of 6 parties for various local organisations working within the human rights and agroecological spheres.
-                        </p>
-                    </motion.div>
-                :
-                    <motion.div 
-                        key={location.pathname}
-                        initial={{ opacity: 0, filter: "blur(8px)" }}
-                        animate={{ opacity: 1,filter: "blur(0px)" }}
-                        exit={{ opacity: 0, filter: "blur(8px)" }}
-                        transition={{ duration: 0.25, ease: "easeInOut" }}
-                        className="datebis"
-                    >
-                        <p className="">
-                            {clickedEvent?.date}
-                        </p>
-                    </motion.div>
-            }
-            </AnimatePresence>
+                <AnimatePresence mode="wait">
+                {
+                    location.pathname === "/" ?
+                        <motion.div 
+                            key="/"
+                            initial={{ opacity: 0, filter: "blur(8px)" }}
+                            animate={{ opacity: 1, filter: "blur(0px)" }}
+                            exit={{ opacity: 0, filter: "blur(8px)" }}
+                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                            className="explanation"
+                        >
+                            <p className="one">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Attuned</span> is a non-profit association based in Brussels that organises <span>benefit parties</span> to raise funds for social causes. Since its inception in 2023, Attuned has managed to raise over <span>6000€</span> over the course of 6 parties for various local organisations working within the human rights and agroecological spheres.
+                            </p>
+                        </motion.div>
+                    :
+                        <motion.div 
+                            key={location.pathname}
+                            initial={{ opacity: 0, filter: "blur(8px)" }}
+                            animate={{ opacity: 1,filter: "blur(0px)" }}
+                            exit={{ opacity: 0, filter: "blur(8px)" }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            className="datebis"
+                        >
+                            <p className="">
+                                {clickedEvent?.date}
+                            </p>
+                        </motion.div>
+                }
+                </AnimatePresence>
                 {/* <div className="explanation">
                     <p className="one">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Attuned</span> is a non-profit association based in Brussels that organises <span>benefit parties</span> to raise funds for social causes. Since its inception in 2023, Attuned has managed to raise over <span>6000€</span> over the course of 6 parties for various local organisations working within the human rights and agroecological spheres.

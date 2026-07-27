@@ -17,7 +17,7 @@
 }
 .focusss .left .lenis-content{
         /* margin-bottom: 1svw; */
-            /* border: 1px solid red; */
+
 
 }
 
@@ -53,14 +53,14 @@
     display:flex;
     margin-left: 5svw;
     flex-direction: column;
+    /* justify-content:space-between; */
+    /* height: 50vh; */
         /* margin-bottom: 1svw; */
-        
-
 }
 
 .focusss .right img {
     /* filter: brightness(calc(80% + var(--threshold))) grayscale(100%) contrast(300%) blur(0); */
-    filter: grayscale(1);
+    /* filter: grayscale(1); */
     transition: filter 0.2s ease;
     object-fit: cover;
     width: 100%;
@@ -123,11 +123,14 @@
     overflow-y: auto;
     scrollbar-width: none;
     padding-top: 3svh;
-    padding-bottom: 3svh;
+    padding-bottom: 1svh;
     padding-left: 1%;
     /* flex: 1; */
     min-height: 0;
-    /* border: 1px solid pink; */
+    height: 100svh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .focusss .left .inner-text p {
@@ -254,4 +257,8 @@
 
 .focusss .photos img:hover {
     filter: none;
+}
+
+.focusss .poster img {
+    width: 10svw;
 }

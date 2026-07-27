@@ -47,16 +47,16 @@
           date: "6 September 2026 @Mona",
           upcoming: true,
           content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned and <a href="https://www.instagram.com/blackhillsoundsystem/" target="blank">Black Hill Soundsystem</a> are joining forces to raise funds for <a href="https://www.facebook.com/p/Collectif-zone-neutre-100071631008694/" target="blank">Zone Neutre</a> collective - a self-organised space currently housing 50+ people, founded on collective ownership, solidarity, mutual aid, and horizontality.
-          Beyond occupying empty buildings, Zone Neutre is part of a broader political struggle: fighting for housing rights and the regularisation of undocumented people. The benefits of this night will go to help raising funds to secure safe and stable housing for the members of the collective, helping them in their political fight.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teaming up with Black Hill, a reggae-dub collective based between Charleroi and Brussels and curator of this lineup, we are hosting for the first time a day event that will take place in the garden of <a href="https://www.toestand.be/fr/mona" target="blank">Mona</a> - a Toestand-run space which organises various socio-cultural activies.
+          Beyond occupying empty buildings, Zone Neutre is part of a broader political struggle: fighting for housing rights and the regularisation of undocumented people. The benefits of this night will go to help raising funds to secure safe and stable housing for the members of the collective, helping them in their political fight.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teaming up with Black Hill, a reggae-dub collective based between Charleroi and Brussels and curator of this lineup, we are hosting for the first time a day event that will take place in the neighbourhood of Jette in the garden of <a href="https://www.toestand.be/fr/mona" target="blank">Mona</a> - a Toestand-run space which organises various socio-cultural activies.
           <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          NB: this event was originally to take place in March in the housing space of Zone Neutre with a different lineup but due to reasons beyond our control, Zone Neutre wasn't able to host the event in that location anymore. 
+          NB: this event was originally to take place in March in the housing space of Zone Neutre with a different lineup, but due to unforeseen reasons, Zone Neutre wasn't able to host the event in that location. 
           <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           With the precious help of Brasserie de la Senne, Konligo and Froui.</p>
           </>,
           artist1: "Black Hill Soundsystem",
           artist2: "Fatma Soundsystem",
           artist3: "On air Soundsystem",
-          image: "blackhill.png",
+          image: "/events/060926/poster-light.jpg",
           affiche2: "26mars-lineup-purpledark.png",
           element1: "",
           element2: "element-pink-more7.png",
@@ -398,7 +398,7 @@
 
     {!listingOn &&
     isHomepage &&
-        <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         {titleHovered && (
           <motion.div
             key={titleHovered}

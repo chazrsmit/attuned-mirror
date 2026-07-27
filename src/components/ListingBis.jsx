@@ -17,7 +17,7 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
         <>
             <motion.div className="listing-bis"
                                     initial={{
-                                          opacity: 0
+                                          opacity: 0,
                                       }}
                                       animate={{
                                           opacity: 1
