@@ -22,15 +22,13 @@
     width: 90%;
     text-align:center;
     font-family: "Garabosse P2";
-}
-
-.title-center{
-    z-index: 1;
+        z-index: 1;
     cursor: pointer;
 }
 
 .title-center p {
-    font-size: 20px;
+    font-size: clamp(14px, 0.6vw + 12px, 20px);
+    /* font-size: 20px; */
 }
 
 .up {
@@ -68,6 +66,7 @@ text-shadow: rgb(119, 213, 244) 4px 0px 0px, rgb(119, 213, 244) 3.87565px 0.9896
     filter: blur(18px);
     z-index: 0;
     transition: filter 0.3s ease-in-out;
+    width: clamp(200px, 30vw, 340px);
 }
 
 .title-center:hover + .bgImage{

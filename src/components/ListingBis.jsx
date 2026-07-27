@@ -11,8 +11,6 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
     const [cursorColor, setCursorColor] = useState(null);
     const navigate = useNavigate()
 
-    
-
     return(
         <>
             <motion.div className="listing-bis"
@@ -71,7 +69,7 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                 <motion.img
                                     key={event.id}
                                     transition={{ duration: 0.2, ease: "easeInOut" }}
-                                    style={{ overflow: "hidden", width: isMobile? '200px' : '340px' }}
+                                    // style={{ overflow: "hidden", width: isMobile? '200px' : '340px' }}
                                     className={`bgImage`}
                                     src={`/images/homepage/${event.bgImage}`}
                             />
