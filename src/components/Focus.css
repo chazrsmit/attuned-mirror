@@ -54,6 +54,7 @@
     margin-left: 5svw;
     flex-direction: column;
         /* margin-bottom: 1svw; */
+        
 
 }
 
@@ -83,7 +84,7 @@
 .btn-x {
     position: absolute;
     right: 1svw;
-    top: 3svh;
+    top: 2svh;
     cursor: pointer;
     z-index: 100;
     transition: all 0.2s ease;

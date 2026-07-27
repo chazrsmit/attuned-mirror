@@ -16,22 +16,32 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
             key="credits"
             layout
             className="credits"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y:0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -20, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y:0,filter: "blur(0px)"  }}
+            exit={{ opacity: 0, y: -20,filter: "blur(8px)" }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
         >
-            <p>credits</p>
-            <button onClick={() => setCredits(false)}>close</button>
+            <div>
+                <p>The fonts used on this website were created by <a href="https://typotheque.genderfluid.space" target="blank">Bye Bye Binary</a>, a French-Belgian type library that "compiles and distributes a collection of post-binary typefaces created through an activist and feminist lens, to be used by as many people as possible".
+                <br/>
+                The fonts in question are: <a href="https://typotheque.genderfluid.space/fr/fontes/garabosse" target="blank">Garabosse</a>, <a href="https://typotheque.genderfluid.space/fr/fontes/picnic" target="blank">PicNic</a> and <a href="https://typotheque.genderfluid.space/fr/fontes/bbb-karrik" target="blank">BBB Karrik</a>.
+                <br />
+                The website was designed and coded by <a href="" target="blank">Charlotte Smit</a>.
+                <br/><br/>
+                Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit and Paul Bossu.</p>
+            </div>
+            <div>
+                <a className="close-credits" onClick={() => setCredits(false)}>close</a>
+            </div>
         </motion.div>
     ) : (
         <motion.div
             key="collaborate"
             layout
             className="btn-collaborate"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x:0 }}
-            exit={{ opacity: 0, x:-20 }}
+            initial={{ opacity: 0, x: -20, filter: "blur(8px)"  }}
+            animate={{ opacity: 1, x: 0,filter: "blur(0px)" }}
+            exit={{ opacity: 0, x:-20,filter: "blur(8px)"  }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
         >
             <a href="mailto:attuned.collectif@proton.me"><button>Wanna collaborate?</button></a>
@@ -47,9 +57,9 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                 location.pathname === "/" ?
                     <motion.div 
                         key="/"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                        initial={{ opacity: 0, filter: "blur(8px)" }}
+                        animate={{ opacity: 1, filter: "blur(0px)" }}
+                        exit={{ opacity: 0, filter: "blur(8px)" }}
                         transition={{ duration: 0.2, ease: "easeInOut" }}
                         className="explanation"
                     >
@@ -60,9 +70,9 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                 :
                     <motion.div 
                         key={location.pathname}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                        initial={{ opacity: 0, filter: "blur(8px)" }}
+                        animate={{ opacity: 1,filter: "blur(0px)" }}
+                        exit={{ opacity: 0, filter: "blur(8px)" }}
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="datebis"
                     >

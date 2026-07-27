@@ -68,13 +68,16 @@ export default function Focus({ events, setIsClicked }) {
         <>
         <motion.div className="focusss"
             initial={{
-                opacity: 0
+                opacity: 0,
+                filter: "blur(8px)"
                 }}
             animate={{
-                opacity: 1
+                opacity: 1,
+                filter: "blur(0px)"
                 }}
             exit={{
-                opacity: 0
+                opacity: 0,
+                filter: "blur(8px)"
                 }}
             transition={{
                 duration: 0.25,
