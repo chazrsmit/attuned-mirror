@@ -53,7 +53,7 @@
     display:flex;
     margin-left: 5svw;
     flex-direction: column;
-        margin-bottom: 1svw;
+        /* margin-bottom: 1svw; */
 
 }
 
@@ -87,6 +87,8 @@
     cursor: pointer;
     z-index: 100;
 }
+
+
 
 .focusss .middle {
     display: flex;

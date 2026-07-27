@@ -44,7 +44,10 @@
   font-size: 6vw;
   width: 90%;
     line-height: 1;
+}
 
+.title-big.blurry {
+  filter: blur(18px);
 }
 
 .bg-explanation {

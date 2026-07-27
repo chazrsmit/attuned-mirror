@@ -1,21 +1,26 @@
 import './LeftDesktop.css'
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn, isHomepage }) {
+export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn }) {
 
     const clickedEvent = events.find(event => event.id === isClicked)
 
     return (
         <>
             <div className="left-desktop">
+                <div className="btn-collaborate">
+                    <button className="">Wanna collaborate?</button>
+                </div>
+                
             <AnimatePresence mode="wait">
             {
-                isHomepage?
+                location.pathname === "/" ?
                     <motion.div 
+                        key="/"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        transition={{ duration: 0.2, ease: "easeInOut" }}
                         className="explanation"
                     >
                         <p className="one">
@@ -23,7 +28,18 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                         </p>
                     </motion.div>
                 :
-                null
+                    <motion.div 
+                        key={location.pathname}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="datebis"
+                    >
+                        <p className="">
+                            {clickedEvent?.date}
+                        </p>
+                    </motion.div>
             }
             </AnimatePresence>
                 {/* <div className="explanation">
@@ -124,7 +140,9 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                     </AnimatePresence>
                 {/* </div> */}
                 {/* } */}
+
             </div>
+
         </>
     )
 }

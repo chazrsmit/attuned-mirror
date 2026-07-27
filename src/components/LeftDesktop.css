@@ -11,7 +11,7 @@
         var(--bg-1) 100%);
     z-index: 100;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding-left: 1svw;
 }
 
@@ -44,7 +44,7 @@
     /* margin-left: 1svw; */
         /* left: 1svw; */
     z-index: 100;
-    padding-bottom: 1.2svw;
+    padding-bottom: 2svw;
     /* border: 1px solid red; */
 }
 
@@ -145,17 +145,14 @@
     text-align:right;
 } */
 
-
 .btn-collaborate {
-    /* border: 1px solid red; */
+
     z-index: 1000;
-    margin-bottom: 3vw;
-    margin-top: 1vw;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    line-height:1;
-            /* border: 1px solid red; */
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    width: fit-content;
+    padding-top: 3svh;
+    /* border: 1px solid red; */    
 }
 
 .btn-collaborate button {
@@ -163,8 +160,8 @@
     margin: 0;
     border: none;
     background: none;
-    font-family: "PicNic";
-    font-size: 24px;
+    font-family: "BBB Karrik";
+    font-size: 20px;
     transition: all 0.2s ease;
     /* text-shadow: var(--grey) 3px 0px 0px, var(--grey) 2.83487px 0.981584px 0px, var(--grey) 2.35766px 1.85511px 0px, var(--grey) 1.62091px 2.52441px 0px, var(--grey) 0.705713px 2.91581px 0px, var(--grey) -0.287171px 2.98622px 0px, var(--grey) -1.24844px 2.72789px 0px, var(--grey) -2.07227px 2.16926px 0px, var(--grey) -2.66798px 1.37182px 0px, var(--grey) -2.96998px 0.42336px 0px, var(--grey) -2.94502px -0.571704px 0px, var(--grey) -2.59586px -1.50383px 0px, var(--grey) -1.96093px -2.27041px 0px, var(--grey) -1.11013px -2.78704px 0px, var(--grey) -0.137119px -2.99686px 0px, var(--grey) 0.850987px -2.87677px 0px, var(--grey) 1.74541px -2.43999px 0px, var(--grey) 2.44769px -1.73459px 0px, var(--grey) 2.88051px -0.838247px 0px; */
 
@@ -176,3 +173,6 @@
     cursor: pointer;
 }
 
+.left-desktop .datebis {
+    font-family: "BBB Karrik";
+}
