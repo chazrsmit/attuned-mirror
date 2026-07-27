@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Focus from './Focus'
 
-export default function ListingBis({events, isClicked, setIsClicked, isHovered, setIsHovered, titleHovered, setTitleHovered, isMobile}) {
+export default function ListingBis({events, isClicked, setIsClicked, isHovered, setIsHovered, titleHovered, setTitleHovered, isMobile, isTablet}) {
 
     const [cursorDate, setCursorDate] = useState(null);
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
@@ -27,13 +27,25 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                           duration: 0.2,
                                           ease: "easeInOut"
                                       }}>
-                {events.map(event => (
+                {events.map(event => {
+        const leftPosition = isMobile
+            ? event.leftBgMobile
+            : isTablet
+            ? event.leftBgTablet
+            : event.leftBg
+        const topPosition = isMobile
+            ? event.topBgMobile
+            : isTablet
+            ? event.topBgTablet
+            : event.topBg
+
+        return (
                     <motion.div
                         key={event.id}
                         style={{ overflow: "hidden",
                             position: "absolute",
-                            top:  event.topBg,
-                            left: event.leftBg,
+                            top:  topPosition,
+                            left: leftPosition,
                              }}
                         className="wrapping-div"
                     >
@@ -69,14 +81,13 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                 <motion.img
                                     key={event.id}
                                     transition={{ duration: 0.2, ease: "easeInOut" }}
-                                    // style={{ overflow: "hidden", width: isMobile? '200px' : '340px' }}
                                     className={`bgImage`}
                                     src={`/images/homepage/${event.bgImage}`}
                             />
                         </div>
                     </motion.div>
 
-                ))}
+                )})}
 
                 {cursorDate && (
                     <div

@@ -15,17 +15,15 @@
     // pour définir les path/routes
     const navigate = useNavigate()
 
-    // sur mobile ou non?
+    // sur mobile ou tablette ou <pas></pas>?
     const [isMobile, setIsMobile] = useState(false)
+    const [isTablet, setIsTablet] = useState(false)
     // check constant de la width du viewport
     useEffect(() => {
       const check = () => {
-        if (window.innerWidth < 768) {
-          setIsMobile(true)
-        }
-        else {
-          setIsMobile(false)
-        }
+        const w = window.innerWidth
+        setIsMobile(w < 768)
+        setIsTablet(w >= 768 && w < 1025)
       }
       check()
       window.addEventListener("resize", check) // lorsqu'on resize le viewport, la fonction check se lance
@@ -77,7 +75,11 @@
           bgImage: "3.png",
           bgImage2: "3-bis.webp",
           topBg: "-2svh",
+          topBgTablet: "-2svh",
+          topBgMobile: "-2svh",
           leftBg: "18svw",
+          leftBgTablet: "12svw",
+          leftBgMobile: "6svw",
           bgColor: "yellow"
       },
       { 
@@ -108,7 +110,11 @@
           bgImage: "7.png",
           bgImage2: "7-bis.webp",
           topBg: "4svh",
+          topBgTablet: "15svh",
+          topBgMobile: "15svh",
           leftBg: "44svw",
+          leftBgTablet: "29svw",
+          leftBgMobile: "15svw",
           bgColor: "green",
           imageEvent1: "291125/1.webp",
           imageEvent2: "291125/2.webp",
@@ -145,7 +151,11 @@
           bgImage: "2.png",
           bgImage2: "2-bis.webp",
           topBg: "2svh",
+          topBgTablet: "2svh",
+          topBgMobile: "2svh",
           leftBg: "71svw",
+          leftBgTablet: "60svw",
+          leftBgMobile: "25svw",
           bgColor: 'pink',
           imageEvent1: "250525/1.webp",
           imageEvent2: "250525/2.webp",
@@ -179,7 +189,11 @@
           bgImage: "6.png",
           bgImage2: "6-bis.webp",
           topBg: "32svh",
+          topBgTablet: "32svh",
+          topBgMobile: "32svh",
           leftBg: "22svw",
+          leftBgTablet: "1svw",
+          leftBgMobile: "8svw",
           bgColor: "blue",
           imageEvent1: "151124/1.webp",
           imageEvent2: "151124/2.webp",
@@ -213,7 +227,11 @@
           bgImage: "4.png",
           bgImage2: "4-bis.webp",
           topBg: "36svh",
+          topBgTablet: "36svh",
+          topBgMobile: "36svh",
           leftBg: "48svw",
+          leftBgTablet: "35svw",
+          leftBgMobile: "17svw",
           bgColor: "yellow"
       },
       { 
@@ -243,7 +261,11 @@
           bgImage: "5.png",
           bgImage2: "5-bis.webp",
           topBg: "41svh",
+          topBgTablet: "45svh",
+          topBgMobile: "41svh",
           leftBg: "70svw",
+          leftBgTablet: "60svw",
+          leftBgMobile: "30svw",
           bgColor: "blue"
       },
           { 
@@ -274,7 +296,11 @@
           bgImage: "1.png",
           bgImage2: "1-bis.webp",
           topBg: "62svh",
+          topBgTablet: "62svh",
+          topBgMobile: "62svh",
           leftBg: "34svw",
+          leftBgTablet: "38svw",
+          leftBgMobile: "30svw",
           bgColor: "pink",
           imageEvent1: "130523/image023.webp",
           imageEvent2: "130523/image031.webp",
@@ -329,6 +355,7 @@
                   isHovered={isHovered}
                   setIsHovered={setIsHovered}
                   isMobile={isMobile}
+                  isTablet={isTablet}
                   setFloatingGraphic={setFloatingGraphic}
                   titleHovered={titleHovered}
                   setTitleHovered={setTitleHovered}
@@ -341,6 +368,7 @@
                   isHovered={isHovered}
                   setIsHovered={setIsHovered}
                   isMobile={isMobile}
+                  isTablet={isTablet}
                   setFloatingGraphic={setFloatingGraphic}
                   titleHovered={titleHovered}
                   setTitleHovered={setTitleHovered}
