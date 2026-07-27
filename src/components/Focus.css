@@ -1,7 +1,7 @@
 
 
 .focusss {
-    /* border: 2px solid red; */
+    /* border: 1px solid red; */
     display:flex;
     width: 78%;
     height: 100svh; 
@@ -14,6 +14,15 @@
         height: 92svh;
     } */
          /* border: 1px solid pink; */
+}
+.focusss .left .lenis-content{
+        /* margin-bottom: 1svw; */
+            /* border: 1px solid red; */
+
+}
+
+.focusss h2{
+    line-height: 1;
 }
 
 .bg-test {
@@ -34,19 +43,23 @@
 } */
 
 .focusss .right .lenis-content {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(2, 60px);
     gap: 1svh 1svw;
-    margin-top: auto;
-    /* width: 20vw; */
+    margin-top: auto; */
     align-content: end;
-    /* border: 1px solid red; */
-    margin-bottom: 40svh;
+    /* margin-bottom: 30svh; */
+    display:flex;
+    margin-left: 5svw;
+    flex-direction: column;
+        margin-bottom: 1svw;
+
 }
 
 .focusss .right img {
-    filter: brightness(calc(80% + var(--threshold))) grayscale(100%) contrast(300%) blur(1px);
+    /* filter: brightness(calc(80% + var(--threshold))) grayscale(100%) contrast(300%) blur(0); */
+    filter: grayscale(1);
     transition: filter 0.2s ease;
     object-fit: cover;
     width: 100%;
@@ -64,6 +77,7 @@
     justify-content: space-between;
     height: 100%;
     min-height: 0;
+    /* border: 1px solid red; */
 }
 
 .btn-x {
@@ -77,9 +91,9 @@
 .focusss .middle {
     display: flex;
     overflow: hidden;
-    flex: 1;
+    /* flex: 1; */
     min-height: 0;
-    /* border: 2px solid blue; */
+    /* border: 1px solid blue; */
 }
 
 .focusss .left {
@@ -90,7 +104,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    height: 100svh;
+    height: 100%;
     min-height: 0;
     /* padding-left: 1%; */
 }
@@ -99,9 +113,16 @@
     overflow-y: auto;
     scrollbar-width: none;
     padding-top: 3svh;
+    /* padding-bottom: 3svh; */
     padding-left: 1%;
-    flex: 1;
+    /* flex: 1; */
     min-height: 0;
+    /* border: 1px solid pink; */
+}
+
+.focusss .left .inner-text p {
+    padding: 0;
+    margin: 0;
 }
 
 /* * {
@@ -110,10 +131,10 @@
 
 .focusss .right {
     width: 40%;
-    overflow: auto;
-    scrollbar-width: none;
-    padding-top: 30svh;
-    /* height: 100svh; */
+    /* overflow: auto; */
+    /* scrollbar-width: none; */
+    /* padding-top: 30svh; */
+    height: 100svh;
     min-height: 0;
     display: flex;
     justify-content: flex-end;
@@ -122,7 +143,11 @@
     align-items: flex-end;
     /* border: 1px solid blue; */
     padding-right: 1svw;
-    padding-bottom: 1svw;
+}
+
+.focusss .right p {
+        line-height: 1.1;
+
 }
 
 /* .focusss .right img {
@@ -150,11 +175,7 @@
     border: 1px solid red;
 } */
 
-.focusss .bottom {
-    /* border: 2px solid yellow; */
-    /* width:  60%; */
-        padding-left: 1%;
-}
+
 
 /* description */
 

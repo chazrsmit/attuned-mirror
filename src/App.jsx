@@ -47,10 +47,10 @@
           date: "6 September 2026 @Mona",
           upcoming: true,
           content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned and <a href="https://www.instagram.com/blackhillsoundsystem/" target="blank">Black Hill Soundsystem</a> are joining forces to raise funds for <a href="https://www.facebook.com/p/Collectif-zone-neutre-100071631008694/" target="blank">Zone Neutre</a> collective - a self-organised space currently housing 50+ people, founded on collective ownership, solidarity, mutual aid, and horizontality.
-          Beyond occupying empty buildings, Zone Neutre is part of a broader political struggle: fighting for housing rights and the regularisation of undocumented people. The benefits of this night will go to help raising funds to secure safe and stable housing for the members of the collective, helping them in their political fight.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teaming up with Black Hill, a reggae-dub collective based between Charleroi and Brussels and curator of this lineup, we are hosting for the first time a day event that will take place in the garden of <a href="https://www.toestand.be/fr/mona" target="blank">Mona</a> - a Toestand-run space which organises various socio-cultural activies.
-          <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Beyond occupying empty buildings, Zone Neutre is part of a broader political struggle: fighting for housing rights and the regularisation of undocumented people. The benefits of this night will go to help raising funds to secure safe and stable housing for the members of the collective, helping them in their political fight.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teaming up with Black Hill, a reggae-dub collective based between Charleroi and Brussels and curator of this lineup, we are hosting for the first time a day event that will take place in the garden of <a href="https://www.toestand.be/fr/mona" target="blank">Mona</a> - a Toestand-run space which organises various socio-cultural activies.
+          <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           NB: this event was originally to take place in March in the housing space of Zone Neutre with a different lineup but due to reasons beyond our control, Zone Neutre wasn't able to host the event in that location anymore. 
-          <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           With the precious help of Brasserie de la Senne, Konligo and Froui.</p>
           </>,
           artist1: "Black Hill Soundsystem",
@@ -109,7 +109,12 @@
           bgImage2: "7-bis.webp",
           topBg: "4svh",
           leftBg: "44svw",
-          bgColor: "green"
+          bgColor: "green",
+          imageEvent1: "291125/1.webp",
+          imageEvent2: "291125/2.webp",
+          imageEvent3: '291125/3.webp',
+          imageEvent4: "291125/4.webp",
+          imageEvent5: "291125/5.webp"
       },
       { 
           id: "may25lav",
@@ -307,30 +312,48 @@
                 isClicked={isClicked}
                 setIsClicked={setIsClicked}
                 listingOn={listingOn}
+                isHomepage={isHomepage}
             />
         )}
       {/* Définition des routes (main page "/" et pages focus) */}
-      <Routes>
-        <Route
-          path="/"
-          element={
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
               listingOn ? (
-                                <AnimatePresence mode="wait">
-                                    <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
-                                </AnimatePresence>
-                          ) : (
-                                <AnimatePresence mode="wait">
-                                    <ListingBis events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
-                                </AnimatePresence>
-                          )
-
-          }
-        />
-        <Route
-          path="/event/:id"
-          element={<Focus events={events} setIsClicked={setIsClicked} />}
-        />
-      </Routes>
+                <Listing
+                  events={events}
+                  isClicked={isClicked}
+                  setIsClicked={setIsClicked}
+                  isHovered={isHovered}
+                  setIsHovered={setIsHovered}
+                  isMobile={isMobile}
+                  setFloatingGraphic={setFloatingGraphic}
+                  titleHovered={titleHovered}
+                  setTitleHovered={setTitleHovered}
+                />
+              ) : (
+                <ListingBis
+                  events={events}
+                  isClicked={isClicked}
+                  setIsClicked={setIsClicked}
+                  isHovered={isHovered}
+                  setIsHovered={setIsHovered}
+                  isMobile={isMobile}
+                  setFloatingGraphic={setFloatingGraphic}
+                  titleHovered={titleHovered}
+                  setTitleHovered={setTitleHovered}
+                />
+              )
+            }
+          />
+          <Route
+            path="/event/:id"
+            element={<Focus events={events} setIsClicked={setIsClicked} />}
+          />
+        </Routes>
+      </AnimatePresence>
      </section>
 
       {/* <section className="main">
@@ -394,9 +417,9 @@
 
 
         {/* buttons */}
-        <div className="btn-collaborate">
+        {/* <div className="btn-collaborate">
           <button className="">Wanna collaborate?</button>
-        </div>
+        </div> */}
 
       </>
     )

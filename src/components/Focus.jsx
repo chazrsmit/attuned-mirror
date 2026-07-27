@@ -27,40 +27,40 @@ export default function Focus({ events, setIsClicked }) {
         getPosition(getRandomPosition())
     }, [id])
 
-        // useEffect(() => {
-        //     const leftContent = leftRef.current?.querySelector('.lenis-content')
-        //     const rightContent = rightRef.current?.querySelector('.lenis-content')
+        useEffect(() => {
+            const leftContent = leftRef.current?.querySelector('.lenis-content')
+            const rightContent = rightRef.current?.querySelector('.lenis-content')
 
-        //     if (!leftContent || !rightContent) return
+            if (!leftContent || !rightContent) return
 
-        //     const lenisLeft = new Lenis({
-        //         wrapper: leftRef.current,
-        //         content: leftContent,
-        //         duration: 1,
-        //         smoothWheel: true,
-        //     })
+            const lenisLeft = new Lenis({
+                wrapper: leftRef.current,
+                content: leftContent,
+                duration: 1,
+                smoothWheel: true,
+            })
 
-        //     const lenisRight = new Lenis({
-        //         wrapper: rightRef.current,
-        //         content: rightContent,
-        //         duration: 1,
-        //         smoothWheel: true,
-        //     })
+            const lenisRight = new Lenis({
+                wrapper: rightRef.current,
+                content: rightContent,
+                duration: 0.1,
+                smoothWheel: true,
+            })
 
-        //     let rafId
-        //     function raf(time) {
-        //         lenisLeft.raf(time)
-        //         lenisRight.raf(time)
-        //         rafId = requestAnimationFrame(raf)
-        //     }
-        //     rafId = requestAnimationFrame(raf)
+            let rafId
+            function raf(time) {
+                lenisLeft.raf(time)
+                lenisRight.raf(time)
+                rafId = requestAnimationFrame(raf)
+            }
+            rafId = requestAnimationFrame(raf)
 
-        //     return () => {
-        //         lenisLeft.destroy()
-        //         lenisRight.destroy()
-        //         cancelAnimationFrame(rafId)
-        //     }
-        // }, [id])
+            return () => {
+                lenisLeft.destroy()
+                lenisRight.destroy()
+                cancelAnimationFrame(rafId)
+            }
+        }, [id])
 
     if (!event) return null
 
@@ -77,7 +77,7 @@ export default function Focus({ events, setIsClicked }) {
                 opacity: 0
                 }}
             transition={{
-                duration: 0.3,
+                duration: 0.25,
                 ease: "easeInOut"
                 }}
         >
@@ -101,15 +101,15 @@ export default function Focus({ events, setIsClicked }) {
                                 <div>
                                     <h2>{event.title}</h2>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <p>{event.date}</p>
-                                </div>
+                                </div> */}
                                 <div className="description-wrapper">
                                     <div className="description">
                                         {event.content}
                                     </div>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <p>Lineup</p>
                                 </div>
                                 <div className="names">
@@ -118,7 +118,7 @@ export default function Focus({ events, setIsClicked }) {
                                     <p>{event.artist3}</p>
                                     <p>{event.artist4}</p>
                                     <p>{event?.artist5}</p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
@@ -131,7 +131,20 @@ export default function Focus({ events, setIsClicked }) {
                     {/* colonne droite avec photos */}
                     <div className="right" ref={rightRef}>
                         <div className="lenis-content">
-                            {event.imageEvent1 &&
+                                <div>
+                                    <p>{event.date}</p>
+                                </div>
+                                <div>
+                                    <p>Lineup</p>
+                                </div>
+                                <div className="names">
+                                    <p>{event.artist1}</p>
+                                    <p>{event.artist2}</p>
+                                    <p>{event.artist3}</p>
+                                    <p>{event.artist4}</p>
+                                    <p>{event?.artist5}</p>
+                                </div>
+                            {/* {event.imageEvent1 &&
                             // <div className="photo-wrap">
                                 <img className="img-1" src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
                             // </div>
@@ -150,7 +163,7 @@ export default function Focus({ events, setIsClicked }) {
                             }
                             {event.imageEvent6 &&
                                 <img className="img-6" src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
-                            }
+                            } */}
                         </div>
                     </div>
                 </div>

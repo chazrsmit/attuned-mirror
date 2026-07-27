@@ -191,9 +191,9 @@
 
     /* CONTENT */
 
-    .description-wrapper {
+    .description-wrapperrr {
         /* padding: 2rem; */
-        padding-bottom: 1rem;
+        /* padding-bottom: 1rem; */
         @media(max-width: 768px) {
             padding: 0rem;
         }

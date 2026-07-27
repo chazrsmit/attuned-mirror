@@ -16,7 +16,7 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
     return(
         <>
             <motion.div className="listing-bis"
-                                                  initial={{
+                                    initial={{
                                           opacity: 0
                                       }}
                                       animate={{
@@ -26,7 +26,7 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                           opacity: 0
                                       }}
                                       transition={{
-                                          duration: 0.3,
+                                          duration: 0.25,
                                           ease: "easeInOut"
                                       }}>
                 {events.map(event => (
