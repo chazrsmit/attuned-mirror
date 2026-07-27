@@ -109,6 +109,29 @@ export default function Focus({ events, setIsClicked }) {
                                         {event.content}
                                     </div>
                                 </div>
+                                {/* images - horizontal scroll on desktop */}
+                                <div className="photos">
+                                    {event.imageEvent1 &&
+                                    
+                                        <img className="img-1" src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
+                                   
+                                    }
+                                    {event.imageEvent2 &&
+                                        <img className="img-2" src={`/images/events/${event.imageEvent2}`} loading="eager" fetchPriority="high"/>
+                                    }
+                                    {event.imageEvent3 &&
+                                        <img className="img-3" src={`/images/events/${event.imageEvent3}`} loading="eager" fetchPriority="high"/>
+                                    }
+                                    {event.imageEvent4 &&
+                                        <img className="img-4" src={`/images/events/${event.imageEvent4}`} loading="eager" fetchPriority="high"/>
+                                    }
+                                    {event.imageEvent5 &&
+                                        <img className="img-5" src={`/images/events/${event.imageEvent5}`} loading="eager" fetchPriority="high"/>
+                                    }
+                                    {event.imageEvent6 &&
+                                        <img className="img-6" src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
+                                    }
+                                </div>
                                 {/* <div>
                                     <p>Lineup</p>
                                 </div>
@@ -131,9 +154,6 @@ export default function Focus({ events, setIsClicked }) {
                     {/* colonne droite avec photos */}
                     <div className="right" ref={rightRef}>
                         <div className="lenis-content">
-                                <div>
-                                    <p>{event.date}</p>
-                                </div>
                                 <div>
                                     <p>Lineup</p>
                                 </div>
