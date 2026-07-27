@@ -2,7 +2,7 @@ import './LeftDesktop.css'
 import { motion, AnimatePresence } from "framer-motion"
 import {useState} from "react"
 
-export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn }) {
+export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn, isTablet }) {
 
     const clickedEvent = events.find(event => event.id === isClicked)
     const [credits, setCredits] = useState(null)
@@ -15,7 +15,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                         <motion.div
                             key="credits"
                             layout
-                            className="credits"
+                            className={`credits ${isTablet ? 'tablet' : null}`}
                             initial={{ opacity: 0, y: -20, filter: "blur(8px)" }}
                             animate={{ opacity: 1, y:0,filter: "blur(0px)"  }}
                             exit={{ opacity: 0, y: -20,filter: "blur(8px)" }}

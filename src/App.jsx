@@ -328,7 +328,7 @@
 
     return (
       <>
-      <CursorTrail />
+      {!isMobile && !isTablet && <CursorTrail />}
       {isMobile && <Footer />}
 
       <section className="main">
@@ -339,6 +339,7 @@
                 setIsClicked={setIsClicked}
                 listingOn={listingOn}
                 isHomepage={isHomepage}
+                isTablet={isTablet}
             />
         )}
       {/* Définition des routes (main page "/" et pages focus) */}
