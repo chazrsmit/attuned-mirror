@@ -15,11 +15,6 @@
     } */
          /* border: 1px solid pink; */
 }
-.focusss .left .lenis-content{
-        /* margin-bottom: 1svw; */
-
-
-}
 
 .focusss h2{
     line-height: 1;
@@ -51,7 +46,7 @@
     align-content: end;
     /* margin-bottom: 30svh; */
     display:flex;
-    margin-left: 5svw;
+    /* margin-left: 5svw; */
     flex-direction: column;
     /* justify-content:space-between; */
     /* height: 50vh; */
