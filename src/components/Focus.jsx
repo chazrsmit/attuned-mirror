@@ -132,22 +132,24 @@ export default function Focus({ events, setIsClicked }) {
                     <div className="right" ref={rightRef}>
                         <div className="lenis-content">
                             {event.imageEvent1 &&
-                                <img src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
+                            // <div className="photo-wrap">
+                                <img className="img-1" src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
+                            // </div>
                             }
                             {event.imageEvent2 &&
-                                <img src={`/images/events/${event.imageEvent2}`} loading="eager" fetchPriority="high"/>
+                                <img className="img-2" src={`/images/events/${event.imageEvent2}`} loading="eager" fetchPriority="high"/>
                             }
                             {event.imageEvent3 &&
-                                <img src={`/images/events/${event.imageEvent3}`} loading="eager" fetchPriority="high"/>
+                                <img className="img-3" src={`/images/events/${event.imageEvent3}`} loading="eager" fetchPriority="high"/>
                             }
                             {event.imageEvent4 &&
-                                <img src={`/images/events/${event.imageEvent4}`} loading="eager" fetchPriority="high"/>
+                                <img className="img-4" src={`/images/events/${event.imageEvent4}`} loading="eager" fetchPriority="high"/>
                             }
                             {event.imageEvent5 &&
-                                <img src={`/images/events/${event.imageEvent5}`} loading="eager" fetchPriority="high"/>
+                                <img className="img-5" src={`/images/events/${event.imageEvent5}`} loading="eager" fetchPriority="high"/>
                             }
                             {event.imageEvent6 &&
-                                <img src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
+                                <img className="img-6" src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
                             }
                         </div>
                     </div>

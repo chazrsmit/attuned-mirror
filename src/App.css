@@ -61,6 +61,7 @@
   left: 60px;
   bottom: 22px;
   position: absolute;
+    z-index: 1000;
 }
 
 .btn-collaborate button {

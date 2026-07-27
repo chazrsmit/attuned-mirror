@@ -10,8 +10,8 @@
         var(--bg-2) 0%,
         var(--bg-1) 100%);
     align-items: flex-end;
+    z-index: 100;
 }
-
 
 /* .left-desktop span {
    text-shadow: #ffd150 1px 0 10px;
@@ -41,6 +41,7 @@
     margin-bottom: 9svh;
     margin-left: 1svw;
         /* left: 1svw; */
+    z-index: 100;
 }
 
 .left-desktop .explanation .two {
