@@ -30,7 +30,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                                 <br/><br/>
                                 Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit and Paul Bossu.</p>
                             </div>
-                            <div>
+                            <div className="btn-close-credits">
                                 <a className="close-credits" onClick={() => setCredits(false)}>close</a>
                             </div>
                         </motion.div>

@@ -190,7 +190,7 @@
       },
       { 
           id: "june24zsenne",
-          title: "Attuned for 100pap's 7th bday",
+          title: "Attuned for 100PAP's 7th bday",
           date: "8 June 2024 @Zenne Bar",
           upcoming: false,
           content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We threw another event in collaboration with <a href="https://100pap.be/" target="blank">100PAP</a> in honour of their 7th birthday, aiming to contribute again to the 100.000€ raised in the 7 years since their beginnings. This time in the neighbourhood of Brussels North, close to Tour and Taxi in Zenne Bar where we got to enjoy the sun and the surrounding green fields.<br/>
@@ -248,7 +248,7 @@
       },
           { 
           id: "may13antidote",
-          title: "Attuned for 100pap's 6th bday",
+          title: "Attuned for 100PAP's 6th bday",
           date: "13 May 2023 @L'Antidote (La Fabriek)",
           upcoming: false,
           content: <><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned's first ever edition was organised both for and in partnership with <a href="https://100pap.be/" target="blank">100PAP</a> - a Brussels-based non-profit organisation that supports collectives of undocumented people by fighting inadequate and unstable housing conditions through the sale of beers and lemonades. The benefits for this event were used to pay for rent, utilities, insurance, and renovation expenses of several collectives.<br />
