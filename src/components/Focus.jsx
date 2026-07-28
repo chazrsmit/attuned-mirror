@@ -27,42 +27,44 @@ export default function Focus({ events, setIsClicked }) {
         getPosition(getRandomPosition())
     }, [id])
 
-        useEffect(() => {
-            const leftContent = leftRef.current?.querySelector('.lenis-content')
-            const rightContent = rightRef.current?.querySelector('.lenis-content')
+    useEffect(() => {
+        const leftContent = leftRef.current?.querySelector('.lenis-content')
+        const rightContent = rightRef.current?.querySelector('.lenis-content')
 
-            if (!leftContent || !rightContent) return
+        if (!leftContent || !rightContent) return
 
-            const lenisLeft = new Lenis({
-                wrapper: leftRef.current,
-                content: leftContent,
-                duration: 1,
-                smoothWheel: true,
-            })
+        const lenisLeft = new Lenis({
+            wrapper: leftRef.current,
+            content: leftContent,
+            duration: 1,
+            smoothWheel: true,
+        })
 
-            const lenisRight = new Lenis({
-                wrapper: rightRef.current,
-                content: rightContent,
-                duration: 0.1,
-                smoothWheel: true,
-            })
+        const lenisRight = new Lenis({
+            wrapper: rightRef.current,
+            content: rightContent,
+            duration: 0.1,
+            smoothWheel: true,
+        })
 
-            let rafId
-            function raf(time) {
-                lenisLeft.raf(time)
-                lenisRight.raf(time)
-                rafId = requestAnimationFrame(raf)
-            }
+        let rafId
+        function raf(time) {
+            lenisLeft.raf(time)
+            lenisRight.raf(time)
             rafId = requestAnimationFrame(raf)
+        }
+        rafId = requestAnimationFrame(raf)
 
-            return () => {
-                lenisLeft.destroy()
-                lenisRight.destroy()
-                cancelAnimationFrame(rafId)
-            }
-        }, [id])
+        return () => {
+            lenisLeft.destroy()
+            lenisRight.destroy()
+            cancelAnimationFrame(rafId)
+        }
+    }, [id])
 
     if (!event) return null
+
+    const [imageHovered, setImageHovered] = useState(null)
 
     return(
         <>
@@ -123,27 +125,25 @@ export default function Focus({ events, setIsClicked }) {
                                     <p>{event?.artist5}</p>
                                 </div> */}
                             </div>
-                                                            {/* images - horizontal scroll on desktop */}   
+                            {/* images */}   
                                 <div className="photos">
                                     {event.imageEvent1 &&
-                                    
-                                        <img className="img-1" src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
-                                   
+                                        <img className="img-1" onMouseEnter={() => setImageHovered("1")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
                                     }
                                     {event.imageEvent2 &&
-                                        <img className="img-2" src={`/images/events/${event.imageEvent2}`} loading="eager" fetchPriority="high"/>
+                                        <img className="img-2" onMouseEnter={() => setImageHovered("2")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent2}`} loading="eager" fetchPriority="high"/>
                                     }
                                     {event.imageEvent3 &&
-                                        <img className="img-3" src={`/images/events/${event.imageEvent3}`} loading="eager" fetchPriority="high"/>
+                                        <img className="img-3" onMouseEnter={() => setImageHovered("3")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent3}`} loading="eager" fetchPriority="high"/>
                                     }
                                     {event.imageEvent4 &&
-                                        <img className="img-4" src={`/images/events/${event.imageEvent4}`} loading="eager" fetchPriority="high"/>
+                                        <img className="img-4" onMouseEnter={() => setImageHovered("4")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent4}`} loading="eager" fetchPriority="high"/>
                                     }
                                     {event.imageEvent5 &&
-                                        <img className="img-5" src={`/images/events/${event.imageEvent5}`} loading="eager" fetchPriority="high"/>
+                                        <img className="img-5" onMouseEnter={() => setImageHovered("5")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent5}`} loading="eager" fetchPriority="high"/>
                                     }
                                     {event.imageEvent6 &&
-                                        <img className="img-6" src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
+                                        <img className="img-6" onMouseEnter={() => setImageHovered("6")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
                                     }
                                 </div>
                         </div>
@@ -162,7 +162,30 @@ export default function Focus({ events, setIsClicked }) {
                                     <img src={`/images/${event.image}`} loading="eager" fetchPriority="high" />
                                 </div>
                             </div> */}
-
+                            {/* images apparaissent ici on hover */}
+                            <div>
+                                <div className="poster">
+                                    {
+                                        imageHovered === "1" && <img src={`/images/events/${event.imageEvent1}`} />
+                                    }
+                                    {
+                                        imageHovered === "2" && <img src={`/images/events/${event.imageEvent2}`} />
+                                    }
+                                    {
+                                        imageHovered === "3" && <img src={`/images/events/${event.imageEvent3}`} />
+                                    }
+                                    {
+                                        imageHovered === "4" && <img src={`/images/events/${event.imageEvent4}`} />
+                                    }
+                                    {
+                                        imageHovered === "5" && <img src={`/images/events/${event.imageEvent5}`} />
+                                    }
+                                    {
+                                        imageHovered === "6" && <img src={`/images/events/${event.imageEvent6}`} />
+                                    }
+                                    {/* <img src={`/images/${event.image}`} loading="eager" fetchPriority="high" /> */}
+                                </div>
+                            </div>
                             <div>
                                 <div>
                                     <p>Lineup:</p>

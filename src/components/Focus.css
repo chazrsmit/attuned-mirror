@@ -126,7 +126,7 @@
     overflow-y: auto;
     scrollbar-width: none;
     padding-top: 3svh;
-    padding-bottom: 0.4svh;
+    padding-bottom: 0.6svh;
     padding-left: 1%;
     /* flex: 1; */
     min-height: 0;
@@ -280,8 +280,12 @@
     filter: none;
 }
 
+.focusss .poster {
+    margin-bottom: 1svh;
+}
+
 .focusss .poster img {
-    width: 10svw;
+    width: 11svw;
 }
 
 .right .lenis-content p {
