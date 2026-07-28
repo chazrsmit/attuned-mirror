@@ -9,6 +9,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
     const id = match?.params.id
     const clickedEvent = events.find(event => event.id === id)
     const [credits, setCredits] = useState(null)
+    const [about, setAbout] = useState(null)
 
     return (
         <>
