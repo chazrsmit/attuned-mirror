@@ -87,10 +87,12 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                 }}
         >
             {/* bouton pour quitter */}
-            <p onClick={() => {
-                navigate('/')
-                setIsClicked(null)
-            }} className="btn-x">close</p>
+            {!isMobile &&
+                <p onClick={() => {
+                    navigate('/')
+                    setIsClicked(null)
+                }} className="btn-x">close</p>
+            }
 
             {/* background image */}
             <img className="bg-test" src={`/images/homepage/${event.bgImage2}`} style={{left: `${position.x}%`, top: `${position.y}%`}} />
@@ -103,7 +105,12 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                     <div className="left">
                         <div ref={leftRef} className={`inner-text ${event.bgColor ? event.bgColor : null}`}>
                             <div className="lenis-content">
-                                <div>
+                                {/* {isMobile &&
+                                <p onClick={() => {
+                                        navigate('/')
+                                        setIsClicked(null)
+                                    }} className="btn-x-bis">close</p>} */}
+                                <div className="title-focus">
                                     <h2>{event.title}</h2>
                                 </div>
                                 {isMobile && 
