@@ -63,6 +63,7 @@
     /* justify-content:space-between; */
     /* height: 50vh; */
         /* margin-bottom: 1svw; */
+        padding-bottom: 0.5rem;
 }
 
 .focusss .right img {
@@ -90,8 +91,8 @@
 
 .btn-x {
     position: absolute;
-    right: 1svw;
-    top: 2svh;
+    right: 0.6rem;
+    top: 0.5rem;
     cursor: pointer;
     z-index: 100;
     transition: all 0.2s ease;
@@ -145,8 +146,8 @@
 .focusss .left .inner-text {
     overflow-y: auto;
     scrollbar-width: none;
-    padding-top: 2svh;
-    padding-bottom: 0.6svh;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     padding-left: 1%;
     /* flex: 1; */
     min-height: 0;
@@ -185,7 +186,7 @@
     justify-content: flex-end;
     flex-direction: column;
     align-items: flex-end;
-    padding-right: 1svw;
+    padding-right: 0.6rem;
 
     @media(max-width: 1150px) {
         width: 20svw;

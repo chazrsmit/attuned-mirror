@@ -12,7 +12,7 @@
     z-index: 100;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 1svw;
+    padding-left: 0.6rem;
     @media (max-width: 1150px) {
         padding-left:0;
         width: 20vw;
@@ -181,15 +181,22 @@
     writing-mode: vertical-lr;
     text-orientation: sideways;
     width: fit-content;
-    padding-top: 2svh;
+    padding-top: 0.5rem;
     /* border: 1px solid red; */
     @media(max-width:1150px) {
         padding-top: 0.5svh;
     };
 }
 
-.about-wrapper {
+/* .about-wrapper {
     padding-bottom: 2svh;
+    @media(max-width:1150px) {
+        padding-bottom: 0.5svh;
+    };
+} */
+
+.what, .explanation {
+    padding-bottom: 0.5rem;
     @media(max-width:1150px) {
         padding-bottom: 0.5svh;
     };
@@ -202,7 +209,7 @@
 }
 
 .credits {
-    padding-top: 2svh;
+    padding-top: 0.5rem;
     display:flex;
     /* text-align: justify; */
     gap: 1rem;
@@ -298,6 +305,7 @@
 
 .datebis p {
     font-size: 24px;
+    padding-bottom: 0.5rem;
     @media (max-width: 1150px) {
         font-size: 20px;
         padding-left: 1svw;
