@@ -15,6 +15,7 @@
     padding-left: 1svw;
     @media (max-width: 1150px) {
         padding-left:0;
+        width: 20vw;
     };
 }
 
@@ -285,8 +286,8 @@
 
 .datebis p {
     font-size: 24px;
-    @media(max-width: 1150px) {
-        font-size: clamp(16px, 1vw + 12px, 24px);
+    @media (max-width: 1150px) {
+        font-size: 20px;
         padding-left: 1svw;
     };
 }

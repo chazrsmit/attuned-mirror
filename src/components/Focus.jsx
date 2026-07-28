@@ -186,7 +186,7 @@ export default function Focus({ events, setIsClicked }) {
                                     {/* <img src={`/images/${event.image}`} loading="eager" fetchPriority="high" /> */}
                                 </div>
                             </div>
-                            <div>
+                            <div className="div-program">
                                 <div>
                                     <p>Lineup:</p>
                                 </div>
