@@ -106,12 +106,28 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                                 <div>
                                     <h2>{event.title}</h2>
                                 </div>
-                                {/* <div>
-                                    <p>{event.date}</p>
-                                </div> */}
+                                {isMobile && 
+                                <div className="div-program">
+                                    <div>
+                                        <p>{event.date}</p>
+                                    </div>
+                                </div>
+                                }
                                 <div className="description-wrapper">
                                     <div className="description">
                                         {event.content}
+                                    </div>
+                                </div>
+                                <div className="line">
+                                    <div>
+                                        <p>Lineup:</p>
+                                    </div>
+                                    <div className="names">
+                                        <p>{event.artist1}</p>
+                                        <p>{event.artist2}</p>
+                                        <p>{event.artist3}</p>
+                                        <p>{event.artist4}</p>
+                                        <p>{event?.artist5}</p>
                                     </div>
                                 </div>
                                 {/* <div>
@@ -155,6 +171,7 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                     </div>
 
                     {/* colonne droite avec photos */}
+                    {!isMobile &&
                     <div className="right" ref={rightRef}>
                         <div className="lenis-content">
                             {/* <div>
@@ -188,11 +205,6 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                             </div>
 
                             <div className="div-program">
-                                {isMobile &&
-                                    <div>
-                                        <p>{event.date}</p>
-                                    </div>
-                                }
                                 <div>
                                     <div>
                                         <p>Lineup:</p>
@@ -208,6 +220,7 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                             </div>
                         </div>
                     </div>
+                    }
                 </div>
             </div>
 

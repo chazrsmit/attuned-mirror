@@ -12,7 +12,7 @@
         width: 100%;
     }
     @media(max-width: 768px) {
-        width: auto;
+        width: 100%;
         overflow: hidden;
         /* margin: 0.6svw; */
         /* border: 2px solid red; */
@@ -129,7 +129,7 @@
         width: 60svw;
     };
     @media(max-width: 768px) {
-        width: 70svw;
+        width: 98%;
     }
 }
 
@@ -310,7 +310,7 @@
     width: 11svw;
 }
 
-.right .lenis-content p {
+.right .lenis-content p, .left .div-program p, .left .line {
     
     padding: 0;
     margin: 0;
