@@ -1,16 +1,11 @@
+/* ==========================================================================
+   1. FONTS
+   ========================================================================== */
+
+
 @font-face {
   font-family: "BBB Karrik";
   src: local("BBB_Karrik"), url('./fonts/BBB_Karrik.otf') format('truetype');
-}
-
-@font-face {
-  font-family: "Dindong";
-  src: local("DINdong"), url('./fonts/DINdong.otf') format('truetype');
-}
-
-@font-face {
-  font-family: "Garabosse P1";
-  src: local("Garabosse-Parangonne"), url('./fonts/Garabosse-Parangonne.otf') format('truetype');
 }
 
 @font-face {
@@ -19,125 +14,23 @@
 }
 
 @font-face {
-  font-family: "Banana 1";
-  src: local("Banana-Outline-Light"), url('./fonts/Banana-Outline-Light.ttf')
-}
-
-@font-face {
-  font-family: "Banana 2";
-  src: local("Banana-Outline-Regular"), url('./fonts/Banana-Outline-Regular.ttf')
-}
-
-@font-face {
-  font-family: "Enclav";
-  src: local("EnclavAcadam-Regular"), url('./fonts/EnclavAcadam-Regular.otf')
-}
-
-@font-face {
-  font-family: "Homoneta I";
-  src: local("Homoneta-Italic"), url('./fonts/Homoneta-Italic.otf')
-}
-
-@font-face {
-  font-family: "Homoneta R";
-  src: local("Homoneta-Regular"), url('./fonts/Homoneta-Regular.otf')
-}
-
-@font-face {
-  font-family: "Adelphe Fructidor";
-  src: local('Adelphe-Trouble-FructidorRegular'), url('./fonts/Adelphe-Trouble-FructidorRegular.otf');
-}
-
-@font-face {
-  font-family: "Adelphe Germinal";
-  src: local('Adelphe-Trouble-GerminalRegularr'), url('./fonts/Adelphe-Trouble-GerminalRegular.otf');
-}
-
-@font-face {
-  font-family: "BBB Sprat";
-  src: local('BBBSprat-Regular'), url('./fonts/BBBSprat-Regular.otf');
-}
-
-@font-face {
-  font-family: "Insolente";
-  src: local('Insolente-Regular'), url('./fonts/Insolente-Regular.otf');
-}
-
-@font-face {
-  font-family: "Fraktur";
-  src: local('UnormativeFraktur'), url('./fonts/UnormativeFraktur.otf');
-}
-
-@font-face {
-  font-family: "Crozet";
-  src: local('Crozet-Regular'), url('./fonts/Crozet-Regular.otf');
-}
-
-@font-face {
   font-family: "PicNic";
   src: local('PicNic'), url('./fonts/PicNic.otf');
 }
 
-@font-face {
-  font-family: "Tremplin";
-  src: local('Tremplin-Regular'), url('./fonts/Tremplin-Regular.otf');
-}
-
-@font-face {
-  font-family: "Redaction";
-  src: local('Redaction-Inclusive-Regular'), url('./fonts/Redaction-Inclusive-Regular.otf');
-}
-
-
+/* ==========================================================================
+   2. ROOT VARIABLES
+   ========================================================================== */
 
 :root {
     --threshold: 50%;
     --white: #e3e3e3;
     --grey: #c1c1c1;
-  /* palette 1 */
-  /* --bg-1: #E5ECE9; thème 1 */
-  /* --bg-2: #D6D1CD; */
-  /* --bg-2: #c0d0cf; thème 1 ?? */
-  /* --bg-2: #ffcab4; */
-
-  /* thème 1 */
-  /* --bg-1: #E5ECE9; thème 1 */
-  /* --bg-2: #c0d0cf; thème 1 ?? */
-
-  /* thème 2 */
-  /* --bg-1: #D6D1CD;
-  --bg-2: #c8b3a1;  */
-  
-  /* accent colors */
-  /* --darker-grey: #969A97;
-  --pink-1: #F90093;
-  --pink-2: #C60F7B;
-  --bg-buttons: #E5ECE9; */
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-} */
-
-/* * {
-  border: 1px solid red;
-} */
+/* ==========================================================================
+   3. GLOBAL RESET / BASE
+   ========================================================================== */
 
 html, body, #root {
   box-sizing: border-box;
@@ -150,13 +43,17 @@ html, body, #root {
     box-sizing: border-box;
 }
 
-
 body {
   overflow: hidden;
   margin: 0;
-  /* background: var(--bg-1); */
   background: linear-gradient(90deg, #c1c1c1 0%, #eeeeee 45%, #e3e3e3 100%);
-  /* cursor: url('/images/homepage/logo.png') 16 16, auto; */
+}
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
 }
 
 ::selection {
@@ -169,69 +66,31 @@ body {
     color: #ffffff;
 }
 
+/* ==========================================================================
+   4. TYPOGRAPHY
+   ========================================================================== */
+
 p {
     padding: 0;
     margin: 0;
 }
 
-#root {
-  /* width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box; */
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
-  /* background-image: linear-gradient(to left, var(--bg-1) 0%, var(--bg-2) 100%); */
-  /* background: var(--bg-1); */
-}
-
 h1,
 h2,
 p {
-  /* font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h); */
   padding: 0;
   margin: 0;
 }
 
-h1 {
-  /* font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  } */
-}
 h2 {
-  /* font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  } */
   font-family: "Garabosse P2";
   font-size: 60px;
   @media(max-width: 768px) {
     font-size: 3.5rem;
   }
 }
+
 p {
-  /* margin: 0; */
   font-weight: 300;
   font-size: 24px;
-  /* font-family: "BBB Karrik"; */
 }
-
-a {
-  /* font-family: "BBB Karrik"; */
-}
-

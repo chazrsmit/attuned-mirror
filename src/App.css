@@ -1,3 +1,7 @@
+/* ==========================================================================
+   5. MAIN LAYOUT
+   ========================================================================== */
+
 .main {
   display: flex;
   justify-content:space-between;
@@ -5,11 +9,10 @@
   min-height: 0;
 }
 
-.btn-listing-change{
-  /* border: 3px solid orange; */
-  width: fit-content;
-  height: fit-content;
-}
+/* ==========================================================================
+   6. TITLE BIG (hover title effect on the homepage)
+   ========================================================================== */
+
 
 .title-big {
   position: absolute;
@@ -21,43 +24,11 @@
   text-align:center;
 }
 
-.title-big2 {
-  top:0;
-  right: 0;
-  position: absolute;
-}
 
 .title-big h1{
   font-family: "PicNic";
   font-size: 9vw;
   width: 90%;
-    line-height: 1.5;
-    font-style: italic;
-    /* filter:blur(18px);
-    z-index:-1; */
-  /* font-family: "BBB Sprat";
-  font-size: 8vw;
-  line-height: 1.2;
-  width: 90%; */
-}
-
-.title-big2 h1{
-  font-family: "Crozet";
-  font-size: 6vw;
-  width: 90%;
-    line-height: 1;
-}
-
-.title-big.blurry {
-  filter: blur(18px);
-}
-
-.bg-explanation {
-  width: 400px;
-  height: 300px;
-  position: absolute;
-  top: 50svh;
-  left:0;
-  filter: blur(18px);
-  z-index: 0;
+  line-height: 1.5;
+  font-style: italic;
 }
