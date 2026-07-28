@@ -14,6 +14,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
     return (
         <>
             <div className={`left-desktop`}>
+                {/* liens & crédits */}
                 <div className="credits-wrapper">
                     <AnimatePresence mode="wait">
                         {credits ? (
@@ -57,40 +58,56 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                         )}
                     </AnimatePresence>
                 </div>
-                <div className="test">
-                    {/* <p><span>Attuned</span> is a non-profit association based in Brussels that organises <span>benefit parties</span> to raise funds for social causes. Since its inception in 2023, Attuned has managed to raise over <span>6000€</span> over the course of 6 parties for various local organisations working within the human rights and agroecological spheres.
-                    </p> */}
+
+                {/* about */}
+                <div className="about-wrapper">
+                    <AnimatePresence mode="wait">
+                    {
+                        location.pathname === "/" ?
+                        (
+                            about ?
+                            <motion.div 
+                                key="about"
+                                initial={{ opacity: 0, filter: "blur(8px)" }}
+                                animate={{ opacity: 1, filter: "blur(0px)" }}
+                                exit={{ opacity: 0, filter: "blur(8px)" }}
+                                transition={{ duration: 0.2, ease: "easeInOut" }}
+                                className="explanation"
+                            >
+                                <p className="one">
+                                    <span>Attuned</span> is a non-profit association based in Brussels that organises <span>benefit parties</span> to raise funds for social causes. Since its inception in 2023, Attuned has managed to raise over <span>6000€</span> over the course of 6 parties for various local organisations working within the human rights and agroecological spheres.
+                                </p>
+                                <a onClick={() => setAbout(false)}>close</a>
+                            </motion.div>
+                            :
+                            <motion.div
+                                key="what"
+                                initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
+                                animate={{ opacity: 1, filter: "blur(0px)",  y: 0 }}
+                                exit={{ opacity: 0, filter: "blur(8px)",  y: 20 }}
+                                transition={{ duration: 0.2, ease: "easeInOut" }}
+                                className="what"
+                            >
+                                <a onClick={() => setAbout(true)}>What is Attuned?</a><br/>
+                                
+                            </motion.div>
+                        )
+                        :
+                            <motion.div 
+                                key={location.pathname}
+                                initial={{ opacity: 0, filter: "blur(8px)" }}
+                                animate={{ opacity: 1,filter: "blur(0px)" }}
+                                exit={{ opacity: 0, filter: "blur(8px)" }}
+                                transition={{ duration: 0.25, ease: "easeInOut" }}
+                                className="datebis"
+                            >
+                                <p className="">
+                                    {clickedEvent?.date}
+                                </p>
+                            </motion.div>
+                    }
+                    </AnimatePresence>
                 </div>
-                <AnimatePresence mode="wait">
-                {
-                    location.pathname === "/" ?
-                        <motion.div 
-                            key="/"
-                            initial={{ opacity: 0, filter: "blur(8px)" }}
-                            animate={{ opacity: 1, filter: "blur(0px)" }}
-                            exit={{ opacity: 0, filter: "blur(8px)" }}
-                            transition={{ duration: 0.2, ease: "easeInOut" }}
-                            className="explanation"
-                        >
-                            <p className="one">
-                                <span>Attuned</span> is a non-profit association based in Brussels that organises <span>benefit parties</span> to raise funds for social causes. Since its inception in 2023, Attuned has managed to raise over <span>6000€</span> over the course of 6 parties for various local organisations working within the human rights and agroecological spheres.
-                            </p>
-                        </motion.div>
-                    :
-                        <motion.div 
-                            key={location.pathname}
-                            initial={{ opacity: 0, filter: "blur(8px)" }}
-                            animate={{ opacity: 1,filter: "blur(0px)" }}
-                            exit={{ opacity: 0, filter: "blur(8px)" }}
-                            transition={{ duration: 0.25, ease: "easeInOut" }}
-                            className="datebis"
-                        >
-                            <p className="">
-                                {clickedEvent?.date}
-                            </p>
-                        </motion.div>
-                }
-                </AnimatePresence>
                 {/* <div className="explanation">
                     <p className="one">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Attuned</span> is a non-profit association based in Brussels that organises <span>benefit parties</span> to raise funds for social causes. Since its inception in 2023, Attuned has managed to raise over <span>6000€</span> over the course of 6 parties for various local organisations working within the human rights and agroecological spheres.
