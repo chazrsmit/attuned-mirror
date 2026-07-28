@@ -12,7 +12,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
 
     return (
         <>
-            <div className="left-desktop">
+            <div className={`left-desktop`}>
                 <div className="credits-wrapper">
                     <AnimatePresence mode="wait">
                         {credits ? (
