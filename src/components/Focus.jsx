@@ -126,26 +126,26 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                                 </div> */}
                             </div>
                             {/* images */}   
-                                <div className="photos">
-                                    {event.imageEvent1 &&
-                                        <img className="img-1" onMouseEnter={() => setImageHovered("1")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
-                                    }
-                                    {event.imageEvent2 &&
-                                        <img className="img-2" onMouseEnter={() => setImageHovered("2")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent2}`} loading="eager" fetchPriority="high"/>
-                                    }
-                                    {event.imageEvent3 &&
-                                        <img className="img-3" onMouseEnter={() => setImageHovered("3")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent3}`} loading="eager" fetchPriority="high"/>
-                                    }
-                                    {event.imageEvent4 &&
-                                        <img className="img-4" onMouseEnter={() => setImageHovered("4")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent4}`} loading="eager" fetchPriority="high"/>
-                                    }
-                                    {event.imageEvent5 &&
-                                        <img className="img-5" onMouseEnter={() => setImageHovered("5")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent5}`} loading="eager" fetchPriority="high"/>
-                                    }
-                                    {event.imageEvent6 &&
-                                        <img className="img-6" onMouseEnter={() => setImageHovered("6")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
-                                    }
-                                </div>
+                            <div className="photos">
+                                {event.imageEvent1 &&
+                                    <img className="img-1" onMouseEnter={() => setImageHovered("1")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
+                                }
+                                {event.imageEvent2 &&
+                                    <img className="img-2" onMouseEnter={() => setImageHovered("2")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent2}`} loading="eager" fetchPriority="high"/>
+                                }
+                                {event.imageEvent3 &&
+                                    <img className="img-3" onMouseEnter={() => setImageHovered("3")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent3}`} loading="eager" fetchPriority="high"/>
+                                }
+                                {event.imageEvent4 &&
+                                    <img className="img-4" onMouseEnter={() => setImageHovered("4")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent4}`} loading="eager" fetchPriority="high"/>
+                                }
+                                {event.imageEvent5 &&
+                                    <img className="img-5" onMouseEnter={() => setImageHovered("5")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent5}`} loading="eager" fetchPriority="high"/>
+                                }
+                                {event.imageEvent6 &&
+                                    <img className="img-6" onMouseEnter={() => setImageHovered("6")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
+                                }
+                            </div>
                         </div>
 
                         {/* bottom line */}
@@ -186,7 +186,7 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                                     {/* <img src={`/images/${event.image}`} loading="eager" fetchPriority="high" /> */}
                                 </div>
                             </div>
-                            
+
                             <div className="div-program">
                                 {isMobile &&
                                     <div>

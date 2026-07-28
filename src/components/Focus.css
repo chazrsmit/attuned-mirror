@@ -1,5 +1,4 @@
 
-
 .focusss {
     /* border: 1px solid red; */
     display:flex;
@@ -24,7 +23,7 @@
 .focusss h2{
     line-height: 1;
     @media (max-width:768px) {
-        font-size: 36px;
+        font-size: 42px;
     }
 }
 
@@ -50,20 +49,11 @@
 } */
 
 .focusss .right .lenis-content {
-    /* display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(2, 60px);
-    gap: 1svh 1svw;
-    margin-top: auto; */
-    align-content: end;
-    /* margin-bottom: 30svh; */
-    display:flex;
-    /* margin-left: 5svw; */
+    display: flex;
     flex-direction: column;
-    /* justify-content:space-between; */
-    /* height: 50vh; */
-        /* margin-bottom: 1svw; */
-        padding-bottom: 0.5rem;
+    height: 100%;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
 }
 
 .focusss .right img {
@@ -147,7 +137,7 @@
     overflow-y: auto;
     scrollbar-width: none;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     padding-left: 1%;
     /* flex: 1; */
     min-height: 0;
@@ -160,6 +150,7 @@
         padding-top: 4svh; */
     };
     @media (max-width:768px) {
+
         /* padding-bottom: 0.5svh;
         padding-top: 0.5svh; */
         /* border: 3px solid blue; */
@@ -320,6 +311,9 @@
 }
 
 .right .lenis-content p {
+    
+    padding: 0;
+    margin: 0;
     color: var(--white);
     -webkit-text-stroke: 0.3px var(--grey);
     /* text-shadow: var(--grey) 3px 0px 0px, var(--grey) 2.83487px 0.981584px 0px, var(--grey) 2.35766px 1.85511px 0px, var(--grey) 1.62091px 2.52441px 0px, var(--grey) 0.705713px 2.91581px 0px, var(--grey) -0.287171px 2.98622px 0px, var(--grey) -1.24844px 2.72789px 0px, var(--grey) -2.07227px 2.16926px 0px, var(--grey) -2.66798px 1.37182px 0px, var(--grey) -2.96998px 0.42336px 0px, var(--grey) -2.94502px -0.571704px 0px, var(--grey) -2.59586px -1.50383px 0px, var(--grey) -1.96093px -2.27041px 0px, var(--grey) -1.11013px -2.78704px 0px, var(--grey) -0.137119px -2.99686px 0px, var(--grey) 0.850987px -2.87677px 0px, var(--grey) 1.74541px -2.43999px 0px, var(--grey) 2.44769px -1.73459px 0px, var(--grey) 2.88051px -0.838247px 0px; */
@@ -329,6 +323,10 @@
     @media (max-width: 1150px) {
         font-size: 20px;
     };
+}
+
+.focusss .div-program {
+        margin-top: auto;
 }
 
 @media (max-width: 768px) {

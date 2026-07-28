@@ -1,12 +1,18 @@
 .listing-bis {
+    border: 1px solid red;
     width: 78%;
-    height: 100svh;
+    height: 100%;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    overflow-y: scroll; 
+    overflow-y: hidden; 
+    overflow-x: hidden;
     @media(max-width: 768px) {
-        width: 100%;
-        height: 92svh;
+        position:relative;
+        width:100%;
+        overflow-y:auto;
+        overflow-x:hidden;
+        position:relative;
+        scrollbar-width:none;
     };
 }
 
@@ -24,7 +30,10 @@
     font-family: "Garabosse P2";
     z-index: 1;
     cursor: pointer;
-    @media(max-width: 992px) {
+    @media(max-width: 1150px) {
+        /* width: 80%; */
+    };
+    @media(max-width: 768px) {
         width: 80%;
     };
 }
@@ -33,6 +42,9 @@
     font-size: 22px;
     @media(max-width: 1150px) {
         font-size: 24px;
+    };
+    @media(max-width: 768px) {
+        font-size: 22px;
     };
     /* @media(max-width: 992px) {
         font-size: 23px;
@@ -76,6 +88,9 @@ text-shadow: rgb(119, 213, 244) 4px 0px 0px, rgb(119, 213, 244) 3.87565px 0.9896
     width: clamp(200px, 30vw, 340px);
     @media(max-width: 1150px) {
         width: 360px;
+    }
+    @media(max-width: 768px) {
+        width: 300px;
     }
 }
 
