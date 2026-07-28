@@ -1,10 +1,13 @@
 import './LeftDesktop.css'
 import { motion, AnimatePresence } from "framer-motion"
 import {useState} from "react"
+import { useMatch } from "react-router-dom"
 
 export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn, isTablet }) {
 
-    const clickedEvent = events.find(event => event.id === isClicked)
+    const match = useMatch("/event/:id")
+    const id = match?.params.id
+    const clickedEvent = events.find(event => event.id === id)
     const [credits, setCredits] = useState(null)
 
     return (
