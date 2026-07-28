@@ -147,6 +147,11 @@ html, body, #root {
 }
 
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
 body {
   overflow: hidden;
   margin: 0;
