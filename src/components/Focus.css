@@ -15,6 +15,7 @@
     @media(max-width: 768px) {
         width: auto;
         overflow: hidden;
+        /* margin: 0.6svw; */
         /* border: 2px solid red; */
     };
     
@@ -158,8 +159,8 @@
         padding-top: 4svh; */
     };
     @media (max-width:768px) {
-        padding-bottom: 0.5svh;
-        padding-top: 0.5svh;
+        /* padding-bottom: 0.5svh;
+        padding-top: 0.5svh; */
         /* border: 3px solid blue; */
     };
 }
@@ -168,7 +169,7 @@
     padding: 0;
     margin: 0;
     @media (max-width:768px) {
-        font-size: 21px;
+        font-size: 22px;
     }
 }
 
@@ -194,7 +195,7 @@
 
     @media(max-width: 768px) {
         width: 30svw;
-        padding-left: 1svw;
+        padding-left: 2svw;
     }
 }
 
@@ -329,6 +330,11 @@
     };
 }
 
-.focusss .div-program {
-    /* border: 1px solid red; */
+@media (max-width: 768px) {
+    .focusss .div-program {
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction:column;
+        gap: 1vh;
+    }
 }

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Lenis from "lenis"
 import { useRef, useEffect, useState } from 'react'
 
-export default function Focus({ events, setIsClicked }) {
+export default function Focus({ events, setIsClicked, isMobile }) {
 
     // deux instances Lenis pour deux div séparées
     const leftRef = useRef(null)
@@ -187,15 +187,22 @@ export default function Focus({ events, setIsClicked }) {
                                 </div>
                             </div>
                             <div className="div-program">
+                                {isMobile &&
+                                    <div>
+                                        <p>{event.date}</p>
+                                    </div>
+                                }
                                 <div>
-                                    <p>Lineup:</p>
-                                </div>
-                                <div className="names">
-                                    <p>{event.artist1}</p>
-                                    <p>{event.artist2}</p>
-                                    <p>{event.artist3}</p>
-                                    <p>{event.artist4}</p>
-                                    <p>{event?.artist5}</p>
+                                    <div>
+                                        <p>Lineup:</p>
+                                    </div>
+                                    <div className="names">
+                                        <p>{event.artist1}</p>
+                                        <p>{event.artist2}</p>
+                                        <p>{event.artist3}</p>
+                                        <p>{event.artist4}</p>
+                                        <p>{event?.artist5}</p>
+                                    </div>
                                 </div>
                             </div>
                             {/* {event.imageEvent1 &&

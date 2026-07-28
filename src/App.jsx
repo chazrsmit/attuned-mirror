@@ -379,7 +379,7 @@
           />
           <Route
             path="/event/:id"
-            element={<Focus events={events} setIsClicked={setIsClicked} />}
+            element={<Focus events={events} setIsClicked={setIsClicked} isMobile={isMobile} />}
           />
         </Routes>
       </AnimatePresence>
