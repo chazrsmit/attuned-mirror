@@ -329,7 +329,7 @@
     return (
       <>
       {!isMobile && !isTablet && <CursorTrail />}
-      {isMobile && <Footer />}
+      {/* {isMobile && <Footer />} */}
 
       <section className="main">
         {!isMobile && (

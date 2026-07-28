@@ -27,40 +27,40 @@ export default function Focus({ events, setIsClicked }) {
         getPosition(getRandomPosition())
     }, [id])
 
-    useEffect(() => {
-        const leftContent = leftRef.current?.querySelector('.lenis-content')
-        const rightContent = rightRef.current?.querySelector('.lenis-content')
+    // useEffect(() => {
+    //     const leftContent = leftRef.current?.querySelector('.lenis-content')
+    //     const rightContent = rightRef.current?.querySelector('.lenis-content')
 
-        if (!leftContent || !rightContent) return
+    //     if (!leftContent || !rightContent) return
 
-        const lenisLeft = new Lenis({
-            wrapper: leftRef.current,
-            content: leftContent,
-            duration: 1,
-            smoothWheel: true,
-        })
+    //     const lenisLeft = new Lenis({
+    //         wrapper: leftRef.current,
+    //         content: leftContent,
+    //         duration: 1,
+    //         smoothWheel: true,
+    //     })
 
-        const lenisRight = new Lenis({
-            wrapper: rightRef.current,
-            content: rightContent,
-            duration: 0.1,
-            smoothWheel: true,
-        })
+    //     const lenisRight = new Lenis({
+    //         wrapper: rightRef.current,
+    //         content: rightContent,
+    //         duration: 0.1,
+    //         smoothWheel: true,
+    //     })
 
-        let rafId
-        function raf(time) {
-            lenisLeft.raf(time)
-            lenisRight.raf(time)
-            rafId = requestAnimationFrame(raf)
-        }
-        rafId = requestAnimationFrame(raf)
+    //     let rafId
+    //     function raf(time) {
+    //         lenisLeft.raf(time)
+    //         lenisRight.raf(time)
+    //         rafId = requestAnimationFrame(raf)
+    //     }
+    //     rafId = requestAnimationFrame(raf)
 
-        return () => {
-            lenisLeft.destroy()
-            lenisRight.destroy()
-            cancelAnimationFrame(rafId)
-        }
-    }, [id])
+    //     return () => {
+    //         lenisLeft.destroy()
+    //         lenisRight.destroy()
+    //         cancelAnimationFrame(rafId)
+    //     }
+    // }, [id])
 
     if (!event) return null
 
