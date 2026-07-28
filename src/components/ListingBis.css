@@ -31,7 +31,7 @@
 
 .title-center p {
     font-size: 20px;
-    @media(max-width: 1024px) {
+    @media(max-width: 1150px) {
         font-size: 24px;
     };
     /* @media(max-width: 992px) {
@@ -75,7 +75,7 @@ text-shadow: rgb(119, 213, 244) 4px 0px 0px, rgb(119, 213, 244) 3.87565px 0.9896
     z-index: 0;
     transition: filter 0.3s ease-in-out;
     width: clamp(200px, 30vw, 340px);
-    @media(max-width: 1024px) {
+    @media(max-width: 1150px) {
         width: 360px;
     }
 }

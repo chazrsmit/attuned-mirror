@@ -23,7 +23,7 @@
       const check = () => {
         const w = window.innerWidth
         setIsMobile(w < 768)
-        setIsTablet(w >= 768 && w < 1025)
+        setIsTablet(w >= 768 && w < 1150)
       }
       check()
       window.addEventListener("resize", check) // lorsqu'on resize le viewport, la fonction check se lance

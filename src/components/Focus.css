@@ -83,7 +83,7 @@
     cursor: pointer;
     z-index: 100;
     transition: all 0.2s ease;
-    @media(max-width:1024px) {
+    @media(max-width:1150px) {
         top: 0.1svh;
     }
 
@@ -116,7 +116,7 @@
     height: 100%;
     min-height: 0;
     /* padding-left: 1%; */
-    @media(max-width: 1024px) {
+    @media(max-width: 1150px) {
         /* border: 1px solid red; */
         width: 80%;
     };
@@ -125,7 +125,7 @@
 .focusss .left .inner-text {
     overflow-y: auto;
     scrollbar-width: none;
-    padding-top: 3svh;
+    padding-top: 2svh;
     padding-bottom: 0.6svh;
     padding-left: 1%;
     /* flex: 1; */
@@ -134,7 +134,7 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    @media(max-width:1024px) {
+    @media(max-width:1150px) {
         padding-bottom: 4svh;
         padding-top: 4svh;
     };
@@ -269,7 +269,7 @@
     height: 10svh;
     filter: grayscale(1);
     transition: filter 0.2s ease;
-    @media(max-width:1024px) {
+    @media(max-width:1150px) {
         height: auto;
         width: 8svw;
         object-fit: cover;
