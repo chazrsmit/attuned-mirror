@@ -57,6 +57,7 @@
     /* border: 1px solid red; */
     @media (max-width: 1024px) {
         width: 200%;
+        padding-bottom: 0;
          /* border: 1px solid red;  */
     };
 }
@@ -186,19 +187,20 @@
     };
 }
 
+.credits-wrapper {
+    position: relative;
+    min-height: 200px; 
+}
+
 .credits.tablet {
+    position: absolute;
+    inset: 0;
     width: 95svw;
-    height: 100svh;
-/* From https://css.glass */
-/* background: rgba(255, 255, 255, 0.2); */
-/* border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-/* padding: 3rem; */
-/* border: 1px solid rgba(255, 255, 255, 0.3); */
-padding-right: 1rem;
-z-index: 1000;
+    height: 100svh; 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding-right: 1rem;
+    z-index: 1000;
 }
 
 .btn-collaborate p, .btn-collaborate a, .credits p, .credits a, .btn-collaborate button {
@@ -210,6 +212,12 @@ z-index: 1000;
     color: black;
     @media(max-width: 1024px) {
         font-size: 22px;
+    }
+}
+
+.btnnn {
+        @media(max-width: 1024px) {
+        font-size: 22px !important;
     }
 }
 
