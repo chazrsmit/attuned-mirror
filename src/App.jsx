@@ -113,7 +113,7 @@
           bgImage2: "7-bis.webp",
           topBg: "4svh",
           topBgTablet: "15svh",
-          topBgMobile: "22svh",
+          topBgMobile: "25svh",
           leftBg: "44svw",
           leftBgTablet: "29svw",
           leftBgMobile: "15svw",

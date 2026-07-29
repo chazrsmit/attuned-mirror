@@ -22,10 +22,32 @@ export default function HomeMobile({ events }) {
                                 className="wrapping-div"
                             >
                                 <div style={{position: "relative"}}>
-                                        <img
-                                            className={`bgImage`}
-                                            src={`/images/homepage/${event.bgImage}`}
-                                        />
+                                    {/* titre */}
+                                    <AnimatePresence>
+                                    {!isOpen &&
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                        className={`title-center ${event.bgColor? event.bgColor : null}`}
+                                        style={{position: "absolute", top: "50%", left:"50%", transform: "translate(-50%, -50%)"}}
+                                        onClick={() => {
+                                            navigate(`/event/${event.id}`)
+                                            setIsClicked(event.id)
+                                        }}
+                                    >
+                                    {event.upcoming && (
+                                        <p className="up"><span>upcoming</span></p>)}
+                                        <p>{event.title}</p>
+                                    </motion.div>
+                                    }
+                                    </AnimatePresence>
+                                    {/* image */}
+                                    <img
+                                        className={`bgImage`}
+                                        src={`/images/homepage/${event.bgImage}`}
+                                    />
                                 </div>
                             </div>
 
