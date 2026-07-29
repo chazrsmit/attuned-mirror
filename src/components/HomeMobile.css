@@ -15,6 +15,10 @@
     };
 }
 
+.home-mobile .lenis-content {
+    min-height: 100%;
+}
+
 .what-is-attuned {
     position:absolute;
     writing-mode: vertical-lr;

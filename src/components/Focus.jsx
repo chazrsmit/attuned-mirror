@@ -8,13 +8,13 @@ export default function Focus({ events, setIsClicked, isMobile }) {
 
     // deux instances Lenis pour deux div séparées
     const leftRef = useRef(null)
-    const rightRef = useRef(null)
 
     const navigate = useNavigate()
     const { id } = useParams()
     const event = events.find(event => id === event.id)
 
     const [position, getPosition] = useState({ x: 50, y: 50})
+    const [positionBis, getPositionBis] = useState({ x: 10, y: 10 })
 
     function getRandomPosition(){
         const x = Math.random()*50
@@ -23,44 +23,43 @@ export default function Focus({ events, setIsClicked, isMobile }) {
         return { x, y }
     }
 
+    function getRandomPositionBis() {
+        const x = Math.random()*100
+        const y = Math.random()*100
+
+        return { x, y }
+    }
+
     useEffect(() => {
         getPosition(getRandomPosition())
+        getPositionBis(getRandomPositionBis())
     }, [id])
 
-    // useEffect(() => {
-    //     const leftContent = leftRef.current?.querySelector('.lenis-content')
-    //     const rightContent = rightRef.current?.querySelector('.lenis-content')
+    useEffect(() => {
+        if (isMobile) return
 
-    //     if (!leftContent || !rightContent) return
+        const leftContent = leftRef.current?.querySelector('.lenis-content')
+        if (!leftContent) return
 
-    //     const lenisLeft = new Lenis({
-    //         wrapper: leftRef.current,
-    //         content: leftContent,
-    //         duration: 1,
-    //         smoothWheel: true,
-    //     })
+        const lenisLeft = new Lenis({
+            wrapper: leftRef.current,
+            content: leftContent,
+            duration: 1,
+            smoothWheel: true,
+        })
 
-    //     const lenisRight = new Lenis({
-    //         wrapper: rightRef.current,
-    //         content: rightContent,
-    //         duration: 0.1,
-    //         smoothWheel: true,
-    //     })
+        let rafId
+        function raf(time) {
+            lenisLeft.raf(time)
+            rafId = requestAnimationFrame(raf)
+        }
+        rafId = requestAnimationFrame(raf)
 
-    //     let rafId
-    //     function raf(time) {
-    //         lenisLeft.raf(time)
-    //         lenisRight.raf(time)
-    //         rafId = requestAnimationFrame(raf)
-    //     }
-    //     rafId = requestAnimationFrame(raf)
-
-    //     return () => {
-    //         lenisLeft.destroy()
-    //         lenisRight.destroy()
-    //         cancelAnimationFrame(rafId)
-    //     }
-    // }, [id])
+        return () => {
+            lenisLeft.destroy()
+            cancelAnimationFrame(rafId)
+        }
+    }, [id, isMobile])
 
     if (!event) return null
 
@@ -96,6 +95,8 @@ export default function Focus({ events, setIsClicked, isMobile }) {
 
             {/* background image */}
             <img className="bg-test" src={`/images/homepage/${event.bgImage2}`} style={{left: `${position.x}%`, top: `${position.y}%`}} />
+            {/* background image 2 */}
+            <img className="bg-test2" src={`/images/homepage/${event.bgImage}`} style={{left: `${positionBis.x}%`, top: `${positionBis.y}%`}} />
 
             {/* content */}
             <div className="focus-content">
@@ -181,7 +182,7 @@ export default function Focus({ events, setIsClicked, isMobile }) {
 
                     {/* colonne droite avec photos */}
                     {!isMobile &&
-                    <div className="right" ref={rightRef}>
+                    <div className="right">
                         <div className="lenis-content">
                             {/* <div>
                                 <div className="poster">

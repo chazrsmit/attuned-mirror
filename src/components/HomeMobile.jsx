@@ -1,15 +1,33 @@
 import './HomeMobile.css'
 import OpenInfo from './OpenInfo'
 import { motion, AnimatePresence } from "framer-motion"
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import Lenis from "lenis"
+import { useNavigate, useParams } from 'react-router-dom'
 
-export default function HomeMobile({ events }) {
+// combien de temps entre les 2 clicks?
+const CLICK_WINDOW = 1000 
 
-    const [isOpen, setIsOpen] = useState(true)
+export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, setIsOpen }) {
+
+
+    const navigate = useNavigate()
+
+    // function pour gérer le click sur mobile
+    function handleEventClick(id) {
+        // si l'event a déjà été clické, on navigue vers la page focus
+        if (isClicked === id) {
+            navigate(`/event/${id}`)
+        }
+        else {
+            setIsClicked(id)
+        }
+    }
 
     return(
         <>
             <div className="home-mobile">
+                <div className="lenis-content">
                 {events.map(event => {
                     return (
                             <div
@@ -32,10 +50,7 @@ export default function HomeMobile({ events }) {
                                         transition={{ duration: 0.3, ease: "easeInOut" }}
                                         className={`title-center ${event.bgColor? event.bgColor : null}`}
                                         style={{position: "absolute", top: "50%", left:"50%", transform: "translate(-50%, -50%)"}}
-                                        onClick={() => {
-                                            navigate(`/event/${event.id}`)
-                                            setIsClicked(event.id)
-                                        }}
+                                        onClick={() => handleEventClick(event.id)}
                                     >
                                     {event.upcoming && (
                                         <p className="up"><span>upcoming</span></p>)}
@@ -52,9 +67,10 @@ export default function HomeMobile({ events }) {
                             </div>
 
                 )})}
+                </div>
             </div>
             
-            <AnimatePresence>
+            <AnimatePresence initial={true}>
                 {/* mettre directement la condition dans le animatepresence et non dans le component sinon ça ne marche pas */}
                 {isOpen ? 
                 (

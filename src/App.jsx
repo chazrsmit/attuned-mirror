@@ -11,13 +11,15 @@
   import Focus from './components/Focus'
   import HomeMobile from './components/HomeMobile'
   import BgMobile from './components/HomeMobile'
+  import Lenis from "lenis"
 
   function App() {
+
 
     // pour définir les path/routes
     const navigate = useNavigate()
 
-    // sur mobile ou tablette ou <pas></pas>?
+    // sur mobile ou tablette ou pas?
     const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
     const [isTablet, setIsTablet] = useState(false)
     // check constant de la width du viewport
@@ -31,6 +33,30 @@
       window.addEventListener("resize", check) // lorsqu'on resize le viewport, la fonction check se lance
       return () => window.removeEventListener("resize", check) // on clean up
     }, [])
+
+      const [isOpen, setIsOpen] = useState(true)
+
+    // lenis scroll seulement on mobile
+    // useEffect(() => {
+    //   if (!isMobile) return
+
+    //   const lenis = new Lenis({
+    //     duration: 1.2,
+    //     smoothWheel: true,
+    //   })
+
+    //   let rafId
+    //   function raf(time) {
+    //     lenis.raf(time)
+    //     rafId = requestAnimationFrame(raf)
+    //   }
+    //   rafId = requestAnimationFrame(raf)
+
+    //   return () => {
+    //     lenis.destroy()
+    //     cancelAnimationFrame(rafId)
+    //   }
+    // }, [isMobile])
 
     const [isClicked, setIsClicked] = useState(null)
     const [isHovered, setIsHovered] = useState(null)
@@ -230,10 +256,10 @@
           bgImage2: "4-bis.webp",
           topBg: "36svh",
           topBgTablet: "36svh",
-          topBgMobile: "99vh",
+          topBgMobile: "101vh",
           leftBg: "48svw",
           leftBgTablet: "35svw",
-          leftBgMobile: "10svw",
+          leftBgMobile: "8svw",
           bgColor: "yellow"
       },
       { 
@@ -264,10 +290,10 @@
           bgImage2: "5-bis.webp",
           topBg: "44svh",
           topBgTablet: "45svh",
-          topBgMobile: "119vh",
+          topBgMobile: "123vh",
           leftBg: "72svw",
           leftBgTablet: "60svw",
-          leftBgMobile: "34vw",
+          leftBgMobile: "30vw",
           bgColor: "blue"
       },
           { 
@@ -299,7 +325,7 @@
           bgImage2: "1-bis.webp",
           topBg: "62svh",
           topBgTablet: "65vh",
-          topBgMobile: "143vh",
+          topBgMobile: "147vh",
           leftBg: "34svw",
           leftBgTablet: "44svw",
           leftBgMobile: "4vw",
@@ -352,7 +378,7 @@
             element=
               {
                 isMobile ? (
-                  <HomeMobile events={events} />
+                  <HomeMobile events={events} setIsClicked={setIsClicked} isClicked={isClicked} isOpen={isOpen} setIsOpen={setIsOpen} />
                 )
                 :
                 (
