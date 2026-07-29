@@ -154,22 +154,22 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                             {/* images */}   
                             <div className="photos">
                                 {event.imageEvent1 &&
-                                    <img className="img-1" onMouseEnter={() => setImageHovered("1")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
+                                    <img className="img-1" onMouseEnter={() => setImageHovered("1")} onMouseLeave={() => setImageHovered(null)} src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent1}`} loading="eager" fetchPriority="high"/>
                                 }
                                 {event.imageEvent2 &&
-                                    <img className="img-2" onMouseEnter={() => setImageHovered("2")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent2}`} loading="eager" fetchPriority="high"/>
+                                    <img className="img-2" onMouseEnter={() => setImageHovered("2")} onMouseLeave={() => setImageHovered(null)} src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent2}`} loading="eager" fetchPriority="high"/>
                                 }
                                 {event.imageEvent3 &&
-                                    <img className="img-3" onMouseEnter={() => setImageHovered("3")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent3}`} loading="eager" fetchPriority="high"/>
+                                    <img className="img-3" onMouseEnter={() => setImageHovered("3")} onMouseLeave={() => setImageHovered(null)} src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent3}`} loading="eager" fetchPriority="high"/>
                                 }
                                 {event.imageEvent4 &&
-                                    <img className="img-4" onMouseEnter={() => setImageHovered("4")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent4}`} loading="eager" fetchPriority="high"/>
+                                    <img className="img-4" onMouseEnter={() => setImageHovered("4")} onMouseLeave={() => setImageHovered(null)} src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent4}`} loading="eager" fetchPriority="high"/>
                                 }
                                 {event.imageEvent5 &&
-                                    <img className="img-5" onMouseEnter={() => setImageHovered("5")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent5}`} loading="eager" fetchPriority="high"/>
+                                    <img className="img-5" onMouseEnter={() => setImageHovered("5")} onMouseLeave={() => setImageHovered(null)} src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent5}`} loading="eager" fetchPriority="high"/>
                                 }
                                 {event.imageEvent6 &&
-                                    <img className="img-6" onMouseEnter={() => setImageHovered("6")} onMouseLeave={() => setImageHovered(null)} src={`/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
+                                    <img className="img-6" onMouseEnter={() => setImageHovered("6")} onMouseLeave={() => setImageHovered(null)} src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent6}`} loading="eager" fetchPriority="high"/>
                                 }
                             </div>
                         </div>
@@ -193,22 +193,22 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                             <div>
                                 <div className="poster">
                                     {
-                                        imageHovered === "1" && <img src={`/images/events/${event.imageEvent1}`} />
+                                        imageHovered === "1" && <img src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent1}`} />
                                     }
                                     {
-                                        imageHovered === "2" && <img src={`/images/events/${event.imageEvent2}`} />
+                                        imageHovered === "2" && <img src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent2}`} />
                                     }
                                     {
-                                        imageHovered === "3" && <img src={`/images/events/${event.imageEvent3}`} />
+                                        imageHovered === "3" && <img src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent3}`} />
                                     }
                                     {
-                                        imageHovered === "4" && <img src={`/images/events/${event.imageEvent4}`} />
+                                        imageHovered === "4" && <img src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent4}`} />
                                     }
                                     {
-                                        imageHovered === "5" && <img src={`/images/events/${event.imageEvent5}`} />
+                                        imageHovered === "5" && <img src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent5}`} />
                                     }
                                     {
-                                        imageHovered === "6" && <img src={`/images/events/${event.imageEvent6}`} />
+                                        imageHovered === "6" && <img src={`${import.meta.env.BASE_URL}/images/events/${event.imageEvent6}`} />
                                     }
                                     {/* <img src={`/images/${event.image}`} loading="eager" fetchPriority="high" /> */}
                                 </div>
