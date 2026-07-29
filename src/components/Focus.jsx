@@ -111,7 +111,7 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                                         setIsClicked(null)
                                     }} className="btn-x-bis">close</p>} */}
                                 <div className="title-focus">
-                                    <h2>{event.title}</h2>
+                                    <h2 className={`titre-focus ${event.bgColor ? event.bgColor:null}`}>{event.title}</h2>
                                 </div>
                                 {isMobile && 
                                 <div className="div-program">

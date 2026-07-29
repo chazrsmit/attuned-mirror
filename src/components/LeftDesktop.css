@@ -278,12 +278,13 @@
     }
 }
 
-.btn-collaborate p, .btn-collaborate a, .btn-collaborate button, .what a {
-    text-decoration: underline;
+.btn-collaborate p, .btn-collaborate a, .btn-collaborate button, .explanation a, .close-credits {
+    text-decoration: underline !important;
 }
 
 .what a {
     font-size: 24px;
+    text-decoration: underline;
     text-decoration-thickness: 3px;
 }
 

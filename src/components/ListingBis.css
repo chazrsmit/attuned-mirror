@@ -39,7 +39,8 @@
 }
 
 .title-center p {
-    font-size: 24px;
+    font-size: 26px;
+    line-height: 1.1;
     @media(max-width: 1150px) {
         font-size: 24px;
     };
@@ -115,7 +116,8 @@ text-shadow: rgb(119, 213, 244) 3px 0px 0px, rgb(119, 213, 244) 2.83487px 0.9815
 
 .cursor-date-label {
     font-size: 18px;
-    font-family: "Garabosse P2";
+    /* font-family: "Garabosse P2"; */
+    font-family: "BBB Karrik";
     white-space: nowrap;
 }
 
