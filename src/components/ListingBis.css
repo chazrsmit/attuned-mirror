@@ -26,7 +26,7 @@
     /* border: 2px solid blue; */
     width: 90%;
     text-align:center;
-    font-family: "Garabosse P2";
+    font-family: "PicNic";
     z-index: 1;
     cursor: pointer;
     @media(max-width: 1150px) {
@@ -39,7 +39,7 @@
 }
 
 .title-center p {
-    font-size: 22px;
+    font-size: 24px;
     @media(max-width: 1150px) {
         font-size: 24px;
     };
