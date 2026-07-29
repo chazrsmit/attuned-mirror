@@ -61,7 +61,7 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
                                     {/* image */}
                                     <img
                                         className={`bgImage`}
-                                        src={`/images/homepage/${event.bgImage}`}
+                                        src={`${import.meta.env.BASE_URL}/images/homepage/${event.bgImage}`}
                                     />
                                 </div>
                             </div>
