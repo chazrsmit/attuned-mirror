@@ -63,7 +63,7 @@
 
     // are we on the homepage?
     const location = useLocation()
-    const isHomepage = location.pathname === "/"
+    const isHomepage = location.pathname === "/attuned-mirror/" || "/"
 
 
     const events = [

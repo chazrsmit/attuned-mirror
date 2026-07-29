@@ -63,7 +63,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                 <div className="about-wrapper">
                     <AnimatePresence mode="wait">
                     {
-                        location.pathname === "/" ?
+                        location.pathname === "/attuned-mirror/" || "/" ?
                         (
                             about ?
                             <motion.div 
