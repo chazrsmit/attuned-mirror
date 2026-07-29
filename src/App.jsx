@@ -9,6 +9,8 @@
   import GradualBlur from './components/GradualBlur'
   import CursorTrail from './components/CursorTrail'
   import Focus from './components/Focus'
+  import HomeMobile from './components/HomeMobile'
+  import BgMobile from './components/BgMobile'
 
   function App() {
 
@@ -328,6 +330,7 @@
 
     return (
       <>
+      {isMobile && <BgMobile events={events} />}
       {!isMobile && !isTablet && <CursorTrail />}
       {/* {isMobile && <Footer />} */}
 
@@ -347,9 +350,14 @@
         <Routes location={location} key={location.pathname}>
           <Route
             path="/"
-            element={
-              listingOn ? (
-                <Listing
+            element=
+              {
+                isMobile ? (
+                  <HomeMobile />
+                )
+                :
+                (
+                  <ListingBis
                   events={events}
                   isClicked={isClicked}
                   setIsClicked={setIsClicked}
@@ -361,21 +369,37 @@
                   titleHovered={titleHovered}
                   setTitleHovered={setTitleHovered}
                 />
-              ) : (
-                <ListingBis
-                  events={events}
-                  isClicked={isClicked}
-                  setIsClicked={setIsClicked}
-                  isHovered={isHovered}
-                  setIsHovered={setIsHovered}
-                  isMobile={isMobile}
-                  isTablet={isTablet}
-                  setFloatingGraphic={setFloatingGraphic}
-                  titleHovered={titleHovered}
-                  setTitleHovered={setTitleHovered}
-                />
-              )
-            }
+                )
+              }
+            // {
+            //   listingOn ? (
+            //     <Listing
+            //       events={events}
+            //       isClicked={isClicked}
+            //       setIsClicked={setIsClicked}
+            //       isHovered={isHovered}
+            //       setIsHovered={setIsHovered}
+            //       isMobile={isMobile}
+            //       isTablet={isTablet}
+            //       setFloatingGraphic={setFloatingGraphic}
+            //       titleHovered={titleHovered}
+            //       setTitleHovered={setTitleHovered}
+            //     />
+            //   ) : (
+            //     <ListingBis
+            //       events={events}
+            //       isClicked={isClicked}
+            //       setIsClicked={setIsClicked}
+            //       isHovered={isHovered}
+            //       setIsHovered={setIsHovered}
+            //       isMobile={isMobile}
+            //       isTablet={isTablet}
+            //       setFloatingGraphic={setFloatingGraphic}
+            //       titleHovered={titleHovered}
+            //       setTitleHovered={setTitleHovered}
+            //     />
+            //   )
+            // }
           />
           <Route
             path="/event/:id"
