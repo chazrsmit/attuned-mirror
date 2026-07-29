@@ -82,7 +82,7 @@ export default function ListingBis({events, isClicked, setIsClicked, isHovered, 
                                     key={event.id}
                                     transition={{ duration: 0.2, ease: "easeInOut" }}
                                     className={`bgImage`}
-                                    src={`/images/homepage/${event.bgImage}`}
+                                    src={`${import.meta.env.BASE_URL}/images/homepage/${event.bgImage}`}
                                 />
                         </div>
                     </motion.div>

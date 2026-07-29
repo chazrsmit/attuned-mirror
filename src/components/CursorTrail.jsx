@@ -21,7 +21,7 @@ export default function CursorTrail() {
 
     return (
         <motion.img
-            src="/images/homepage/logo.png"
+            src={`${import.meta.env.BASE_URL}/images/homepage/logo.png`}
             style={{
                 position: 'fixed',
                 top: 15,

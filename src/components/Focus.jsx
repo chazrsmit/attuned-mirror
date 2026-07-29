@@ -94,9 +94,9 @@ export default function Focus({ events, setIsClicked, isMobile }) {
             }
 
             {/* background image */}
-            <img className="bg-test" src={`/images/homepage/${event.bgImage2}`} style={{left: `${position.x}%`, top: `${position.y}%`}} />
+            <img className="bg-test" src={`${import.meta.env.BASE_URL}/images/homepage/${event.bgImage2}`} style={{left: `${position.x}%`, top: `${position.y}%`}} />
             {/* background image 2 */}
-            <img className="bg-test2" src={`/images/homepage/${event.bgImage}`} style={{left: `${positionBis.x}%`, top: `${positionBis.y}%`}} />
+            <img className="bg-test2" src={`${import.meta.env.BASE_URL}/images/homepage/${event.bgImage}`} style={{left: `${positionBis.x}%`, top: `${positionBis.y}%`}} />
 
             {/* content */}
             <div className="focus-content">
