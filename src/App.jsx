@@ -10,7 +10,7 @@
   import CursorTrail from './components/CursorTrail'
   import Focus from './components/Focus'
   import HomeMobile from './components/HomeMobile'
-  import BgMobile from './components/BgMobile'
+  import BgMobile from './components/HomeMobile'
 
   function App() {
 
@@ -330,7 +330,6 @@
 
     return (
       <>
-      {isMobile && <BgMobile events={events} />}
       {!isMobile && !isTablet && <CursorTrail />}
       {/* {isMobile && <Footer />} */}
 
@@ -353,7 +352,7 @@
             element=
               {
                 isMobile ? (
-                  <HomeMobile />
+                  <HomeMobile events={events} />
                 )
                 :
                 (

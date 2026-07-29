@@ -1,0 +1,12 @@
+.open-info {
+    padding: 0.5rem;
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+
+.open-info p, .open-info a {
+    font-family: "BBB Karrik";
+    padding:0;
+    margin:0;
+}
