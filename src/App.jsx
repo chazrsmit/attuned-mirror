@@ -18,7 +18,7 @@
     const navigate = useNavigate()
 
     // sur mobile ou tablette ou <pas></pas>?
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
     const [isTablet, setIsTablet] = useState(false)
     // check constant de la width du viewport
     useEffect(() => {
@@ -78,7 +78,7 @@
           bgImage2: "3-bis.webp",
           topBg: "-2svh",
           topBgTablet: "-2svh",
-          topBgMobile: "-2svh",
+          topBgMobile: "2svh",
           leftBg: "16svw",
           leftBgTablet: "12svw",
           leftBgMobile: "6svw",
@@ -113,7 +113,7 @@
           bgImage2: "7-bis.webp",
           topBg: "4svh",
           topBgTablet: "15svh",
-          topBgMobile: "15svh",
+          topBgMobile: "22svh",
           leftBg: "44svw",
           leftBgTablet: "29svw",
           leftBgMobile: "15svw",
@@ -154,7 +154,7 @@
           bgImage2: "2-bis.webp",
           topBg: "2svh",
           topBgTablet: "2svh",
-          topBgMobile: "2svh",
+          topBgMobile: "50svh",
           leftBg: "71svw",
           leftBgTablet: "56svw",
           leftBgMobile: "25svw",
@@ -192,7 +192,7 @@
           bgImage2: "6-bis.webp",
           topBg: "32svh",
           topBgTablet: "32svh",
-          topBgMobile: "32svh",
+          topBgMobile: "74svh",
           leftBg: "20svw",
           leftBgTablet: "1svw",
           leftBgMobile: "8svw",
@@ -230,7 +230,7 @@
           bgImage2: "4-bis.webp",
           topBg: "36svh",
           topBgTablet: "36svh",
-          topBgMobile: "44vh",
+          topBgMobile: "99vh",
           leftBg: "48svw",
           leftBgTablet: "35svw",
           leftBgMobile: "10svw",
@@ -264,7 +264,7 @@
           bgImage2: "5-bis.webp",
           topBg: "44svh",
           topBgTablet: "45svh",
-          topBgMobile: "66vh",
+          topBgMobile: "119vh",
           leftBg: "72svw",
           leftBgTablet: "60svw",
           leftBgMobile: "34vw",
@@ -299,10 +299,10 @@
           bgImage2: "1-bis.webp",
           topBg: "62svh",
           topBgTablet: "65vh",
-          topBgMobile: "90vh",
+          topBgMobile: "143vh",
           leftBg: "34svw",
           leftBgTablet: "44svw",
-          leftBgMobile: "20vw",
+          leftBgMobile: "4vw",
           bgColor: "pink",
           imageEvent1: "130523/image023.webp",
           imageEvent2: "130523/image031.webp",
