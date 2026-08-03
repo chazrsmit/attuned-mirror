@@ -24,6 +24,8 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
         }
     }
 
+    const [credits, setCredits] = useState(null)
+
     return(
         <>
             <div className="home-mobile">
@@ -70,6 +72,7 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
                 </div>
             </div>
             
+            {/* What is Attuned? */}
             <AnimatePresence initial={true}>
                 {/* mettre directement la condition dans le animatepresence et non dans le component sinon ça ne marche pas */}
                 {isOpen ? 
@@ -89,6 +92,35 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
                         <a onClick={() => setIsOpen(true)}>What is Attuned?</a>
                     </motion.div>
                 )}
+            </AnimatePresence>
+
+            {/* Credits */}
+
+            <AnimatePresence inital={true}>
+                { credits ? 
+                    <motion.div
+                        key="creditsmobile"
+                        initial={{ opacity: 0, x: -20, filter: "blur(8px)" }}
+                        animate={{ opacity: 1, x:0,filter: "blur(0px)"  }}
+                        exit={{ opacity: 0, x: -20,filter: "blur(8px)" }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="credits-mobile"
+                    >
+                        <p>texte credits</p>
+                        <a onClick={() => setCredits(false)}>Close</a>
+                    </motion.div>
+                    :
+                    <motion.div
+                        key="opencreditsmobile"
+                        initial={{ opacity: 0, x: -20, filter: "blur(8px)" }}
+                        animate={{ opacity: 1, x:0,filter: "blur(0px)"  }}
+                        exit={{ opacity: 0, x: -20,filter: "blur(8px)" }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="open-credits-mobile"
+                    >
+                        <a onClick={() => setCredits(true)}>open credits</a>
+                    </motion.div>
+                }
             </AnimatePresence>
         </>
     )

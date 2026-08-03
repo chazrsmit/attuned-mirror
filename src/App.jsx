@@ -34,7 +34,7 @@
       return () => window.removeEventListener("resize", check) // on clean up
     }, [])
 
-      const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(true)
 
     // lenis scroll seulement on mobile
     // useEffect(() => {
