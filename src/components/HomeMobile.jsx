@@ -44,7 +44,7 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
                                 <div style={{position: "relative"}}>
                                     {/* titre */}
                                     <AnimatePresence>
-                                    {!isOpen &&
+                                    {!isOpen && !credits &&
                                     <motion.div
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
@@ -106,7 +106,13 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="credits-mobile"
                     >
-                        <p>texte credits</p>
+                        <p>The fonts used on this website were created by <a href="https://typotheque.genderfluid.space" target="blank">Bye Bye Binary</a>, a French-Belgian type library that "compiles and distributes a collection of post-binary typefaces created through an activist and feminist lens, to be used by as many people as possible".
+                        <br/>
+                        The fonts in question are: <a href="https://typotheque.genderfluid.space/fr/fontes/picnic" target="blank">PicNic</a> and <a href="https://typotheque.genderfluid.space/fr/fontes/bbb-karrik" target="blank">BBB Karrik</a>.
+                        <br />
+                        The website was designed and coded by <a href="" target="blank">Charlotte Smit</a>.
+                        <br/><br/>
+                        Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit, Fabian Fuchs and Paul Bossu.</p>
                         <a onClick={() => setCredits(false)}>Close</a>
                     </motion.div>
                     :
@@ -118,7 +124,7 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="open-credits-mobile"
                     >
-                        <a onClick={() => setCredits(true)}>open credits</a>
+                        <a onClick={() => setCredits(true)}>Credits</a>
                     </motion.div>
                 }
             </AnimatePresence>

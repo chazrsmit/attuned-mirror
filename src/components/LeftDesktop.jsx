@@ -34,7 +34,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                                     <br />
                                     The website was designed and coded by <a href="" target="blank">Charlotte Smit</a>.
                                     <br/><br/>
-                                    Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit and Paul Bossu.</p>
+                                    Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit, Fabian Fuchs and Paul Bossu.</p>
                                 </div>
                                 <div className="btn-close-credits">
                                     <a className="close-credits" onClick={() => setCredits(false)}>close</a>
