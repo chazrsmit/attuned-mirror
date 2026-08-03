@@ -108,7 +108,7 @@ text-shadow: rgb(119, 213, 244) 3px 0px 0px, rgb(119, 213, 244) 2.83487px 0.9815
 }
 
 .title-center:hover + .bgImage{
-    filter: blur(0.3px);
+    filter: blur(0px);
 }
 
 

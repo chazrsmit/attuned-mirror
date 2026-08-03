@@ -30,7 +30,7 @@ export default function LeftDesktop({ events, isClicked, setIsClicked, listingOn
                                 <div>
                                     <p>The fonts used on this website were created by <a href="https://typotheque.genderfluid.space" target="blank">Bye Bye Binary</a>, a French-Belgian type library that "compiles and distributes a collection of post-binary typefaces created through an activist and feminist lens, to be used by as many people as possible".
                                     <br/>
-                                    The fonts in question are: <a href="https://typotheque.genderfluid.space/fr/fontes/garabosse" target="blank">Garabosse</a>, <a href="https://typotheque.genderfluid.space/fr/fontes/picnic" target="blank">PicNic</a> and <a href="https://typotheque.genderfluid.space/fr/fontes/bbb-karrik" target="blank">BBB Karrik</a>.
+                                    The fonts in question are: <a href="https://typotheque.genderfluid.space/fr/fontes/picnic" target="blank">PicNic</a> and <a href="https://typotheque.genderfluid.space/fr/fontes/bbb-karrik" target="blank">BBB Karrik</a>.
                                     <br />
                                     The website was designed and coded by <a href="" target="blank">Charlotte Smit</a>.
                                     <br/><br/>
