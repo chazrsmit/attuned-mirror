@@ -24,7 +24,8 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
         }
     }
 
-    const [credits, setCredits] = useState(null)
+    // const [credits, setCredits] = useState(null)
+    const [panel, setPanel] = useState(null)
 
     return(
         <>
@@ -44,7 +45,7 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
                                 <div style={{position: "relative"}}>
                                     {/* titre */}
                                     <AnimatePresence>
-                                    {!isOpen && !credits &&
+                                    {!isOpen && !panel &&
                                     <motion.div
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
@@ -83,51 +84,82 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
                 (
                     <motion.div
                         className="what-is-attuned"
-                        key="whatisattuned"
+                        key={`whatisattuned`}
                         initial={{ opacity: 0, x: -20, filter: "blur(8px)" }}
-                        animate={{ opacity: 1, x:0,filter: "blur(0px)"  }}
+                        animate={{ opacity: 1, x:0,filter: "blur(0px)", filter: panel ? "blur(18px)" : "blur(0px)" }}
                         exit={{ opacity: 0, x: -20,filter: "blur(8px)" }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
+                        style={{ pointerEvents: panel ? "none" : "auto" }}
                     >
                         <a onClick={() => setIsOpen(true)}>What is Attuned?</a>
                     </motion.div>
                 )}
             </AnimatePresence>
 
-            {/* Credits */}
-
+            {/* Panel - links and credits */}
             <AnimatePresence inital={true}>
-                { credits ? 
+                { panel === 'credits' ? 
                     <motion.div
                         key="creditsmobile"
                         initial={{ opacity: 0, x: -20, filter: "blur(8px)" }}
-                        animate={{ opacity: 1, x:0,filter: "blur(0px)"  }}
+                        animate={{ opacity: 1, x:0,filter: "blur(0px)", filter: isOpen ? "blur(18px)" : "blur(0px)" }}
                         exit={{ opacity: 0, x: -20,filter: "blur(8px)" }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
+                        style={{ pointerEvents: isOpen ? "none" : "auto" }}
                         className="credits-mobile"
                     >
-                        <p>The fonts used on this website were created by <a href="https://typotheque.genderfluid.space" target="blank">Bye Bye Binary</a>, a French-Belgian type library that "compiles and distributes a collection of post-binary typefaces created through an activist and feminist lens, to be used by as many people as possible".
-                        <br/>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The fonts used on this website were created by <a href="https://typotheque.genderfluid.space" target="blank">Bye Bye Binary</a>, a French-Belgian type library that "compiles and distributes a collection of post-binary typefaces created through an activist and feminist lens, to be used by as many people as possible".
                         The fonts in question are: <a href="https://typotheque.genderfluid.space/fr/fontes/picnic" target="blank">PicNic</a> and <a href="https://typotheque.genderfluid.space/fr/fontes/bbb-karrik" target="blank">BBB Karrik</a>.
                         <br />
-                        The website was designed and coded by <a href="" target="blank">Charlotte Smit</a>.
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The website was designed and coded by <a href="" target="blank">Charlotte Smit</a>.
                         <br/><br/>
-                        Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit, Fabian Fuchs and Paul Bossu.</p>
-                        <a onClick={() => setCredits(false)}>Close</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit, Fabian Fuchs and Paul Bossu.</p>
+                        <a onClick={() => setPanel('links')}>(close)</a>
                     </motion.div>
                     :
+                    panel === 'links' ? (
                     <motion.div
-                        key="opencreditsmobile"
+                        key="linksmobile"
                         initial={{ opacity: 0, x: -20, filter: "blur(8px)" }}
-                        animate={{ opacity: 1, x:0,filter: "blur(0px)"  }}
-                        exit={{ opacity: 0, x: -20,filter: "blur(8px)" }}
+                        animate={{ opacity: 1, x: 0, filter: isOpen ? "blur(18px)" : "blur(0px)" }}
+                        exit={{ opacity: 0, x: -20, filter: "blur(8px)" }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="open-credits-mobile"
+                        style={{ pointerEvents: isOpen ? "none" : "auto" }}
+                        className="links-mobile"
                     >
-                        <a onClick={() => setCredits(true)}>Credits</a>
+                        <a href="https://www.instagram.com/attuned_collective/" target="blank">Instagram</a>    
+                        <a href="" target="blank">Facebook</a>
+                        <a onClick={() => setPanel('credits')}>Credits</a>
+                        <a href="" target="blank">Collaborate with us</a><br/>
+                        <a onClick={() => setPanel(null)}>(close)</a>
+                    </motion.div>)
+                    :
+                    (<motion.div
+                        key="openlinksmobile"
+                        initial={{ opacity: 0, x: -20, filter: "blur(8px)" }}
+                        animate={{ opacity: 1, x: 0, filter: isOpen ? "blur(18px)" : "blur(0px)" }}
+                        exit={{ opacity: 0, x: -20, filter: "blur(8px)" }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        style={{ pointerEvents: isOpen ? "none" : "auto" }}
+                        className="open-links-mobile"
+                    >
+                        <a onClick={() => setPanel('links')}>Links</a>
                     </motion.div>
-                }
+                    )}
             </AnimatePresence>
+
+            {/* Links social media */}
+            {/* <motion.div
+                // key="links"
+                // initial={{ opacity: 0, x: -20, filter: "blur(8px)" }}
+                // animate={{ opacity: 1, x:0,filter: "blur(0px)"  }}
+                // exit={{ opacity: 0, x: -20,filter: "blur(8px)" }}
+                // transition={{ duration: 0.3, ease: "easeInOut" }}
+                className={`socials ${credits || isOpen ? 'blur' : null}`}
+            >
+                <a href="https://www.instagram.com/attuned_collective/" target="blank">Instagram</a>
+                <a href="https://www.instagram.com/attuned_collective/" target="blank">Contact</a>
+            </motion.div> */}
         </>
     )
 }

@@ -38,9 +38,10 @@
     text-decoration:underline;
 }
 
+
 /* CREDITS */
 
-.open-credits-mobile, .credits-mobile {
+.open-credits-mobile, .credits-mobile, .open-links-mobile, .links-mobile {
     position: absolute;
     inset: 0;
     height: fit-content;
@@ -50,9 +51,42 @@
     font-family: "BBB Karrik";
 }
 
-.open-credits-mobile a, .credits-mobile a {
+.open-credits-mobile a, .credits-mobile a, .open-links-mobile a, .links-mobile a {
     padding:0;
     margin:0;
     font-size: 24px;
     text-decoration:underline;
+    color: black;
 }
+
+.links-mobile {
+    display: flex;
+    gap: 0.3rem;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+
+/* .socials {
+    position: absolute;
+    right:0;
+    bottom:0;
+    padding: 0.5rem;
+    padding-right: 0.4rem;
+    font-family: "PicNic";
+    display:flex;
+    flex-direction: column;
+    align-items:flex-end;
+    z-index: 1000;
+    transition: filter 0.3s ease-in-out;
+}
+
+.socials.blur {
+    filter: blur(18px);
+}
+
+.socials a {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    text-shadow: rgb(227, 227, 227) 3px 0px 0px, rgb(227, 227, 227) 2.83487px 0.981584px 0px, rgb(227, 227, 227) 2.35766px 1.85511px 0px, rgb(227, 227, 227) 1.62091px 2.52441px 0px, rgb(227, 227, 227) 0.705713px 2.91581px 0px, rgb(227, 227, 227) -0.287171px 2.98622px 0px, rgb(227, 227, 227) -1.24844px 2.72789px 0px, rgb(227, 227, 227) -2.07227px 2.16926px 0px, rgb(227, 227, 227) -2.66798px 1.37182px 0px, rgb(227, 227, 227) -2.96998px 0.42336px 0px, rgb(227, 227, 227) -2.94502px -0.571704px 0px, rgb(227, 227, 227) -2.59586px -1.50383px 0px, rgb(227, 227, 227) -1.96093px -2.27041px 0px, rgb(227, 227, 227) -1.11013px -2.78704px 0px, rgb(227, 227, 227) -0.137119px -2.99686px 0px, rgb(227, 227, 227) 0.850987px -2.87677px 0px, rgb(227, 227, 227) 1.74541px -2.43999px 0px, rgb(227, 227, 227) 2.44769px -1.73459px 0px, rgb(227, 227, 227) 2.88051px -0.838247px 0px;
+} */
