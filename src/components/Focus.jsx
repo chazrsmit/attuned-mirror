@@ -140,16 +140,6 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                                         </div>
                                     </div>
                                 }
-                                {/* <div>
-                                    <p>Lineup</p>
-                                </div>
-                                <div className="names">
-                                    <p>{event.artist1}</p>
-                                    <p>{event.artist2}</p>
-                                    <p>{event.artist3}</p>
-                                    <p>{event.artist4}</p>
-                                    <p>{event?.artist5}</p>
-                                </div> */}
                             </div>
                             {/* images */}   
                             <div className="photos">
