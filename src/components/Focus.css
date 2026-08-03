@@ -251,7 +251,7 @@
 .focusss .description a {
     text-decoration: none;
     font-family: "BBB Karrik";
-    font-size: 24px;
+    /* font-size: 24px; */
     transition: all 0.2s ease;
     /* color: var(--pink-1); */
     /* -webkit-text-stroke: 1px var(--bg-2); */
