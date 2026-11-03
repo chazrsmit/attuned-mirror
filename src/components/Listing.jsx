@@ -30,42 +30,43 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
 
 
   return (
-    <motion.div className="listing" ref={listingRef}
-                                          initial={{
-                                          opacity: 0,
-                                          filter: "blur(6px)",
-                                          x: 20
-                                      }}
-                                      animate={{
-                                          opacity: 1,
-                                          filter: "blur(0px)",
-                                          x: 0
-                                      }}
-                                      exit={{
-                                          opacity: 0,
-                                          filter: "blur(6px)",
-                                          x: -20
-                                      }}
-                                      transition={{
-                                          duration: 0.3,
-                                          ease: "easeInOut"
-                                      }}>
+    <motion.div
+      className="listing"
+      ref={listingRef}
+      initial={{
+        opacity: 0,
+        filter: "blur(6px)",
+        x: 20
+      }}
+      animate={{
+          opacity: 1,
+          filter: "blur(0px)",
+          x: 0
+      }}
+      exit={{
+          opacity: 0,
+          filter: "blur(6px)",
+          x: -20
+      }}
+      transition={{
+          duration: 0.3,
+          ease: "easeInOut"
+      }}
+    >
       <div ref={contentRef}>
-        {/* {isMobile && 
-
-        } */}
         {events.map((event) => {
           const opened = isClicked === event.id
           const hovered = isHovered === event.id
           const title = titleHovered === event.id
 
           return (
-            <div key={event.id} className={`block ${hovered || opened ? event.bg : null}`}
-            onMouseEnter={() => {
+            <div
+              key={event.id}
+              className={`block ${hovered || opened ? event.bg : null}`}
+              onMouseEnter={() => {
               setIsHovered(event.id)
-
               setFloatingGraphic(prev => {
-                if (prev?.id === event.id) return prev  // already showing this block's image — leave position untouched
+                if (prev?.id === event.id) return prev
                 return {
                   id: event.id,
                   src: event.element2,
@@ -79,40 +80,39 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
               })
 
               setTitleHovered(event.id)
-            }}
-            onMouseLeave={() => {
-              setIsHovered(prev => (prev === event.id ? null : prev))
-              setTitleHovered(prev => (prev === event.id ? null : prev))
-              // floatingGraphic is untouched here on purpose — it stays sticky
-            }}    
+              }}
+              onMouseLeave={() => {
+                setIsHovered(prev => (prev === event.id ? null : prev))
+                setTitleHovered(prev => (prev === event.id ? null : prev))
+              }}    
             >
               {isMobile && event.upcoming &&
                 <div>
                   <motion.p
-                                      key="upcoming"
-                                      className="upcoming"
-                                      initial={{
-                                          opacity: 0,
-                                          filter: "blur(6px)",
-                                          x: 20
-                                      }}
-                                      animate={{
-                                          opacity: 1,
-                                          filter: "blur(0px)",
-                                          x: 0
-                                      }}
-                                      exit={{
-                                          opacity: 0,
-                                          filter: "blur(6px)",
-                                          x: -20
-                                      }}
-                                      transition={{
-                                          duration: 0.3,
-                                          ease: "easeInOut"
-                                      }}
-                                      >
-                                        upcoming
-                                      </motion.p>
+                    key="upcoming"
+                    className="upcoming"
+                    initial={{
+                        opacity: 0,
+                        filter: "blur(6px)",
+                        x: 20
+                    }}
+                    animate={{
+                        opacity: 1,
+                        filter: "blur(0px)",
+                        x: 0
+                    }}
+                    exit={{
+                        opacity: 0,
+                        filter: "blur(6px)",
+                        x: -20
+                    }}
+                    transition={{
+                        duration: 0.3,
+                        ease: "easeInOut"
+                    }}
+                  >
+                    upcoming
+                  </motion.p>
                 </div>
               }
 
@@ -126,32 +126,34 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
               <div className="infos">
                 <p className="date">{event.date}</p>
                 {/* upcoming */}
-                {!isMobile &&                 <AnimatePresence initial={false} mode="wait">
-                  {event.upcoming && <motion.p
-                                      key="upcoming"
-                                      className="upcoming"
-                                      initial={{
-                                          opacity: 0,
-                                          filter: "blur(6px)",
-                                          x: 20
-                                      }}
-                                      animate={{
-                                          opacity: 1,
-                                          filter: "blur(0px)",
-                                          x: 0
-                                      }}
-                                      exit={{
-                                          opacity: 0,
-                                          filter: "blur(6px)",
-                                          x: -20
-                                      }}
-                                      transition={{
-                                          duration: 0.3,
-                                          ease: "easeInOut"
-                                      }}
-                                      >
-                                        upcoming
-                                      </motion.p>
+                {!isMobile && 
+                <AnimatePresence initial={false} mode="wait">
+                  {event.upcoming && 
+                    <motion.p
+                      key="upcoming"
+                      className="upcoming"
+                      initial={{
+                          opacity: 0,
+                          filter: "blur(6px)",
+                          x: 20
+                      }}
+                      animate={{
+                          opacity: 1,
+                          filter: "blur(0px)",
+                          x: 0
+                      }}
+                      exit={{
+                          opacity: 0,
+                          filter: "blur(6px)",
+                          x: -20
+                      }}
+                      transition={{
+                          duration: 0.3,
+                          ease: "easeInOut"
+                      }}
+                    >
+                      upcoming
+                    </motion.p>
                   }
                 </AnimatePresence>}
               </div>
@@ -159,7 +161,7 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
               {/* content */}
               <AnimatePresence initial={false}>
                 {opened && (
-                    <>
+                  <>
                   <motion.div
                     key="content"
                     initial={{ height: 0, opacity: 0 }}
@@ -173,8 +175,8 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                             <p>{event.content}</p>
                         </div>
                     </div>
-                      <br/>
-                      <br/>
+                    <br/>
+                    <br/>
 
                     <div className={`lineup ${opened ? event.bg : null}`}  style={{ paddingBottom: !event.link ? "1rem" : undefined }}>
                       <div className={`circle-lineup ${opened ? event.bg : null}`}>
@@ -194,47 +196,10 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                         <a href={event.link} target="blank">{event.linktext}</a>
                       </div>
                     }
-                    {/* <div className="parternship">
-                      <p>{event.help}</p>
-                    </div> */}
-                    
                   </motion.div>
                   </>
                 )}
               </AnimatePresence>
-
-              {/* affiche */}
-              {/* { !isMobile &&
-              
-              (
-                <AnimatePresence initial={false}>
-                  {hovered && (
-                  <>
-                  <motion.img
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0}}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      style={{ 
-                          position: "absolute",
-                          top: "220px",
-                          right: "20px", 
-                          width: "300px" }}
-                      className={`affiche ${opened ? 'clicked' : null}`}
-                      src={`${import.meta.env.BASE_URL}/images/${event.image}`}
-                  />
-                  <motion.img
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 0 }}
-                      exit={{ opacity: 0}}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className={`affiche2 ${opened ? 'clicked' : null}`}
-                      src={`${import.meta.env.BASE_URL}/images/${event.affiche2}`}
-                  />
-                  </>
-                  )}
-              </AnimatePresence>
-              )} */}
 
               {/* éléments graphiques */}
               <AnimatePresence initial={false}>
@@ -254,39 +219,6 @@ export default function Listing({ events, isClicked, setIsClicked, isHovered, se
                 />
                 )}
               </AnimatePresence>
-              {/* {isMobile && hovered && event.element2 && (
-                  <motion.img
-                    className="element2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                    style={{
-                      position: "absolute",
-                      bottom: event.topMobile,
-                      left: event.leftMobile,
-                      width: event.widthMobile,
-                    }}
-                    src={`${import.meta.env.BASE_URL}/images/${event.element2}`}
-                  />
-                )} */}
-              {/* <AnimatePresence initial={false}>
-                {hovered && event.element2 && (
-                <motion.img
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                    style={{ overflow: "hidden",
-                        position: "absolute",
-                        top: `${randomPos[event.id]?.y ?? 50}%`,
-                        left: `${randomPos[event.id]?.x ?? 50}%`,
-                        width: event.width2 }}
-                    className={`element2`}
-                    src={`${import.meta.env.BASE_URL}/images/${event?.element2}`}
-                />
-                )}
-              </AnimatePresence> */}
             </div>
           );
         })}

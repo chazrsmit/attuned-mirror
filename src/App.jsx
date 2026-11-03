@@ -1,17 +1,13 @@
   import { useState, useEffect } from 'react'
   import { useNavigate, Routes, Route, useLocation } from 'react-router-dom'
   import './App.css'
-  import Listing from './components/Listing'
   import ListingBis from './components/ListingBis'
   import LeftDesktop from './components/LeftDesktop'
-  import Footer from './components/Footer'
   import { motion, AnimatePresence } from "framer-motion";
-  import GradualBlur from './components/GradualBlur'
   import CursorTrail from './components/CursorTrail'
   import Focus from './components/Focus'
   import HomeMobile from './components/HomeMobile'
-  import BgMobile from './components/HomeMobile'
-  import Lenis from "lenis"
+
 
   function App() {
 
@@ -35,28 +31,6 @@
     }, [])
 
     const [isOpen, setIsOpen] = useState(true)
-
-    // lenis scroll seulement on mobile
-    // useEffect(() => {
-    //   if (!isMobile) return
-
-    //   const lenis = new Lenis({
-    //     duration: 1.2,
-    //     smoothWheel: true,
-    //   })
-
-    //   let rafId
-    //   function raf(time) {
-    //     lenis.raf(time)
-    //     rafId = requestAnimationFrame(raf)
-    //   }
-    //   rafId = requestAnimationFrame(raf)
-
-    //   return () => {
-    //     lenis.destroy()
-    //     cancelAnimationFrame(rafId)
-    //   }
-    // }, [isMobile])
 
     const [isClicked, setIsClicked] = useState(null)
     const [isHovered, setIsHovered] = useState(null)
@@ -360,16 +334,17 @@
       {/* {isMobile && <Footer />} */}
 
       <section className="main">
-        {!isMobile && (
-            <LeftDesktop
-                events={events}
-                isClicked={isClicked}
-                setIsClicked={setIsClicked}
-                listingOn={listingOn}
-                isHomepage={isHomepage}
-                isTablet={isTablet}
-            />
-        )}
+      {!isMobile && (
+          <LeftDesktop
+              events={events}
+              isClicked={isClicked}
+              setIsClicked={setIsClicked}
+              listingOn={listingOn}
+              isHomepage={isHomepage}
+              isTablet={isTablet}
+          />
+      )}
+
       {/* Définition des routes (main page "/" et pages focus) */}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
@@ -396,83 +371,18 @@
                 />
                 )
               }
-            // {
-            //   listingOn ? (
-            //     <Listing
-            //       events={events}
-            //       isClicked={isClicked}
-            //       setIsClicked={setIsClicked}
-            //       isHovered={isHovered}
-            //       setIsHovered={setIsHovered}
-            //       isMobile={isMobile}
-            //       isTablet={isTablet}
-            //       setFloatingGraphic={setFloatingGraphic}
-            //       titleHovered={titleHovered}
-            //       setTitleHovered={setTitleHovered}
-            //     />
-            //   ) : (
-            //     <ListingBis
-            //       events={events}
-            //       isClicked={isClicked}
-            //       setIsClicked={setIsClicked}
-            //       isHovered={isHovered}
-            //       setIsHovered={setIsHovered}
-            //       isMobile={isMobile}
-            //       isTablet={isTablet}
-            //       setFloatingGraphic={setFloatingGraphic}
-            //       titleHovered={titleHovered}
-            //       setTitleHovered={setTitleHovered}
-            //     />
-            //   )
-            // }
+
           />
+
           <Route
             path="/event/:id"
             element={<Focus events={events} setIsClicked={setIsClicked} isMobile={isMobile} />}
           />
+
         </Routes>
       </AnimatePresence>
      </section>
 
-      {/* <section className="main">
-        {!isMobile && <LeftDesktop events={events} isClicked={isClicked} setIsClicked={setIsClicked} listingOn={listingOn} />}
-        {listingOn &&
-        <AnimatePresence mode="wait">
-          <Listing events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
-        </AnimatePresence>
-        }
-        {!listingOn && 
-        <AnimatePresence mode="wait">
-            <ListingBis events={events} isClicked={isClicked} setIsClicked={setIsClicked} isHovered={isHovered} setIsHovered={setIsHovered} isMobile={isMobile} setFloatingGraphic={setFloatingGraphic} titleHovered={titleHovered} setTitleHovered={setTitleHovered} />
-        </AnimatePresence>
-        }
-      </section> */}
-{/* 
-      <AnimatePresence initial={false} mode="wait">
-        {floatingGraphic && (
-        <motion.img
-            key={floatingGraphic.src}
-            drag
-            dragElastic={0.1}
-            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}  
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
-            style={{ overflow: "hidden",
-                position: "absolute",
-                top:  `${floatingGraphic.y}vh`,
-                left:`${floatingGraphic.x}vw`,
-                width: isMobile? floatingGraphic.widthMobile : floatingGraphic.width }}
-            className={`element2`}
-            src={`${import.meta.env.BASE_URL}/images/${floatingGraphic.src}`}
-        />
-        )}
-      </AnimatePresence> */}
-
-      {/* <div className="btn-listing-change" onClick={()=>handleBtnClick()} style={{position:"absolute", inset: "0"}}>
-        <button>click</button>
-      </div> */}
 
     {!listingOn &&
     isHomepage &&
@@ -491,13 +401,6 @@
         )}
       </AnimatePresence>
     }
-
-
-
-        {/* buttons */}
-        {/* <div className="btn-collaborate">
-          <button className="">Wanna collaborate?</button>
-        </div> */}
 
       </>
     )

@@ -148,18 +148,6 @@ export default function HomeMobile({ events, isClicked, setIsClicked, isOpen, se
                     )}
             </AnimatePresence>
 
-            {/* Links social media */}
-            {/* <motion.div
-                // key="links"
-                // initial={{ opacity: 0, x: -20, filter: "blur(8px)" }}
-                // animate={{ opacity: 1, x:0,filter: "blur(0px)"  }}
-                // exit={{ opacity: 0, x: -20,filter: "blur(8px)" }}
-                // transition={{ duration: 0.3, ease: "easeInOut" }}
-                className={`socials ${credits || isOpen ? 'blur' : null}`}
-            >
-                <a href="https://www.instagram.com/attuned_collective/" target="blank">Instagram</a>
-                <a href="https://www.instagram.com/attuned_collective/" target="blank">Contact</a>
-            </motion.div> */}
         </>
     )
 }
