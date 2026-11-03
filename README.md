@@ -15,14 +15,9 @@ Visitors can explore event details, lineups, photography, and related links, wit
 ## Built with
 
 - React 19
-- Vite
 - React Router
 - Framer Motion
 - Lenis smooth scrolling
-
-## Deployment
-
-The site is configured for its GitHub Pages project URL. A GitHub Actions workflow builds and deploys the site when changes are pushed to `main`.
 
 ## Credits
 
