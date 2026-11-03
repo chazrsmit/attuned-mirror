@@ -165,20 +165,12 @@ export default function Focus({ events, setIsClicked, isMobile }) {
                         </div>
 
                         {/* bottom line */}
-                        {/* <div className="bottom">
-                            <p>{event.date}</p>
-                        </div> */}
                     </div>
 
                     {/* colonne droite avec photos */}
                     {!isMobile &&
                     <div className="right">
                         <div className="lenis-content">
-                            {/* <div>
-                                <div className="poster">
-                                    <img src={`/images/${event.image}`} loading="eager" fetchPriority="high" />
-                                </div>
-                            </div> */}
                             {/* images apparaissent ici on hover */}
                             <div>
                                 <div className="poster">

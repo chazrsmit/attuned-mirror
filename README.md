@@ -1,16 +1,29 @@
-# React + Vite
+# Attuned
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The website for **Attuned**, a Brussels-based non-profit association bringing people together through benefit parties for local social causes. The project pairs an expressive visual identity with an archive of events, artists, collaborators, and the organisations supported.
 
-Currently, two official plugins are available:
+**Live website:** [chazrsmit.github.io/attuned-mirror](https://chazrsmit.github.io/attuned-mirror/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About the project
 
-## React Compiler
+Attuned organises benefit events in partnership with local collectives and community spaces. Since 2023, six parties have raised over €6,000 for organisations working across areas including human rights and agroecology. This website introduces the association and documents its events through a graphic, image-led experience.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Attuned centers its artistic direction around—mostly— electronic music in all its varieties, aiming to spotlight local artists while raising funds for various social causes, in partnership with other equally-minded local initiatives. This sense of community and partnership is reflected through the imagery of stones (resilience, stability) and flowers (growth, hope). 
 
-## Expanding the ESLint configuration
+Visitors can explore event details, lineups, photography, and related links, with animated transitions and typography carrying the visual identity across desktop and mobile.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Built with
+
+- React 19
+- Vite
+- React Router
+- Framer Motion
+- Lenis smooth scrolling
+
+## Deployment
+
+The site is configured for its GitHub Pages project URL. A GitHub Actions workflow builds and deploys the site when changes are pushed to `main`.
+
+## Credits
+
+The website design and development are credited to Charlotte Smit. The project credits typefaces from [Bye Bye Binary](https://typotheque.genderfluid.space/), including PicNic and BBB Karrik. Attuned was founded by Serafina Cutaia, Soukeyna Latrach, Charlotte Smit, Fabian Fuchs, and Paul Bossu.
